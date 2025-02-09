@@ -1,0 +1,96 @@
+.container {
+    float: left;
+    margin-left: 5%;
+    padding: 20px;
+    width: 75%;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.paragraph {
+    width: 100%;
+}
+
+.paragraph h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+.location {
+    
+    width: 320px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align:center;
+    border: 6px solid #dddddd6c;
+    border-radius: 10px;
+    display: block;
+    float: right;
+}
+
+.cover{
+    width: 300px;
+    height: 169px;
+    border: 2px solid #a2a9b1;
+}
+
+table.items {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: centre;
+    border: 6px solid #dddddd6c;
+    border-radius: 10px;
+}
+
+table.pkmnencounter {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: centre;
+    border: 6px solid #dddddd6c;
+    border-radius: 10px;
+}
+
+.pkmnencounter th, .pkmnencounter td {
+    padding: 12px 15px;
+    text-align: center;
+ }
+    
+.pkmnencounter th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.pkmnencounter .name {
+
+}
+
+.pkmnencounter .method {
+
+}
+
+.pkmnencounter .levels{
+    text-align: center;
+}
+
+.pkmnencounter .day {
+    background-color: #96E0FF;
+    width: 50%;
+    height: 100%;
+    padding: 8px;
+    overflow: hidden;
+}
+.pkmnencounter .night{
+    background-color: #597a9b;
+    width: 50%;
+    height: 100%;
+    padding: 8px; 
+    overflow: hidden;
+}
+
