@@ -22,7 +22,7 @@
     
     width: 320px;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin-left: 20px;
     font-size: 18px;
     text-align:center;
     border: 6px solid #dddddd6c;
@@ -31,13 +31,31 @@
     float: right;
 }
 
+.mapproximity {
+    height: 150px;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    border: 6px solid #064900;
+    border-radius: 10px;
+    table-layout: fixed;
+}
+
+.mapproximity td{
+    min-height: 150px;
+    width: 33%;
+    height: 33%;
+    border-collapse: collapse;
+    
+}
+
 .cover{
     width: 300px;
     height: 169px;
     border: 2px solid #a2a9b1;
 }
 
-table.items {
+.items {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
@@ -45,6 +63,10 @@ table.items {
     text-align: centre;
     border: 6px solid #dddddd6c;
     border-radius: 10px;
+}
+
+.items th{
+    border: 2px solid;
 }
 
 table.pkmnencounter {
@@ -66,6 +88,17 @@ table.pkmnencounter {
     background-color: #f2f2f2;
     color: #333;
 }
+.pkmnencounter td {
+    text-align: center;
+}
+
+.pkmnencounter .sprite {
+    width : 32px;
+    height: 32px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+}
 
 .pkmnencounter .name {
 
@@ -77,6 +110,10 @@ table.pkmnencounter {
 
 .pkmnencounter .levels{
     text-align: center;
+}
+
+.pkmnencounter .rate {
+
 }
 
 .pkmnencounter .day {
@@ -92,5 +129,79 @@ table.pkmnencounter {
     height: 100%;
     padding: 8px; 
     overflow: hidden;
+}
+
+/*Type Colors*/
+.normal{
+    background-color: #C1C2C1;
+    border-color:#676967;
+}
+.fire {
+    background-color: #EF7374;
+    border-color:#961A1B;
+}
+.fighting {
+    background-color: #ee954d;
+    border-color:#743816;
+}
+.water {
+    background-color: #74ACF5;
+    border-color:#1B539B;
+}
+.flying {
+    background-color: #a1dbf1;
+    border-color:#397da5;
+}
+.grass {
+    background-color: #82c274;
+    border-color:#1c4d1f;
+}
+.poison {
+    background-color: #7763ad;
+    border-color:#342c58;
+}
+.electric {
+    background-color: #e2e473;
+    border-color:#A37D00;
+}
+.ground {
+    background-color: #947951;
+    border-color:#4e371c;
+}
+.psychic {
+    background-color: #F584A8;
+    border-color:#9B2A4F;
+}
+.rock {
+    background-color: #CBC7AD;
+    border-color:#5E3515;
+}
+.ice {
+    background-color: #91e3f8;
+    border-color:#28869E;
+}
+.bug {
+    background-color: #B8C26A;
+    border-color:#545e0e;
+}
+.dragon {
+    background-color: #867ce0;
+    border-color:#212381;
+}
+.ghost {
+    background-color: #aca7b9;
+    border-color:#2a2633;
+}
+.dark {
+    background-color: #5f5d66;
+    border-color:#292929;
+}
+.steel {
+    background-color: #a9b7bb;
+    border-color:#33444b;
+}
+.fairy {
+    background-color: #ffc1fc;
+    border-color:#892192;
 }
 
