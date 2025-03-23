@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 @font-face {
-    font-family: 'Mgb Patrician'; /* Nome del font */
+    font-family: 'Verve'; /* Nome del font */
     src: url('../src/Font/verve-font/Verve-nnjJ.ttf') format('truetype'); /* Percorso al file */
     font-weight: normal;
     font-style: normal;
@@ -28,7 +28,7 @@ body{
 }
 
 h1 {
-    font-family: 'Mgb Patrician', sans-serif;
+    font-family: 'Verve', sans-serif;
     width: calc(100% - 350px);
     font-size: 32px;
     font-weight: normal;
@@ -38,7 +38,7 @@ h1 {
 }
 
 h2{
-    font-family: 'Mgb Patrician', sans-serif;
+    font-family: 'Verve', sans-serif;
     clear: both;
     font-size: 28px;
     font-weight: normal;
@@ -48,7 +48,7 @@ h2{
 }
 
 h3{
-    font-family: 'Mgb Patrician', sans-serif;
+    font-family: 'Verve', sans-serif;
     font-size: 24px;
     font-weight: normal;
     margin: 20px 0;
@@ -62,10 +62,11 @@ h3{
 .roundtr {border-top-right-radius: 14px;}
 .roundbl {border-bottom-left-radius: 14px;}
 .roundbr {border-bottom-right-radius: 14px;}
+
 /* Stili tabella LOCATION */
 .location {
     
-    width: 320px;
+    width: 360px;
     border-collapse: collapse;
     margin-left: 20px;
     font-size: 18px;
