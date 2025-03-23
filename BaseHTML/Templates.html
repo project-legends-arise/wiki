@@ -5,49 +5,58 @@
 <!-- Tabella item-->
 <table class="items">
     <tr>
-        <th>Item</th>
+        <th colspan="2">Item</th>
         <th>Location</th>
     </tr>
-    <tr><!--. Copiare da <tr> a </tr>-->
-        <td><table><tr>
-                <td>
-                    <img src="<!--Inserire qui URL immagine-->" alt="<!--Nome item-->">
-                </td>
-                <td><!--Inserire nome item--></td>
-        </tr></table></td>          
-        <td><!--Inserire luogo di ottenimento--></td>
-    </tr>
 </table>
+
+    <tr><!--. Copiare da <tr> a </tr>-->
+    <td><img src="" alt="<testo in caso di mancato caricamento>"></td>
+    <td>Nome item</td>
+    <td>Luogo ottenimento</td>
+    </tr>
+
+
+
 <!-- Tabella incontri pokemon-->
-<table class="pkmnencounter">
-    <tr><!--Intestazione-->
+
+
+<!--Struttura base tabella-->
+<table class="pkmnencounter"> 
+    <tr>
         <th>Pokemon</th>
         <th>Method</th>
         <th>Levels</th>
-        <th>Rate</th>
+        <th colspan="2">Rate</th>
     </tr>
-    <tr><!--Pokemon a rate uniforme. Copiare da <tr> a </tr>-->
+    <!-- Inserisci i blocchi qui -->
+</table>
+
+<!--Pokemon a rate uniforme. Copiare da <tr> a </tr>-->
+    <tr> 
         <td><table><tr><!--Sotto tabella per sprite e nome pokemon-->
-            <td><img src="<!--Inserire qui URL immagine-->" alt="<!--Nome pokemon-->" class="sprite <!--inserire tipo pokemon lasciando uno spazio-->"></td>
-            <td class="name"><!--Inserire nome del pokemon--></td>
+            <td><img src="" alt="<testo in caso di mancato caricamento>" class="sprite <nome del tipo>"></td>
+            <td class="name"></td>
         </tr></table></td>
-        <td class="method"><!--Inserire metodo di incontro--></td>
-        <td class="levels"><!--Inserire range livelli--></td>
-        <td class="rate"><!--Inserire rate con simbolo percentuale--></td>
+        <td class="method"></td>
+        <td class="levels"></td>
+        <td class="rate" colspan="2"></td>
     </tr>
+
+
     <tr><!--Pokemon a rate differente tra giorno e notte. Copiare da <tr> a </tr>-->
     <td><table><tr><!--Sotto tabella per sprite e nome pokemon-->
-        <td><img src="<!--Inserire qui URL immagine-->" alt="<!--Nome pokemon-->" class="sprite <!--inserire tipo pokemon lasciando uno spazio-->"></td>
-        <td class="name"><!--Inserire nome del pokemon--></td>
+        <td><img src="" alt="<testo in caso di mancato caricamento>" class="sprite <nome del tipo>"></td>
+        <td class="name"></td>
     </tr></table></td>
-    <td class="method"><!--Inserire metodo di incontro--></td>
-    <td class="levels"><!--Inserire range livelli--></td>
-        <td><table class="rate"><tr>
-                <td class="day"><!--Inserire rate con simbolo percentuale--></td>
-                <td class="night"><!--Inserire rate con simbolo percentuale--></td>
-        </tr></table></td>
+    <td class="method"></td>
+    <td class="levels"></td>
+    <td class="day"></td>
+    <td class="night"></td>
     </tr>
-</table>
+
 <!-- Tabella incontri allenatori-->
+
+
 
 <!-- Tabella allenatori importanti-->

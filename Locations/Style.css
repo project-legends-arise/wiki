@@ -1,3 +1,4 @@
+/* Stili di pagina */
 .container {
     float: left;
     margin-left: 5%;
@@ -7,17 +8,31 @@
     border-radius: 20px;
 }
 
-.paragraph {
-    width: 100%;
-}
-
-.paragraph h1 {
+h1 {
+    width: calc(100% - 350px);
     font-size: 24px;
     font-weight: bold;
     margin: 20px 0;
-    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 10px; /* Spazio tra il titolo e la linea */
+    border-bottom: 1px solid #232323; /* Linea sotto il titolo */
 }
 
+h2{
+    clear: both;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding-bottom: 10px; /* Spazio tra il titolo e la linea */
+    border-bottom: 1px solid #232323;
+}
+
+/* Stili generali elementi di tabella */
+.roundy {border-radius: 14px;}
+.roundtl {border-top-left-radius: 14px;}
+.roundtr {border-top-right-radius: 14px;}
+.roundbl {border-bottom-left-radius: 14px;}
+.roundbr {border-bottom-right-radius: 14px;}
+/* Stili tabella LOCATION */
 .location {
     
     width: 320px;
@@ -33,20 +48,56 @@
 
 .mapproximity {
     height: 150px;
+    width:100%;
     margin: 20px 0;
     font-size: 18px;
     text-align: center;
-    border: 6px solid #064900;
+    border: 6px solid #754600;
     border-radius: 10px;
     table-layout: fixed;
 }
 
 .mapproximity td{
-    min-height: 150px;
+    min-height: 50px;
     width: 33%;
     height: 33%;
     border-collapse: collapse;
-    
+    font-size: 16px;
+}
+
+.mapproximity .corner{
+    background-color: #FFD580;    
+}
+
+.mapproximity .route.top {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: white;
+}
+
+
+.mapproximity .route.bottom {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: white;
+}
+
+.mapproximity .route.center {
+    background-color:white;
+    font-weight: bold;
+}
+
+.mapproximity .route.left {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: white;
+}
+
+
+.mapproximity .route.right {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: white;
 }
 
 .cover{
@@ -55,9 +106,9 @@
     border: 2px solid #a2a9b1;
 }
 
+/* Stili tabella ITEMS */
 .items {
     width: 100%;
-    border-collapse: collapse;
     margin: 20px 0;
     font-size: 18px;
     text-align: centre;
@@ -69,139 +120,82 @@
     border: 2px solid;
 }
 
+/* Stili tabella POKEMON */
 table.pkmnencounter {
-    width: 100%;
-    border-collapse: collapse;
+    width: 60%;
     margin: 20px 0;
     font-size: 18px;
     text-align: centre;
-    border: 6px solid #dddddd6c;
-    border-radius: 10px;
+    border: 6px solid #4AA14D;
+    border-radius: 20px;
+    background-color: #75C977;
+    padding-bottom: 20px;
+
 }
 
 .pkmnencounter th, .pkmnencounter td {
-    padding: 12px 15px;
+    /* padding: 5px; */
     text-align: center;
  }
     
 .pkmnencounter th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #A2E0A3;
+    color: #000000;
 }
 .pkmnencounter td {
-    text-align: center;
+    background-color: #ffffff;
+    height:55px
 }
 
-.pkmnencounter .sprite {
+img.sprite {
     width : 32px;
     height: 32px;
+}
+
+td.sprite {
+    border-collapse: separate;
+    width: 50px;
+    height: 50px;
     border-width: 2px;
     border-style: solid;
     border-radius: 30px;
-}
-
-.pkmnencounter .name {
-
-}
-
-.pkmnencounter .method {
-
 }
 
 .pkmnencounter .levels{
     text-align: center;
 }
 
-.pkmnencounter .rate {
-
-}
-
 .pkmnencounter .day {
     background-color: #96E0FF;
     width: 50%;
     height: 100%;
-    padding: 8px;
     overflow: hidden;
 }
+
 .pkmnencounter .night{
     background-color: #597a9b;
     width: 50%;
     height: 100%;
-    padding: 8px; 
     overflow: hidden;
 }
 
-/*Type Colors*/
-.normal{
-    background-color: #C1C2C1;
-    border-color:#676967;
-}
-.fire {
-    background-color: #EF7374;
-    border-color:#961A1B;
-}
-.fighting {
-    background-color: #ee954d;
-    border-color:#743816;
-}
-.water {
-    background-color: #74ACF5;
-    border-color:#1B539B;
-}
-.flying {
-    background-color: #a1dbf1;
-    border-color:#397da5;
-}
-.grass {
-    background-color: #82c274;
-    border-color:#1c4d1f;
-}
-.poison {
-    background-color: #7763ad;
-    border-color:#342c58;
-}
-.electric {
-    background-color: #e2e473;
-    border-color:#A37D00;
-}
-.ground {
-    background-color: #947951;
-    border-color:#4e371c;
-}
-.psychic {
-    background-color: #F584A8;
-    border-color:#9B2A4F;
-}
-.rock {
-    background-color: #CBC7AD;
-    border-color:#5E3515;
-}
-.ice {
-    background-color: #91e3f8;
-    border-color:#28869E;
-}
-.bug {
-    background-color: #B8C26A;
-    border-color:#545e0e;
-}
-.dragon {
-    background-color: #867ce0;
-    border-color:#212381;
-}
-.ghost {
-    background-color: #aca7b9;
-    border-color:#2a2633;
-}
-.dark {
-    background-color: #5f5d66;
-    border-color:#292929;
-}
-.steel {
-    background-color: #a9b7bb;
-    border-color:#33444b;
-}
-.fairy {
-    background-color: #ffc1fc;
-    border-color:#892192;
-}
+/*Colori TIPI*/
+.normal{background-color: #C1C2C1; border-color:#676967;}
+.fire {background-color: #EF7374; border-color:#961A1B;}
+.fighting {background-color: #ee954d; border-color:#743816;}
+.water {background-color: #74ACF5; border-color:#1B539B;}
+.flying {background-color: #a1dbf1; border-color:#397da5;}
+.grass {background-color: #82c274; border-color:#1c4d1f;}
+.poison {background-color: #7763ad; border-color:#342c58;}
+.electric {background-color: #e2e473; border-color:#A37D00;}
+.ground {background-color: #947951; border-color:#4e371c;}
+.psychic {background-color: #F584A8; border-color:#9B2A4F;}
+.rock {background-color: #CBC7AD; border-color:#5E3515;}
+.ice {background-color: #91e3f8; border-color:#28869E;}
+.bug {background-color: #B8C26A; border-color:#545e0e;}
+.dragon {background-color: #867ce0; border-color:#212381;}
+.ghost {background-color: #aca7b9; border-color:#2a2633;}
+.dark {background-color: #5f5d66; border-color:#292929;}
+.steel {background-color: #a9b7bb; border-color:#33444b;}
+.fairy {background-color: #ffc1fc; border-color:#892192;}
 
