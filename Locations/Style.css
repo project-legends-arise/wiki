@@ -29,7 +29,7 @@ body{
 
 h1 {
     font-family: 'Verve', sans-serif;
-    width: calc(100% - 350px);
+    width: calc(100% - 400px);
     font-size: 32px;
     font-weight: normal;
     margin: 20px 0;
@@ -56,14 +56,160 @@ h3{
     border-bottom: 1px solid #232323;
 }
 
-/* Stili generali elementi di tabella */
-.roundy {border-radius: 14px;}
-.roundtl {border-top-left-radius: 14px;}
-.roundtr {border-top-right-radius: 14px;}
-.roundbl {border-bottom-left-radius: 14px;}
-.roundbr {border-bottom-right-radius: 14px;}
+big{
+    font-size: 20px;	
+}
 
-/* Stili tabella LOCATION */
+/* Stili generali elementi di tabella */
+.round {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -icab-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.roundtl {
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -khtml-border-top-left-radius: 10px;
+    -icab-border-top-left-radius: 10px;
+    -o-border-top-left-radius: 10px;
+}
+
+.roundtr {
+    border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    -icab-border-top-right-radius: 10px;
+    -o-border-top-right-radius: 10px;
+}
+
+.roundbl {
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -icab-border-bottom-left-radius: 10px;
+    -o-border-bottom-left-radius: 10px;
+}
+
+.roundbr {
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -icab-border-bottom-right-radius: 10px;
+    -o-border-bottom-right-radius: 10px;
+}
+
+.roundbottom {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -icab-border-bottom-left-radius: 10px;
+    -icab-border-bottom-right-radius: 10px;
+    -o-border-bottom-left-radius: 10px;
+    -o-border-bottom-right-radius: 10px
+}
+
+.roundtop {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-top-left-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    -icab-border-top-left-radius: 10px;
+    -icab-border-top-right-radius: 10px;
+    -o-border-top-left-radius: 10px;
+    -o-border-top-right-radius: 10px
+}
+
+.roundleft {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -khtml-border-top-left-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -icab-border-top-left-radius: 10px;
+    -icab-border-bottom-left-radius: 10px;
+    -o-border-top-left-radius: 10px;
+    -o-border-bottom-left-radius: 10px
+}
+
+.roundright {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    -icab-border-bottom-right-radius: 10px;
+    -icab-border-top-right-radius: 10px;
+    -o-border-bottom-right-radius: 10px;
+    -o-border-top-right-radius: 10px
+}
+
+/* Stili colore tabelle */
+table td{
+    padding: 5px;
+    background-color:#ffffff;
+}
+/* --- */
+table.green {
+    background-color: #75C977;
+    border: 6px solid #4AA14D;
+}
+table.green th {
+    background-color: #A2E0A3;
+    color: #000000;
+}
+/* --- */
+table.blue {
+    background-color: #75C9FF;
+    border: 6px solid #4AA1FF;
+}
+table.blue th {
+    background-color: #A2E0FF;
+    color: #000000;
+}
+/* --- */
+table.red {
+    background-color: #FFA575;
+    border: 6px solid #FF7546;
+}
+table.red th {
+    background-color: #FFA575;
+    color: #000000;
+}
+/* --- */
+table.yellow {
+    background-color: #FFD580;
+    border: 6px solid #FFA146;
+}
+table.yellow th {
+    background-color: #FFD580;
+    color: #000000;
+}
+
+
+/* !!!!!!!!!!WORK IN PROGRESS!!!!!!!!!! */
 .location {
     
     width: 360px;
@@ -165,7 +311,7 @@ table.pkmnencounter {
 }
 
 .pkmnencounter th, .pkmnencounter td {
-    /* padding: 5px; */
+
     text-align: center;
  }
     
@@ -175,58 +321,67 @@ table.pkmnencounter {
 }
 .pkmnencounter td {
     background-color: #ffffff;
-    height:55px
-}
-
-img.sprite {
-    width : 32px;
-    height: 32px;
-}
-
-td.sprite {
-    border-collapse: separate;
-    width: 50px;
-    height: 50px;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 30px;
+    height:80px
 }
 
 .pkmnencounter .levels{
     text-align: center;
 }
 
-.pkmnencounter .day {
+/* !!!!!!!!!!END WORK IN PROGRESS!!!!!!!!!! */
+
+td.day {
     background-color: #96E0FF;
     width: 50%;
     height: 100%;
     overflow: hidden;
 }
 
-.pkmnencounter .night{
+td.night{
     background-color: #597a9b;
     width: 50%;
     height: 100%;
     overflow: hidden;
 }
 
+
+/* Stili Sprite */
+div.bg-sprite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:visible;
+}
+
+.sprite-small{
+    width: 24px;
+    height: 24px;}
+
+.sprite-medium{
+    width: 40px;
+    height: 40px;}
+
+.sprite-large{
+    width: 80px;
+    height: 80px;}	
+
 /*Colori TIPI*/
-.normal{background-color: #C1C2C1; border-color:#676967;}
-.fire {background-color: #EF7374; border-color:#961A1B;}
-.fighting {background-color: #ee954d; border-color:#743816;}
-.water {background-color: #74ACF5; border-color:#1B539B;}
-.flying {background-color: #a1dbf1; border-color:#397da5;}
-.grass {background-color: #82c274; border-color:#1c4d1f;}
-.poison {background-color: #7763ad; border-color:#342c58;}
-.electric {background-color: #e2e473; border-color:#A37D00;}
-.ground {background-color: #947951; border-color:#4e371c;}
-.psychic {background-color: #F584A8; border-color:#9B2A4F;}
-.rock {background-color: #CBC7AD; border-color:#5E3515;}
-.ice {background-color: #91e3f8; border-color:#28869E;}
-.bug {background-color: #B8C26A; border-color:#545e0e;}
-.dragon {background-color: #867ce0; border-color:#212381;}
-.ghost {background-color: #aca7b9; border-color:#2a2633;}
-.dark {background-color: #5f5d66; border-color:#292929;}
-.steel {background-color: #a9b7bb; border-color:#33444b;}
-.fairy {background-color: #ffc1fc; border-color:#892192;}
+.normal{width:32px; height:32px; background-color: #C1C2C1; border:3px solid #676967; border-radius: 32px;}
+.fire {width:32px; height:32px; background-color: #EF7374; border:3px solid #961A1B; border-radius: 32px;}
+.fighting {width:32px; height:32px; background-color: #ee954d; border:3px solid #743816; border-radius: 32px;}
+.water {width:32px; height:32px; background-color: #74ACF5; border:3px solid #1B539B; border-radius: 32px;}
+.flying {width:32px; height:32px; background-color: #a1dbf1; border:3px solid #397da5; border-radius: 32px;}
+.grass {width:32px; height:32px; background-color: #82c274; border:3px solid #1c4d1f; border-radius: 32px;}
+.poison {width:32px; height:32px; background-color: #7763ad; border:3px solid #342c58; border-radius: 32px;}
+.electric {width:32px; height:32px; background-color: #e2e473; border:3px solid #A37D00; border-radius: 32px;}
+.ground {width:32px; height:32px; background-color: #947951; border:3px solid #4e371c; border-radius: 32px;}
+.psychic {width:32px; height:32px; background-color: #F584A8; border:3px solid #9B2A4F; border-radius: 32px;}
+.rock {width:32px; height:32px; background-color: #CBC7AD; border:3px solid #5E3515; border-radius: 32px;}
+.ice {width:32px; height:32px; background-color: #91e3f8; border:3px solid #28869E; border-radius: 32px;}
+.bug {width:32px; height:32px; background-color: #B8C26A; border:3px solid #545e0e; border-radius: 32px;}
+.dragon {width:32px; height:32px; background-color: #867ce0; border:3px solid #212381; border-radius: 32px;}
+.ghost {width:32px; height:32px; background-color: #aca7b9; border:3px solid #2a2633; border-radius: 32px;}
+.dark {width:32px; height:32px; background-color: #5f5d66; border:3px solid #292929; border-radius: 32px;}
+.steel {width:32px; height:32px; background-color: #a9b7bb; border:3px solid #33444b; border-radius: 32px;}
+.fairy {width:32px; height:32px; background-color: #ffc1fc; border:3px solid #892192; border-radius: 32px;}
 
