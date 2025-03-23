@@ -57,6 +57,44 @@
 
 <!-- Tabella incontri allenatori-->
 
+<!-- Struttura base tabella -->
+<table class="pkmnencounter">
+    <tr>
+        <th>Trainer</th>
+        <th>Pokémon</th>
+    </tr>
+</table>
+
+<!-- Prima riga di un allenatore -->
+<tr> <!-- Worker George -->
+    <td rowspan="1"><table> 
+        <tr horizontal-align="center"><td><img src="" alt="pkmn trainer" class="ctrainer"></td></tr>
+        <tr><td>Worker George</td></tr>
+    </table></td> <!-- Fine della colonna allenatore -->
+    <td><table>
+        <tr>
+            <td rowspan="2"><img src="" alt="<testo in caso di mancato caricamento>" class="sprite"></td>
+            <td><!-- Nome pokémon --></td>
+        </tr>
+        <tr><td><!-- oggetto tenuto --></td></tr>
+    </table></td> <!-- Fine della colonna Pokémon -->
+</tr>
+
+<!-- Riga da usare dal secondo pokémon in poi per quell'allenatore -->
+<tr>
+    <td><table>
+        <tr>
+            <td rowspan="2"><img src="" alt="<testo in caso di mancato caricamento>" class="sprite"></td>
+            <td><!-- Nome pokémon --></td>
+        </tr>
+        <tr><td><!-- oggetto tenuto --></td></tr>
+    </table></td> <!-- Fine della colonna Pokémon -->
+</tr>
+
+<!-- Riga di separazione tra allenatori quando necessaria -->
+<tr margin="10px">
+    <th colspan="2" style="line-height: 2;"><!-- Testo --></th>
+</tr>
 
 
 <!-- Tabella allenatori importanti-->
