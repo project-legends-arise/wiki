@@ -10,9 +10,16 @@
 }
 
 /* Usa il font nel tuo progetto */
+:root {
+    --font-verve: 'Verve', sans-serif;
+    --font-nunito: 'Nunito', sans-serif;
+    --table-min-width: 450px;
+    --table-max-width: 600px;
+}
+
 
 body{
-    font-family: "Nunito", sans-serif;
+    font-family: var(--font-nunito);
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;      
@@ -28,7 +35,7 @@ body{
 }
 
 h1 {
-    font-family: 'Verve', sans-serif;
+    font-family: var(--font-verve);
     width: calc(100% - 400px);
     font-size: 32px;
     font-weight: normal;
@@ -38,7 +45,7 @@ h1 {
 }
 
 h2{
-    font-family: 'Verve', sans-serif;
+    font-family: var(--font-verve);
     clear: both;
     font-size: 28px;
     font-weight: normal;
@@ -48,12 +55,11 @@ h2{
 }
 
 h3{
-    font-family: 'Verve', sans-serif;
-    font-size: 24px;
+    font-family: var(--font-verve);
+    font-size: 20px;
     font-weight: normal;
-    margin: 20px 0;
+    margin: 20px 0px 10px 0px;
     padding-bottom: 10px; /* Spazio tra il titolo e la linea */
-    border-bottom: 1px solid #232323;
 }
 
 big{
@@ -61,6 +67,10 @@ big{
 }
 
 /* Stili generali elementi di tabella */
+div.tcontainer{
+    width: 100%;
+    overflow-x: auto;
+}
 .round {
     border-radius: 10px;
     -moz-border-radius: 10px;
@@ -170,6 +180,7 @@ big{
 table td{
     padding: 5px;
     background-color:#ffffff;
+    font-size: 14px;
 }
 /* --- */
 table.green {
@@ -209,8 +220,17 @@ table.yellow th {
 }
 
 
+table.intro {
+    display: block;
+    float: right;
+    width: 360px;
+    justify-content: center;
+    align-items: center;
+}
+
 /* !!!!!!!!!!WORK IN PROGRESS!!!!!!!!!! */
-.location {
+
+/* .location {
     
     width: 360px;
     border-collapse: collapse;
@@ -281,76 +301,118 @@ table.yellow th {
     width: 300px;
     height: 169px;
     border: 2px solid #a2a9b1;
-}
+} */
 
 /* Stili tabella ITEMS */
-.items {
-    width: 100%;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: centre;
-    border: 6px solid #dddddd6c;
-    border-radius: 10px;
+#items{
+    width: 60%; 
+    min-width: var(--table-min-width); 
+    max-width: var(--table-max-width);  
+}
+#items img{
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#items td.icon{
+    width: 44px;
+    text-align: center;
+}
+#items td.name{
+    width: 150px;
+    text-align: center;
+}
+#items td.location{
+    width: 300px;
+    text-align: left;
 }
 
-.items th{
-    border: 2px solid;
-}
-
-/* Stili tabella POKEMON */
-table.pkmnencounter {
+/* Stili tabella POKEMON SELVATICI*/
+#wildspawns{ /*id assegnato alla tabella*/
     width: 60%;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: centre;
-    border: 6px solid #4AA14D;
-    border-radius: 20px;
-    background-color: #75C977;
-    padding-bottom: 20px;
+    min-width: var(--table-min-width);
+    max-width: var(--table-max-width);
 
 }
-
-.pkmnencounter th, .pkmnencounter td {
-
+#wildspawns td{
     text-align: center;
- }
+    width: auto;
+}
+
+#wildspawns .pokemon table{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#wildspawns .pokemon table tr td:nth-child(1){
+    width: 50px;
+}
+#wildspawns .pokemon .name{    
+    text-align: left;
+}
+
+#wildspawns tr td:nth-child(3){
     
-.pkmnencounter th {
-    background-color: #A2E0A3;
-    color: #000000;
-}
-.pkmnencounter td {
-    background-color: #ffffff;
-    height:80px
+    width: 75px;
 }
 
-.pkmnencounter .levels{
+#wildspawns th.rate{
+    width: 5%;
+}
+#wildspawns td.day {
+    background-color: #96E0FF;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+#wildspawns td.night{
+    background-color: #597a9b;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
     text-align: center;
 }
 
-/* !!!!!!!!!!END WORK IN PROGRESS!!!!!!!!!! */
-
-td.day {
-    background-color: #96E0FF;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
+/*Stili ALLENATORI COMUNI*/
+.trainers{
+    width: 60%;
+    min-width: var(--table-min-width);
+    max-width: var(--table-max-width);
+}
+.trainers .name{
+    width : 150px;
+}
+.trainers .pokemonlist{
+    width: 200px;
 }
 
-td.night{
-    background-color: #597a9b;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-
-
-/* Stili Sprite */
-div.bg-sprite{
+.trainers td table{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.trainers td table td{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+/*Stili ALLENATORI SPECIALI*/
+
+/* Stili Sprite */
+div.bg-sprite{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
     overflow:visible;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .sprite-small{
@@ -365,23 +427,24 @@ div.bg-sprite{
     width: 80px;
     height: 80px;}	
 
+
 /*Colori TIPI*/
-.normal{width:32px; height:32px; background-color: #C1C2C1; border:3px solid #676967; border-radius: 32px;}
-.fire {width:32px; height:32px; background-color: #EF7374; border:3px solid #961A1B; border-radius: 32px;}
-.fighting {width:32px; height:32px; background-color: #ee954d; border:3px solid #743816; border-radius: 32px;}
-.water {width:32px; height:32px; background-color: #74ACF5; border:3px solid #1B539B; border-radius: 32px;}
-.flying {width:32px; height:32px; background-color: #a1dbf1; border:3px solid #397da5; border-radius: 32px;}
-.grass {width:32px; height:32px; background-color: #82c274; border:3px solid #1c4d1f; border-radius: 32px;}
-.poison {width:32px; height:32px; background-color: #7763ad; border:3px solid #342c58; border-radius: 32px;}
-.electric {width:32px; height:32px; background-color: #e2e473; border:3px solid #A37D00; border-radius: 32px;}
-.ground {width:32px; height:32px; background-color: #947951; border:3px solid #4e371c; border-radius: 32px;}
-.psychic {width:32px; height:32px; background-color: #F584A8; border:3px solid #9B2A4F; border-radius: 32px;}
-.rock {width:32px; height:32px; background-color: #CBC7AD; border:3px solid #5E3515; border-radius: 32px;}
-.ice {width:32px; height:32px; background-color: #91e3f8; border:3px solid #28869E; border-radius: 32px;}
-.bug {width:32px; height:32px; background-color: #B8C26A; border:3px solid #545e0e; border-radius: 32px;}
-.dragon {width:32px; height:32px; background-color: #867ce0; border:3px solid #212381; border-radius: 32px;}
-.ghost {width:32px; height:32px; background-color: #aca7b9; border:3px solid #2a2633; border-radius: 32px;}
-.dark {width:32px; height:32px; background-color: #5f5d66; border:3px solid #292929; border-radius: 32px;}
-.steel {width:32px; height:32px; background-color: #a9b7bb; border:3px solid #33444b; border-radius: 32px;}
-.fairy {width:32px; height:32px; background-color: #ffc1fc; border:3px solid #892192; border-radius: 32px;}
+.normal {background-color: #C1C2C1; border-color: #676967;}
+.fire {background-color: #EF7374; border-color: #961A1B;}
+.fighting {background-color: #ee954d; border-color: #743816;}
+.water {background-color: #74ACF5; border-color: #1B539B;}
+.flying {background-color: #a1dbf1; border-color: #397da5;}
+.grass {background-color: #82c274; border-color: #1c4d1f;}
+.poison {background-color: #7763ad; border-color: #342c58;}
+.electric {background-color: #e2e473; border-color: #A37D00;}
+.ground {background-color: #947951; border-color: #4e371c;}
+.psychic {background-color: #F584A8; border-color: #9B2A4F;}
+.rock {background-color: #CBC7AD; border-color: #5E3515;}
+.ice {background-color: #91e3f8; border-color: #28869E;}
+.bug {background-color: #B8C26A; border-color: #545e0e;}
+.dragon {background-color: #867ce0; border-color: #212381;}
+.ghost {background-color: #aca7b9; border-color: #2a2633;}
+.dark {background-color: #5f5d66; border-color: #292929;}
+.steel {background-color: #a9b7bb; border-color: #33444b;}
+.fairy {background-color: #ffc1fc; border-color: #892192;}
 

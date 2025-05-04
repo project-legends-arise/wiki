@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">     
-            <table class="location">                
+            <table class="intro round yellow">                
                 <tr>
                     <td>
                         <table>
@@ -73,27 +73,30 @@
                     </p>
 
             <h2>Items</h2>
-            <table class="round red">
+            <div class="tcontainer">
+            <table id="items" class="round red">
                 <tr>
                     <th colspan="2">Item</th>
-                    <th>Location</th>
+                    <th class="loc">Location</th>
                 </tr>
                 <tr>                    
-                    <td><img src="https://archives.bulbagarden.net/media/upload/9/9a/Bag_TM_Normal_Sprite.png" alt="Bag TM Normal Sprite"></td>
-                    <td>TM83 (Work Up)</td>         
-                    <td>Inside grass</td>
+                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/9/9a/Bag_TM_Normal_Sprite.png" alt="Bag TM Normal Sprite" class="sprite-small"></td>
+                    <td class="name">TM83 (Work Up)</td>         
+                    <td class="location">Inside grass</td>
                 </tr>
-            </table> <!-- Fine della <table class="items"> -->      
+            </table>
+            </div> <!-- Fine della <table class="items"> -->      
         <h2>Pokemon</h2>
-        <table class="pkmnencounter">
+        <div class="tcontainer">
+        <table id="wildspawns" class="round green">
             <tr>
-                <th class="roundtl">Pokemon</th>
-                <th>Method</th>
-                <th>Levels</th>
-                <th class="roundtr" colspan="2">Rate</th>
+                <th class="name roundtl">Pokemon</th>
+                <th class="method">Method</th>
+                <th class="level">Levels</th>
+                <th class="rate roundtr" colspan="2">Rate</th>
             </tr>
             <tr>
-                <td><table>
+                <td class="pokemon"><table>
                     <tr>
                         <td><div class="bg-sprite normal">
                             <img src="https://archives.bulbagarden.net/media/upload/3/33/Spr_3r_263.png" alt="Zigzagoon" class="sprite-medium">
@@ -106,7 +109,7 @@
                 <td colspan="2">40%</td>
             </tr>
             <tr>
-                <td><table>
+                <td class="pokemon"><table>
                     <tr>
                         <td>
                             <div class="bg-sprite flying"><img src="https://archives.bulbagarden.net/media/upload/archive/a/a5/20151030033018%21Spr_5b_519.png" alt="Pidove" class="sprite-medium"></div>
@@ -121,7 +124,7 @@
 
             </tr>
             <tr>
-                <td><table>
+                <td class="pokemon"><table>
                     <tr>
                         <td>
                             <div class="bg-sprite flying"><img src="https://archives.bulbagarden.net/media/upload/8/88/Menu_HOME_0527.png" alt="Woobat" class="sprite-medium"></div>
@@ -135,7 +138,7 @@
                 <td class="night">35%</td>
             </tr>
             <tr>
-                <td><table>
+                <td class="pokemon"><table>
                     <tr>
                         <td>
                             <div class="bg-sprite fighting"><img src="https://archives.bulbagarden.net/media/upload/archive/3/30/20151030053101%21Spr_5b_532.png" alt="Timburr" class="sprite-medium"></div>
@@ -148,19 +151,19 @@
                 <td colspan="2">25%</td>
             </tr>
         </table> <!-- Fine della <table class="pkmnencounter"> -->
-                
+        </div> <!-- Fine del <div class="spawncontainer"> -->        
         <h2>Trainers</h2>
         <h3>Cargo Handling Yards</h3>
-
-        <table class="pkmnencounter">
+        <div class="tcontainer">
+        <table class="trainers round green">
             <tr>
-                <th>Trainer</th>
-                <th>Pokémon</th>
+                <th class="name">Trainer</th>
+                <th class="pokemonlist">Pokémon</th>
             </tr>
             <tr> <!-- Worker George -->
-                <td rowspan="1" width="250px"><table width="100%"> 
-                    <tr ><td horizontal-align="center"><img src="..\src\Trainer\worker-gen7.png" alt="pkmn trainer" class="sprite-large"></td></tr>
-                    <tr><td horizontal-align="center">Worker George</td></tr>
+                <td rowspan="1"><table class="icon">
+                    <tr ><td><img src="..\src\Trainer\worker-gen7.png" alt="pkmn trainer" class="sprite-large"></td></tr>
+                    <tr><td>Worker George</td></tr>
                 </table></td> <!-- Fine della colonna allenatore -->
                 <td><table>
                     <tr>
@@ -172,8 +175,8 @@
             </tr> 
 
             <tr> <!-- Worker Luke -->
-                <td rowspan="2" width="250px"><table width="100%">
-                    <tr horizontal-align="center"><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite-large"></td></tr>
+                <td rowspan="2"><table class="icon">
+                    <tr><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite-large"></td></tr>
                     <tr><td>Worker Luke</td></tr>
                 </table></td> <!-- Fine della colonna allenatore -->
                 <td><table>
@@ -195,8 +198,8 @@
             </tr>
             
             <tr> <!-- Worker Kevin -->
-                <td rowspan="3" width="250px"><table width="100%">
-                    <tr horizontal-align="center"><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite-large"></td></tr>
+                <td rowspan="3" style="justify-content: center; align-items: center;"><table class="icon">
+                    <tr><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite-large"></td></tr>
                     <tr><td>Worker Kevin</td></tr>
                 </table></td> <!-- Fine della colonna allenatore -->
                 <td><table>
@@ -227,8 +230,8 @@
             </tr> 
             
             <tr> <!-- Worker Jacques -->
-                <td rowspan="1" width="250px"><table width="100%">
-                    <tr horizontal-align="center"><td><img src="..\src\Trainer\workerice.png" alt="pkmn trainer" class="sprite-large"></td></tr>
+                <td rowspan="1"><table class="icon">
+                    <tr><td><img src="..\src\Trainer\workerice.png" alt="pkmn trainer" class="sprite-large"></td></tr>
                     <tr><td>Worker Jacques</td></tr>
                 </table></td> <!-- Fine della colonna allenatore -->
                 <td><table>
@@ -240,16 +243,17 @@
                 </table></td> <!-- Fine della colonna Pokémon -->
             </tr>
         </table>
-
+        </div>
         <h3>Arrivals Office</h3>
-        <table class="pkmnencounter">
+        <div class="tcontainer">
+        <table class="trainers round green">
             <tr>
-                <th>Trainer</th>
-                <th>Pokémon</th>
+                <th class="name">Trainer</th>
+                <th class="pokemonlist">Pokémon</th>
             </tr>
             <tr> <!-- White Collar Theodora -->
-                <td rowspan="2" width="250px"><table width="100%"> <!-- Il Rowspan conteolla quante righe occupa la cella. Le righe successive entro il rowspan inizieranno dalla cella successiva. -->
-                    <tr horizontal-align="center"><td><img src="..\src\Trainer\clerkf.png" alt="pkmn trainer" class="sprite-large"></td></tr>
+                <td rowspan="2"><table class="icon"> <!-- Il Rowspan conteolla quante righe occupa la cella. Le righe successive entro il rowspan inizieranno dalla cella successiva. -->
+                    <tr><td><img src="..\src\Trainer\clerkf.png" alt="pkmn trainer" class="sprite-large"></td></tr>
                     <tr><td>White Collar Theodora</td></tr>
                 </table></td> <!-- Fine della colonna allenatore -->
                 <td><table>
@@ -261,16 +265,24 @@
                 </table></td> <!-- Fine della colonna Pokémon -->
             </tr> <!-- Fine della riga nel caso di pokémon singolo-->
             <tr>
-                <td><table>
-                    <tr>
+                <td>
+                    <table>
+                        <tr>
                         <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/archive/3/30/20151030053101%21Spr_5b_532.png" alt="Buneary" class="sprite-large"></td>
-                        <td>Buneary Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
+                        <td>
+                            <table>
+                            <tr>
+                            <td>Buneary Lv.9</td>
+                            </tr>
+                            <tr>
+                            <td>no item</td>
+                            </tr>
+                </table>
+            </td>
+            <!-- Fine della colonna Pokémon -->
             </tr> 
         </table>
-                
+        </div>        
     </div> <!-- Fine del <div class="container"> -->
 </body>
 </html>
