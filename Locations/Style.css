@@ -589,6 +589,7 @@ Stili tabella ITEMS */
 .trainers .name{
     width : 150px;
 }
+
 .trainers .pokemonlist{
     width: 200px;
 }
@@ -766,9 +767,6 @@ dt table{
 .VIT{
     width: 700px;
     border-style: solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-top: var(--table-padding);
     padding-bottom: var(--table-padding);
 }
@@ -776,9 +774,6 @@ dt table{
 .VITalt{
     width: 500px;
     border-style: solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-top: var(--table-padding);
     padding-bottom: var(--table-padding);
 }
@@ -835,6 +830,7 @@ div.teamalt{
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     row-gap: 15px;
+    justify-items: center;
     background-color: #55dddd;
 }
 div.team{
@@ -843,13 +839,13 @@ div.team{
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     row-gap: 15px;
+    justify-items: center;
     background-color: #55dddd;
 }
 
 /* Componenti [hide/show] */
 .toctitle {
     width: 100%;
-
     margin-bottom: 10px;
 }
 
