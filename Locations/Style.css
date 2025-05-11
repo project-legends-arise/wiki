@@ -20,6 +20,8 @@
     --table-border-width: 6px;
     --table-border-radius: 10px;
 
+    --table-padding: 10px;
+
     /*Copie di colori per i tipi*/
     --typecolor-normal-dark: #676967;
     --typecolor-normal-highlight: #8F8F8E;
@@ -34,12 +36,12 @@
     --typecolor-fighting-light: #ee954d;
 
     --typecolor-water-dark: #1B539B;
-    --typecolor-water-highlight: #1965f1;
+    --typecolor-water-highlight: #197ef1;
     --typecolor-water-light: #74ACF5;
 
     --typecolor-flying-dark: #397da5;
-    --typecolor-flying-highlight: #93ddfd;
-    --typecolor-flying-light: #a1dbf1;
+    --typecolor-flying-highlight: #34c2ff;
+    --typecolor-flying-light: #8fc6db;
 
     --typecolor-grass-dark: #1c4d1f;
     --typecolor-grass-highlight: #0dbe1c;
@@ -99,21 +101,22 @@ body{
     font-family: var(--font-nunito);
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;      
+    font-style: normal;   
+    background-color: #929292;
+    justify-items: center;   
 }
 
 .container {
-    float: left;
-    margin-left: 5%;
+    float: center;
     padding: 20px;
-    width: 75%;
+    width: 1000px;
     border: 1px solid gray;
     border-radius: 20px;
+    background-color: #eeeee3;
 }
 
 h1 {
     font-family: var(--font-verve);
-    width: calc(100% - 400px);
     font-size: 32px;
     font-weight: normal;
     margin: 20px 0;
@@ -132,7 +135,7 @@ h2{
 }
 
 h3{
-    font-family: var(--font-verve);
+    font-family: var(--font-nunito);
     font-size: 20px;
     font-weight: normal;
     margin: 20px 0px 10px 0px;
@@ -141,6 +144,24 @@ h3{
 
 big{
     font-size: 20px;	
+}
+
+table-text-title{
+    font-family: var(--font-nunito);
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+table-text-bigger{
+    font-family: var(--font-nunito);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.2;
 }
 
 table-text-big{
@@ -338,6 +359,28 @@ table td{
     color: #000000;
 }
 
+.purple {
+    background-color: #a76fdd;
+    border-style: solid;
+    border-color: #9b4fdd;
+}
+.purple th {
+    background-color: #9b4fdd;
+    color: #000000;
+}
+
+/* --- */
+.gray {
+    background-color: #4d4d4d;
+    border-style: solid;
+    border-color: #A9A9A9;
+}
+.gray th {
+    background-color: #7a7a7a;
+    color: #000000;
+}
+
+
 /* Border thickness styles */
 .border-bold {
     border-width: var(--table-border-width);
@@ -362,85 +405,13 @@ table.intro {
 }
 
 .transparent{
-    background: none;
+    background: none !important;
 }
 
 /* !!!!!!!!!!WORK IN PROGRESS!!!!!!!!!! */
 
-/* .location {
-    
-    width: 360px;
-    border-collapse: collapse;
-    margin-left: 20px;
-    font-size: 18px;
-    text-align:center;
-    border: 6px solid #dddddd6c;
-    border-radius: 10px;
-    display: block;
-    float: right;
-}
 
-.mapproximity {
-    height: 150px;
-    width:100%;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: center;
-    border: 6px solid #754600;
-    border-radius: 10px;
-    table-layout: fixed;
-}
-
-.mapproximity td{
-    min-height: 50px;
-    width: 33%;
-    height: 33%;
-    border-collapse: collapse;
-    font-size: 16px;
-}
-
-.mapproximity .corner{
-    background-color: #FFD580;    
-}
-
-.mapproximity .route.top {
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    background-color: white;
-}
-
-
-.mapproximity .route.bottom {
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: white;
-}
-
-.mapproximity .route.center {
-    background-color:white;
-    font-weight: bold;
-}
-
-.mapproximity .route.left {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    background-color: white;
-}
-
-
-.mapproximity .route.right {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: white;
-}
-
-.cover{
-    width: 300px;
-    height: 169px;
-    border: 2px solid #a2a9b1;
-} */
-
-/* Stili tabella ITEMS */
+Stili tabella ITEMS */
 #items{
     width: 60%; 
     min-width: var(--table-min-width); 
@@ -463,6 +434,103 @@ table.intro {
 #items td.location{
     width: 300px;
     text-align: left;
+}
+
+#intro {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+
+}
+
+#intro td{
+    border-width: 0px;
+    background: none;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+#intro-title{
+    width : 100%;
+}
+
+#intro-description{
+    width: 100%;
+}
+
+#intro-description td{
+    background-color: #ffffff;
+}
+
+#intro-directions td {
+    width: calc(100%/3);
+}
+
+#intro-directions .corner {
+    background-color: #FFD580;    
+}
+
+#intro-directions .route.top {
+    border-top-left-radius: 50% / 50%;
+    border-top-right-radius: 50%;
+    background-color: white;
+}
+
+#intro-directions .route.bottom {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: white;
+}
+
+#intro-directions .route.center {
+    background-color: white;
+    font-weight: bold;
+}
+
+#intro-directions .route.left {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: white;
+}
+
+#intro-directions .route.right {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: white;
+}
+
+#intro-map{
+    width: 100%;
+}
+
+.imgcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    width: 300px;
+    height: 219px;
+    border-radius: calc(var(--table-border-radius) + var(--table-border-width));
+    border-width: calc(var(--table-border-width) / 2.5);
+    border-style: solid;
+}
+
+.introheader{
+    width: 100%;
+}
+
+#intro-map img{
+    width: 200px;   
+    border-radius: calc(var(--table-border-radius) + var(--table-border-width));
+    border-width: calc(var(--table-border-width) / 2.5);
+    border-style: solid;
+    margin: 10px 0 10px 0;
 }
 
 /* Stili tabella POKEMON SELVATICI*/
@@ -539,14 +607,14 @@ table.intro {
 
 /*Stili ALLENATORI SPECIALI*/
 
-/* Stili Sprite */
-div.bg-sprite{
-    display: inline-block;
+/* Stili Sprite e immagini*/
+.bg-sprite{
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow:visible;
-    width: 32px;
-    height: 32px;
+    overflow:hidden;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border-width: calc(var(--table-border-width) / 2);
     border-style: solid;
@@ -565,8 +633,8 @@ div.bg-sprite{
 .sprite-large{
     width: 80px !important;
     height: 80px !important;
-    text-align: center;}	
-
+    text-align: center;
+}	
 
 /*Colori TIPI*/
 /* per tabelle */
@@ -613,12 +681,24 @@ div.bg-sprite{
 .special {background-color: #496ca1}
 .status {background-color: #676767}
 
+.blank {background-color: #fff !important;border-color: #fff !important;}
+
+/* Stili colori VIT (Very Important Trainer) */
+.lark{
+    background-color: rgb(250, 192, 0);
+    border-color: rgb(163, 125, 0);
+
+}
+.lark-light{
+    background-color: rgb(255, 214, 89);
+    border-color: rgb(163, 125, 0);
+}
+
 /*Moveset*/
 .pkmn{
     width: 200px;
     border-width: calc(var(--table-border-width) / 2);
     border-style: solid;
-
 }
 
 .pkmn td{
@@ -628,11 +708,22 @@ div.bg-sprite{
     width: 50%;
 }
 
+
+.event {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 dl {
     display: block;
     text-align: center;
     margin: 0px;
     padding: 0px;
+}
+
+dt table{
+    width : 100%;
 }
 
 .pkmn dl.info dt:nth-of-type(odd) {
@@ -647,6 +738,7 @@ dl {
 
 .move{
     width: 100px;
+    height: 42px;
     border-width: calc(var(--table-border-width) / 2.5);
     border-style: solid;
     border-radius: calc(var(--table-border-radius) + var(--table-border-width) / 2.5);
@@ -672,13 +764,24 @@ dl {
 
 /* VeryImportantTrainer */
 .VIT{
+    width: 700px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--table-padding);
+    padding-bottom: var(--table-padding);
+}
+
+.VITalt{
     width: 500px;
     border-style: solid;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: var(--table-padding);
+    padding-bottom: var(--table-padding);
 }
-
 .trainer-info{
     width: 100%;
     display: flex;
@@ -726,7 +829,7 @@ td.info dl{
     padding: 0px;
 }
 
-div.team{
+div.teamalt{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -734,11 +837,22 @@ div.team{
     row-gap: 15px;
     background-color: #55dddd;
 }
+div.team{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    row-gap: 15px;
+    background-color: #55dddd;
+}
 
 /* Componenti [hide/show] */
 .toctitle {
+    width: 100%;
+
     margin-bottom: 10px;
 }
+
 .toctogglecheckbox {
     display: inline !important;
     position: absolute;
@@ -772,17 +886,18 @@ div.team{
 }
 
 .toctogglecheckbox:checked + .toctitle .toctogglelabel::after {
-    content: 'Show'
-}
-
-.toctogglecheckbox:not(:checked) + .toctitle .toctogglelabel::after {
     content: 'Hide'
 }
 
-.toctogglecheckbox:checked + .toctitle + .team {
-    display: none;
+.toctogglecheckbox:not(:checked) + .toctitle .toctogglelabel::after {
+    content: 'Show'
 }
-.toctogglecheckbox:not(:checked) +  .toctitle + .team {
+
+.toctogglecheckbox:checked + .toctitle + div {
     display: grid;
 }
+.toctogglecheckbox:not(:checked) +  .toctitle + div {
+    display: none;
+}
+
 
