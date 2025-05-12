@@ -191,6 +191,10 @@ table-text-small{
     line-height: 0.8;
 }
 
+.justified-text p {
+  text-align: justify;
+}
+
 /* Stili generali elementi di tabella */
 div.tcontainer{
     width: 100%;
