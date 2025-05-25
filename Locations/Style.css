@@ -9,9 +9,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'bl_genfont';
+    src: local('Segoe UI Symbol'),local('Helvetica'),local('Noto Emoji Regular');
+    unicode-range: U+2640,U+2642
+}
+
 /* Lista Variabili CSS */
 :root {
-    --font-verve: 'Verve', sans-serif;
+    --font-verve: 'bl_genfont', sans-serif;
     --font-nunito: 'Nunito', sans-serif;
 
     --table-min-width: 450px;
@@ -697,24 +703,30 @@ dt table td{
 
 /* VeryImportantTrainer */
 .VIT{
-    width: 700px;
+
     border-style: solid;
     padding-top: var(--table-padding);
     padding-bottom: var(--table-padding);
 }
 
 .VITalt{
-    width: 500px;
+
     border-style: solid;
     padding-top: var(--table-padding);
     padding-bottom: var(--table-padding);
 }
 .trainer-info{
-    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.trainer-info td{
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .trainer-bgsprite{
     display: inline-block;
@@ -751,7 +763,8 @@ td.info{
 
 td.info dl{
     display: block;
-    text-align: left;
+    text-align: center;
+    width: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -808,24 +821,42 @@ div.team{
     text-decoration: underline
 }
 
-.toctogglecheckbox:focus +.toctogglelabel {
+.toctogglecheckbox:focus + .VIT .toctogglelabel,
+.toctogglecheckbox:focus + .VITalt .toctogglelabel {
     text-decoration: underline;
     outline: auto
 }
 
-.toctogglecheckbox:checked + .toctitle .toctogglelabel::after {
+.toctogglecheckbox:checked + .VIT .toctitle .toctogglelabel::after,
+.toctogglecheckbox:checked + .VITalt .toctitle .toctogglelabel::after {
     content: 'Hide'
 }
 
-.toctogglecheckbox:not(:checked) + .toctitle .toctogglelabel::after {
+.toctogglecheckbox:not(:checked) + .VIT .toctitle .toctogglelabel::after,
+.toctogglecheckbox:not(:checked) + .VITalt .toctitle .toctogglelabel::after {
     content: 'Show'
 }
 
-.toctogglecheckbox:checked + .toctitle + div {
+.toctogglecheckbox:checked + .VIT .toctitle + div,
+.toctogglecheckbox:checked + .VITalt .toctitle + div {
     display: grid;
 }
-.toctogglecheckbox:not(:checked) +  .toctitle + div {
+.toctogglecheckbox:not(:checked) + .VIT .toctitle + div,
+.toctogglecheckbox:not(:checked) + .VITalt .toctitle + div {
     display: none;
 }
 
 
+
+.toctogglecheckbox:checked + .VITalt{
+    width: 500px;
+}
+.toctogglecheckbox:checked + .VIT{
+    width: 700px;
+}
+
+
+.toctogglecheckbox:not(:checked) + .VITalt,
+.toctogglecheckbox:not(:checked) + .VIT{
+    width: 350px;
+}
