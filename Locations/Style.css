@@ -429,9 +429,14 @@ table.intro {
 }
 
 .market-good{
-    background: #797979;;
+    background: #797979;
+    width: 100%;
 }
-
+ 
+.market-good .icon {
+    width : 30px;
+    background-color: #b61313;
+}
 .market-good td{
     text-align: center;
     padding: 5px 10px 5px 10px;
