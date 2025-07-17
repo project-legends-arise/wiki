@@ -108,72 +108,238 @@ At the deepest point of the area, the player encounters a secured electronic doo
 <h4>Red Chain Engine</h4>
 
 <!----------------------------Boss Trainer-------------------------------->
-<div class="tcontainer"><table class="VITalt round dark border-bold"><tr><td class="trainer-info transparent"><table class="transparent"><tr><td class="transparent">
-<!--Boss Information-->  
-<div class="trainer-bgsprite fire"><img src="..\src\Trainer\mars.png" class="sprite-large"></div></td>
-<td class="info round normal border-none"><dl>
-<dt><table-text-big><b>Lieutenant Duo</b></table-text-big></dt>
-<dt><table-text-title>Mars & Jupiter</table-text-title></dt>
-<dt><table-text-medium><b>Chapter 1 Bosses</b></table-text-medium></dt></dl></td><td class="transparent">
-<div class="trainer-bgsprite psychic"><img src="..\src\Trainer\jupiter.png" class="sprite-large"></div></td></tr>
-<!--Boss Reward-->  
-<tr><td class="transparent"><table-text-small>Reward:<br><b>$2800</b></table-text-small></td>
-<!--Boss Pokéballs-->  
-<td class="balls-preview round normal border-none"><div>
-<img src="https://archives.bulbagarden.net/media/upload/f/fa/Ballfull.png" alt="Ballfull">
-<img src="https://archives.bulbagarden.net/media/upload/f/fa/Ballfull.png" alt="Ballfull">
-<img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
-<img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
-<img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
-<img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty"></div></td></tr></table></td></tr>
-<!--Show/Hide Toggle-->                  
-<tr><td class="transparent"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle"><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
-<!--Boss Team-->
-<div class="teamalt" style="background: none;">
-<!--Boss' 1° Pokémon-->
-<table class="pkmn round normal"><tr><td class="round">
-<img src="https://archives.bulbagarden.net/media/upload/1/13/Menu_HOME_0432.png" alt="Purugly" class="sprite-large"></td><td class="transparent" rowspan="2"><dl>
-<dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
-<dt>Ability:</dt><dt>Defiant</dt>
-<dt>Held Item</dt><dt>Chople Berry</dt></dl></td></tr>
-<tr><td class="round">Purugly Lv.16</td></tr>
-<!--1° Pokémon's Moves-->
-<tr><td class="round" colspan="2"><table><tr><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Fake Out</th></tr><tr>
-<td class="normalhl roundbl">Normal</td><td class="physical roundbr">Physical</td></tr></table></td><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Scratch</th></tr><tr>
-<td class="normalhl roundbl">Normal</td><td class="physical roundbr">Physical</td></tr></table></td></tr><tr><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Hone Claws</th></tr><tr>
-<td class="normalhl roundbl">Dark</td><td class="status roundbr">Status</td></tr></table></td><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Faint Attack</th></tr><tr>
-<td class="normalhl roundbl">Dark</td><td class="physical roundbr">Physical</td></tr></table></td>
-</tr></table></td></tr>
-<!--Boss' 2° Pokémon-->
-<table class="pkmn round poison"><tr><td class="round">
-<img src="https://archives.bulbagarden.net/media/upload/d/de/Menu_HOME_0435.png" alt="Skuntank" class="sprite-large"></td><td class="transparent" rowspan="2"><dl>
-<dt>Type:</dt><dt><table><tr><td class="roundleft poisonhl">Poison</td><td class="roundright darkhl">Dark</td></tr></table></dt>
-                                                <dt>Ability:</dt>
-                                                <dt>Keen Eye</dt>
-                                                <dt>Held Item</dt>
-                                                <dt>Chople Berry</dt>
-                                            </dl>
-                                        </td>
-                                    </tr>
+<div class="tcontainer">
+    <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents">
+    <table class="VITalt expand round dark border-bold">
+        <tr>
+            <td class="trainer-info transparent">
+            <table class="transparent">
+                <tr>
+                <td class="transparent">
+                    <!--Boss Information-->
+                    <div class="trainer-bgsprite fire">
+                    <img src="..\src\Trainer\mars.png" class="sprite-large">
+                    </div>
+                </td>
+                <td class="info round normal border-none">
+                    <dl>
+                    <dt>
+                        <table-text-big><b>Lieutenant Duo</b></table-text-big>
+                    </dt>
+                    <dt>
+                        <table-text-title>Mars & Jupiter</table-text-title>
+                    </dt>
+                    <dt>
+                        <table-text-medium><b>Chapter 1 Bosses</b></table-text-medium>
+                    </dt>
+                    </dl>
+                </td>
+                <td class="transparent">
+                    <div class="trainer-bgsprite psychic">
+                    <img src="..\src\Trainer\jupiter.png" class="sprite-large">
+                    </div>
+                </td>
+                </tr>
+                <!--Boss Reward-->
+                <tr>
+                <td class="transparent">
+                    <table-text-small>Reward:<br><b>$2800</b></table-text-small>
+                </td>
+                <!--Boss Pokéballs-->
+                <td class="balls-preview round normal border-none">
+                    <div>
+                    <img src="https://archives.bulbagarden.net/media/upload/f/fa/Ballfull.png" alt="Ballfull">
+                    <img src="https://archives.bulbagarden.net/media/upload/f/fa/Ballfull.png" alt="Ballfull">
+                    <img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
+                    <img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
+                    <img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
+                    <img src="https://archives.bulbagarden.net/media/upload/7/7e/Ballempty.png" alt="Ballempty">
+                    </div>
+                </td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <!--Show/Hide Toggle-->
+        <tr>
+            <td class="transparent">
+        <div class="toctitle">
+            <span class="toctogglespan">
+                <label class="toctogglelabel" for="toctogglecheckbox"></label>
+            </span>
+        </div>
+        <!--Boss Team-->
+        <div class="teamalt" style="background: none;">
+            <!--Boss' 1° Pokémon-->
+            <table class="pkmn round normal">
+                <tr>
+                    <td class="round">
+                        <img src="https://archives.bulbagarden.net/media/upload/1/13/Menu_HOME_0432.png" alt="Purugly" class="sprite-large">
+                    </td>
+                    <td class="transparent" rowspan="2">
+                        <dl>
+                            <dt>Type:</dt>
+                            <dt>
+                                <table>
                                     <tr>
-                                        <td class="round">Skuntank Lv.16</td>
+                                        <td class="round normalhl">Normal</td>
                                     </tr>
-<tr><td class="round" colspan="2"><table><tr><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Fake Out</th></tr><tr>
-<td class="normalhl roundbl">Normal</td><td class="physical roundbr">Physical</td></tr></table></td><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Scratch</th></tr><tr>
-<td class="normalhl roundbl">Normal</td><td class="physical roundbr">Physical</td></tr></table></td></tr><tr><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Hone Claws</th></tr><tr>
-<td class="normalhl roundbl">Dark</td><td class="status roundbr">Status</td></tr></table></td><td>
-<table class="move round normal"><tr><th class="roundtop" colspan="2">Faint Attack</th></tr><tr>
-<td class="normalhl roundbl">Dark</td><td class="physical roundbr">Physical</td></tr></table></td>
-</tr></table></td></tr>
-<!--Chiusura tabella Boss Trainer-->
-</table></div></td></tr></table></div>
+                                </table>
+                            </dt>
+                            <dt>Ability:</dt>
+                            <dt>Defiant</dt>
+                            <dt>Held Item</dt>
+                            <dt>Chople Berry</dt>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="round">Purugly Lv.16</td>
+                </tr>
+                <!--1° Pokémon's Moves-->
+                <tr>
+                    <td class="round" colspan="2">
+                        <table>
+                            <tr>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Fake Out</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Normal</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Scratch</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Normal</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Hone Claws</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Dark</td>
+                                            <td class="status roundbr">Status</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Faint Attack</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Dark</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--Boss' 2° Pokémon-->
+            <table class="pkmn round poison">
+                <tr>
+                    <td class="round">
+                        <img src="https://archives.bulbagarden.net/media/upload/d/de/Menu_HOME_0435.png" alt="Skuntank" class="sprite-large">
+                    </td>
+                    <td class="transparent" rowspan="2">
+                        <dl>
+                            <dt>Type:</dt>
+                            <dt>
+                                <table>
+                                    <tr>
+                                        <td class="roundleft poisonhl">Poison</td>
+                                        <td class="roundright darkhl">Dark</td>
+                                    </tr>
+                                </table>
+                            </dt>
+                            <dt>Ability:</dt>
+                            <dt>Keen Eye</dt>
+                            <dt>Held Item</dt>
+                            <dt>Chople Berry</dt>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="round">Skuntank Lv.16</td>
+                </tr>
+                <tr>
+                    <td class="round" colspan="2">
+                        <table>
+                            <tr>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Fake Out</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Normal</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Scratch</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Normal</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Hone Claws</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Dark</td>
+                                            <td class="status roundbr">Status</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class="move round normal">
+                                        <tr>
+                                            <th class="roundtop" colspan="2">Faint Attack</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="normalhl roundbl">Dark</td>
+                                            <td class="physical roundbr">Physical</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--Chiusura tabella Boss Trainer-->
+        </div>
+            </td>
+        </tr>
+    </table>
+</div></td>
     
 
 

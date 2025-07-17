@@ -734,7 +734,7 @@ dt table td{
 }
 
 .VITalt{
-
+    width: 350px;
     border-style: solid;
     padding-top: var(--table-padding);
     padding-bottom: var(--table-padding);
@@ -868,15 +868,15 @@ div.team{
 
 
 
-.toctogglecheckbox:checked + .expand{
+.toctogglecheckbox:checked + .VITalt{
     width: 500px;
 }
-.toctogglecheckbox:checked + .expand{
+.toctogglecheckbox:checked + .VIT{
     width: 700px;
 }
 
 
-.toctogglecheckbox:not(:checked) + .expand,
-.toctogglecheckbox:not(:checked) + .expand{
+.toctogglecheckbox:not(:checked) + .VIT,
+.toctogglecheckbox:not(:checked) + .VITalt{
     width: 350px;
 }
