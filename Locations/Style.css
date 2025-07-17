@@ -845,19 +845,17 @@ div.team{
     text-decoration: underline
 }
 
-.toctogglecheckbox:focus + .VIT .toctogglelabel,
-.toctogglecheckbox:focus + .VITalt .toctogglelabel {
+.toctogglecheckbox:focus + .expand .toctogglelabel {
     text-decoration: underline;
     outline: auto
 }
 
-.toctogglecheckbox:checked + .VIT .toctitle .toctogglelabel::after,
-.toctogglecheckbox:checked + .VITalt .toctitle .toctogglelabel::after {
+.toctogglecheckbox:checked + .expand .toctitle .toctogglelabel::after{
     content: 'Hide'
 }
 
-.toctogglecheckbox:not(:checked) + .expand .toctitle .toctogglelabel::after,
- {
+.toctogglecheckbox:not(:checked) + .expand .toctitle .toctogglelabel::after
+{
     content: 'Show'
 }
 
@@ -870,15 +868,15 @@ div.team{
 
 
 
-.toctogglecheckbox:checked + .VITalt{
+.toctogglecheckbox:checked + .expand{
     width: 500px;
 }
-.toctogglecheckbox:checked + .VIT{
+.toctogglecheckbox:checked + .expand{
     width: 700px;
 }
 
 
-.toctogglecheckbox:not(:checked) + .VITalt,
-.toctogglecheckbox:not(:checked) + .VIT{
+.toctogglecheckbox:not(:checked) + .expand,
+.toctogglecheckbox:not(:checked) + .expand{
     width: 350px;
 }
