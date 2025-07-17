@@ -856,8 +856,8 @@ div.team{
     content: 'Hide'
 }
 
-.toctogglecheckbox:not(:checked) + .VIT .toctitle .toctogglelabel::after,
-.toctogglecheckbox:not(:checked) + .VITalt .toctitle .toctogglelabel::after {
+.toctogglecheckbox:not(:checked) + .expand .toctitle .toctogglelabel::after,
+ {
     content: 'Show'
 }
 
