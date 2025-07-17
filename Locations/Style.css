@@ -861,12 +861,10 @@ div.team{
     content: 'Show'
 }
 
-.toctogglecheckbox:checked + .VIT .toctitle + div,
-.toctogglecheckbox:checked + .VITalt .toctitle + div {
+.toctogglecheckbox:checked + .expand .toctitle + div{
     display: grid;
 }
-.toctogglecheckbox:not(:checked) + .VIT .toctitle + div,
-.toctogglecheckbox:not(:checked) + .VITalt .toctitle + div {
+.toctogglecheckbox:not(:checked) + .expand .toctitle + div {
     display: none;
 }
 
