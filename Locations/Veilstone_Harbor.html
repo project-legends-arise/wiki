@@ -301,47 +301,37 @@
             </tr>
         </table>
     </div>
-    <h4>Arrivals Office</h4>
-    <div class="tcontainer">
-        <table class="trainers round green border-bold">
-            <tr>
-                <th class="name">Trainer</th>
-                <th class="pokemonlist">Pokémon</th>
-            </tr>
-            <tr> <!-- White Collar Theodora -->
-                <td rowspan="2"><table class="icon"> <!-- Il Rowspan conteolla quante righe occupa la cella. Le righe successive entro il rowspan inizieranno dalla cella successiva. -->
-                    <tr><td><img src="..\src\Trainer\clerkf.png" alt="pkmn trainer" class="sprite"></td></tr>
-                    <tr><td>White Collar Theodora</td></tr>
-                </table></td> <!-- Fine della colonna allenatore -->
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/a/a2/Menu_HOME_0298.png" alt="Azurill" class="sprite-medium"></td>
-                        <td>Azurill Lv.10</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr> <!-- Fine della riga nel caso di pokémon singolo-->
-            <tr>
-                <td>
-                    <table>
-                        <tr>
-                            <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/2/23/Menu_HOME_0427.png" alt="Buneary" class="sprite-medium"></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td>Buneary Lv.9</td>
-                                    </tr>
-                                    <tr>
-                                        <td>no item</td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <!-- Fine della colonna Pokémon -->
-                        </tr> 
-                    </table>
-                    
-                </div> 
-        </table>    
+
+
+
+<h3>Arrivals Office</h3>
+<!----------TRAINERS---------------->
+<div class="tcontainer">
+<table class="trainers round gray border-bold">
+<tr><th class="name">Trainer</th><th class="pokemonlist">Pokémon</th></tr>
+<!--------- Entry ---------->
+<tr><td><table class="icon">
+<tr><td><img src="https://archives.bulbagarden.net/media/upload/archive/7/74/20120731134117%21Spr_B2W2_Guitarist.png" alt="pkmn trainer" class="sprite"></td></tr>
+<tr><td>White Collar Theodora</td></tr></table></td>
+<!-----Pokemon 1-------->
+<td><table class="pkmn round transparent border-none">
+<tr><td class="round"><img src=".\src\Pokemon\0298.png" alt="Azurill" class="sprite-medium"></td>
+<td class="transparent" rowspan="2"><dl>
+<dt>Type:</dt><dt><table><tr><td class="round waterhl">Water</td></tr></table></dt>
+<dt>Held Item</dt><dt>None</dt></dl></td></tr>
+<tr><td class="round">Azurill Lv.10</td></tr></table></td></tr>
+<!-----Pokemon 2-------->
+<tr>
+<td><table class="pkmn round transparent border-none">
+<tr><td class="round"><img src=".\src\Pokemon\0427.png" alt="Buneary" class="sprite-medium"></td>
+<td class="transparent" rowspan="2"><dl>
+<dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+<dt>Held Item</dt><dt>None</dt></dl></td></tr>
+<tr><td class="round">Buneary Lv.9</td></tr></table></td></tr>
+<!--------- Chiusura Tabella ---------->
+</table></div>
+         
+</table>    
     <h1>Related Articles</h1>
 </div>                
 </body>
