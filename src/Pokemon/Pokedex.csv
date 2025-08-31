@@ -1,650 +1,650 @@
-001	Bulbasaur
-002	Ivysaur
-003	Venusaur
-004	Charmander
-005	Charmeleon
-006	Charizard
-007	Squirtle
-008	Wartortle
-009	Blastoise
-010	Caterpie
-011	Metapod
-012	Butterfree
-013	Weedle
-014	Kakuna
-015	Beedrill
-016	Pidgey
-017	Pidgeotto
-018	Pidgeot
-019	Rattata
-020	Raticate
-021	Spearow
-022	Fearow
-023	Ekans
-024	Arbok
-025	Pikachu
-026	Raichu
-027	Sandshrew
-028	Sandslash
-029	Nidoran♀
-030	Nidorina
-031	Nidoqueen
-032	Nidoran♂
-033	Nidorino
-034	Nidoking
-035	Clefairy
-036	Clefable
-037	Vulpix
-038	Ninetales
-039	Jigglypuff
-040	Wigglytuff
-041	Zubat
-042	Golbat
-043	Oddish
-044	Gloom
-045	Vileplume
-046	Paras
-047	Parasect
-048	Venonat
-049	Venomoth
-050	Diglett
-051	Dugtrio
-052	Meowth
-053	Persian
-054	Psyduck
-055	Golduck
-056	Mankey
-057	Primeape
-058	Growlithe
-059	Arcanine
-060	Poliwag
-061	Poliwhirl
-062	Poliwrath
-063	Abra
-064	Kadabra
-065	Alakazam
-066	Machop
-067	Machoke
-068	Machamp
-069	Bellsprout
-070	Weepinbell
-071	Victreebel
-072	Tentacool
-073	Tentacruel
-074	Geodude
-075	Graveler
-076	Golem
-077	Ponyta
-078	Rapidash
-079	Slowpoke
-080	Slowbro
-081	Magnemite
-082	Magneton
-083	Farfetch'd
-084	Doduo
-085	Dodrio
-086	Seel
-087	Dewgong
-088	Grimer
-089	Muk
-090	Shellder
-091	Cloyster
-092	Gastly
-093	Haunter
-094	Gengar
-095	Onix
-096	Drowzee
-097	Hypno
-098	Krabby
-099	Kingler
-100	Voltorb
-101	Electrode
-102	Exeggcute
-103	Exeggutor
-104	Cubone
-105	Marowak
-106	Hitmonlee
-107	Hitmonchan
-108	Lickitung
-109	Koffing
-110	Weezing
-111	Rhyhorn
-112	Rhydon
-113	Chansey
-114	Tangela
-115	Kangaskhan
-116	Horsea
-117	Seadra
-118	Goldeen
-119	Seaking
-120	Staryu
-121	Starmie
-122	Mr. Mime
-123	Scyther
-124	Jynx
-125	Electabuzz
-126	Magmar
-127	Pinsir
-128	Tauros
-129	Magikarp
-130	Gyarados
-131	Lapras
-132	Ditto
-133	Eevee
-134	Vaporeon
-135	Jolteon
-136	Flareon
-137	Porygon
-138	Omanyte
-139	Omastar
-140	Kabuto
-141	Kabutops
-142	Aerodactyl
-143	Snorlax
-144	Articuno
-145	Zapdos
-146	Moltres
-147	Dratini
-148	Dragonair
-149	Dragonite
-150	Mewtwo
-151	Mew
-152	Chikorita
-153	Bayleef
-154	Meganium
-155	Cyndaquil
-156	Quilava
-157	Typhlosion
-158	Totodile
-159	Croconaw
-160	Feraligatr
-161	Sentret
-162	Furret
-163	Hoothoot
-164	Noctowl
-165	Ledyba
-166	Ledian
-167	Spinarak
-168	Ariados
-169	Crobat
-170	Chinchou
-171	Lanturn
-172	Pichu
-173	Cleffa
-174	Igglybuff
-175	Togepi
-176	Togetic
-177	Natu
-178	Xatu
-179	Mareep
-180	Flaaffy
-181	Ampharos
-182	Bellossom
-183	Marill
-184	Azumarill
-185	Sudowoodo
-186	Politoed
-187	Hoppip
-188	Skiploom
-189	Jumpluff
-190	Aipom
-191	Sunkern
-192	Sunflora
-193	Yanma
-194	Wooper
-195	Quagsire
-196	Espeon
-197	Umbreon
-198	Murkrow
-199	Slowking
-200	Misdreavus
-201	Unown
-202	Wobbuffet
-203	Girafarig
-204	Pineco
-205	Forretress
-206	Dunsparce
-207	Gligar
-208	Steelix
-209	Snubbull
-210	Granbull
-211	Qwilfish
-212	Scizor
-213	Shuckle
-214	Heracross
-215	Sneasel
-216	Teddiursa
-217	Ursaring
-218	Slugma
-219	Magcargo
-220	Swinub
-221	Piloswine
-222	Corsola
-223	Remoraid
-224	Octillery
-225	Delibird
-226	Mantine
-227	Skarmory
-228	Houndour
-229	Houndoom
-230	Kingdra
-231	Phanpy
-232	Donphan
-233	Porygon2
-234	Stantler
-235	Smeargle
-236	Tyrogue
-237	Hitmontop
-238	Smoochum
-239	Elekid
-240	Magby
-241	Miltank
-242	Blissey
-243	Raikou
-244	Entei
-245	Suicune
-246	Larvitar
-247	Pupitar
-248	Tyranitar
-249	Lugia
-250	Ho-Oh
-251	Celebi
-252	Treecko
-253	Grovyle
-254	Sceptile
-255	Torchic
-256	Combusken
-257	Blaziken
-258	Mudkip
-259	Marshtomp
-260	Swampert
-261	Poochyena
-262	Mightyena
-263	Zigzagoon
-264	Linoone
-265	Wurmple
-266	Silcoon
-267	Beautifly
-268	Cascoon
-269	Dustox
-270	Lotad
-271	Lombre
-272	Ludicolo
-273	Seedot
-274	Nuzleaf
-275	Shiftry
-276	Taillow
-277	Swellow
-278	Wingull
-279	Pelipper
-280	Ralts
-281	Kirlia
-282	Gardevoir
-283	Surskit
-284	Masquerain
-285	Shroomish
-286	Breloom
-287	Slakoth
-288	Vigoroth
-289	Slaking
-290	Nincada
-291	Ninjask
-292	Shedinja
-293	Whismur
-294	Loudred
-295	Exploud
-296	Makuhita
-297	Hariyama
-298	Azurill
-299	Nosepass
-300	Skitty
-301	Delcatty
-302	Sableye
-303	Mawile
-304	Aron
-305	Lairon
-306	Aggron
-307	Meditite
-308	Medicham
-309	Electrike
-310	Manectric
-311	Plusle
-312	Minun
-313	Volbeat
-314	Illumise
-315	Roselia
-316	Gulpin
-317	Swalot
-318	Carvanha
-319	Sharpedo
-320	Wailmer
-321	Wailord
-322	Numel
-323	Camerupt
-324	Torkoal
-325	Spoink
-326	Grumpig
-327	Spinda
-328	Trapinch
-329	Vibrava
-330	Flygon
-331	Cacnea
-332	Cacturne
-333	Swablu
-334	Altaria
-335	Zangoose
-336	Seviper
-337	Lunatone
-338	Solrock
-339	Barboach
-340	Whiscash
-341	Corphish
-342	Crawdaunt
-343	Baltoy
-344	Claydol
-345	Lileep
-346	Cradily
-347	Anorith
-348	Armaldo
-349	Feebas
-350	Milotic
-351	Castform
-352	Kecleon
-353	Shuppet
-354	Banette
-355	Duskull
-356	Dusclops
-357	Tropius
-358	Chimecho
-359	Absol
-360	Wynaut
-361	Snorunt
-362	Glalie
-363	Spheal
-364	Sealeo
-365	Walrein
-366	Clamperl
-367	Huntail
-368	Gorebyss
-369	Relicanth
-370	Luvdisc
-371	Bagon
-372	Shelgon
-373	Salamence
-374	Beldum
-375	Metang
-376	Metagross
-377	Regirock
-378	Regice
-379	Registeel
-380	Latias
-381	Latios
-382	Kyogre
-383	Groudon
-384	Rayquaza
-385	Jirachi
-386	Deoxys
-387	Turtwig
-388	Grotle
-389	Torterra
-390	Chimchar
-391	Monferno
-392	Infernape
-393	Piplup
-394	Prinplup
-395	Empoleon
-396	Starly
-397	Staravia
-398	Staraptor
-399	Bidoof
-400	Bibarel
-401	Kricketot
-402	Kricketune
-403	Shinx
-404	Luxio
-405	Luxray
-406	Budew
-407	Roserade
-408	Cranidos
-409	Rampardos
-410	Shieldon
-411	Bastiodon
-412	Burmy
-413	Wormadam
-414	Mothim
-415	Combee
-416	Vespiquen
-417	Pachirisu
-418	Buizel
-419	Floatzel
-420	Cherubi
-421	Cherrim
-422	Shellos
-423	Gastrodon
-424	Ambipom
-425	Drifloon
-426	Drifblim
-427	Buneary
-428	Lopunny
-429	Mismagius
-430	Honchkrow
-431	Glameow
-432	Purugly
-433	Chingling
-434	Stunky
-435	Skuntank
-436	Bronzor
-437	Bronzong
-438	Bonsly
-439	Mime Jr.
-440	Happiny
-441	Chatot
-442	Spiritomb
-443	Gible
-444	Gabite
-445	Garchomp
-446	Munchlax
-447	Riolu
-448	Lucario
-449	Hippopotas
-450	Hippowdon
-451	Skorupi
-452	Drapion
-453	Croagunk
-454	Toxicroak
-455	Carnivine
-456	Finneon
-457	Lumineon
-458	Mantyke
-459	Snover
-460	Abomasnow
-461	Weavile
-462	Magnezone
-463	Lickilicky
-464	Rhyperior
-465	Tangrowth
-466	Electivire
-467	Magmortar
-468	Togekiss
-469	Yanmega
-470	Leafeon
-471	Glaceon
-472	Gliscor
-473	Mamoswine
-474	Porygon-Z
-475	Gallade
-476	Probopass
-477	Dusknoir
-478	Froslass
-479	Rotom
-480	Uxie
-481	Mesprit
-482	Azelf
-483	Dialga
-484	Palkia
-485	Heatran
-486	Regigigas
-487	Giratina
-488	Cresselia
-489	Phione
-490	Manaphy
-491	Darkrai
-492	Shaymin
-493	Arceus
-494	Victini
-495	Snivy
-496	Servine
-497	Serperior
-498	Tepig
-499	Pignite
-500	Emboar
-501	Oshawott
-502	Dewott
-503	Samurott
-504	Patrat
-505	Watchog
-506	Lillipup
-507	Herdier
-508	Stoutland
-509	Purrloin
-510	Liepard
-511	Pansage
-512	Simisage
-513	Pansear
-514	Simisear
-515	Panpour
-516	Simipour
-517	Munna
-518	Musharna
-519	Pidove
-520	Tranquill
-521	Unfezant
-522	Blitzle
-523	Zebstrika
-524	Roggenrola
-525	Boldore
-526	Gigalith
-527	Woobat
-528	Swoobat
-529	Drilbur
-530	Excadrill
-531	Audino
-532	Timburr
-533	Gurdurr
-534	Conkeldurr
-535	Tympole
-536	Palpitoad
-537	Seismitoad
-538	Throh
-539	Sawk
-540	Sewaddle
-541	Swadloon
-542	Leavanny
-543	Venipede
-544	Whirlipede
-545	Scolipede
-546	Cottonee
-547	Whimsicott
-548	Petilil
-549	Lilligant
-550	Basculin
-551	Sandile
-552	Krokorok
-553	Krookodile
-554	Darumaka
-555	Darmanitan
-556	Maractus
-557	Dwebble
-558	Crustle
-559	Scraggy
-560	Scrafty
-561	Sigilyph
-562	Yamask
-563	Cofagrigus
-564	Tirtouga
-565	Carracosta
-566	Archen
-567	Archeops
-568	Trubbish
-569	Garbodor
-570	Zorua
-571	Zoroark
-572	Minccino
-573	Cinccino
-574	Gothita
-575	Gothorita
-576	Gothitelle
-577	Solosis
-578	Duosion
-579	Reuniclus
-580	Ducklett
-581	Swanna
-582	Vanillite
-583	Vanillish
-584	Vanilluxe
-585	Deerling
-586	Sawsbuck
-587	Emolga
-588	Karrablast
-589	Escavalier
-590	Foongus
-591	Amoonguss
-592	Frillish
-593	Jellicent
-594	Alomomola
-595	Joltik
-596	Galvantula
-597	Ferroseed
-598	Ferrothorn
-599	Klink
-600	Klang
-601	Klinklang
-602	Tynamo
-603	Eelektrik
-604	Eelektross
-605	Elgyem
-606	Beheeyem
-607	Litwick
-608	Lampent
-609	Chandelure
-610	Axew
-611	Fraxure
-612	Haxorus
-613	Cubchoo
-614	Beartic
-615	Cryogonal
-616	Shelmet
-617	Accelgor
-618	Stunfisk
-619	Mienfoo
-620	Mienshao
-621	Druddigon
-622	Golett
-623	Golurk
-624	Pawniard
-625	Bisharp
-626	Bouffalant
-627	Rufflet
-628	Braviary
-629	Vullaby
-630	Mandibuzz
-631	Heatmor
-632	Durant
-633	Deino
-634	Zweilous
-635	Hydreigon
-636	Larvesta
-637	Volcarona
-638	Cobalion
-639	Terrakion
-640	Virizion
-641	Tornadus
-642	Thundurus
-643	Reshiram
-644	Zekrom
-645	Landorus
-646	Kyurem
-647	Keldeo
-648	Meloetta
-649	Genesect
-905	Enamorus
+001	Bulbasaur	erba/veleno
+002	Ivysaur	erba/veleno
+003	Venusaur	erba/veleno
+004	Charmander	fuoco
+005	Charmeleon	fuoco
+006	Charizard	fuoco/volante
+007	Squirtle	acqua
+008	Wartortle	acqua
+009	Blastoise	acqua
+010	Caterpie	coleottero
+011	Metapod	coleottero
+012	Butterfree	coleottero/volante
+013	Weedle	coleottero/veleno
+014	Kakuna	coleottero/veleno
+015	Beedrill	coleottero/veleno
+016	Pidgey	normale/volante
+017	Pidgeotto	normale/volante
+018	Pidgeot	normale/volante
+019	Rattata	normale
+020	Raticate	normale
+021	Spearow	normale/volante
+022	Fearow	normale/volante
+023	Ekans	veleno
+024	Arbok	veleno
+025	Pikachu	elettro
+026	Raichu	elettro
+027	Sandshrew	terra
+028	Sandslash	terra
+029	Nidoran♀	veleno
+030	Nidorina	veleno
+031	Nidoqueen	veleno/terra
+032	Nidoran♂	veleno
+033	Nidorino	veleno
+034	Nidoking	veleno/terra
+035	Clefairy	folletto
+036	Clefable	folletto
+037	Vulpix	fuoco
+038	Ninetales	fuoco
+039	Jigglypuff	normale/folletto
+040	Wigglytuff	normale/folletto
+041	Zubat	veleno/volante
+042	Golbat	veleno/volante
+043	Oddish	erba/veleno
+044	Gloom	erba/veleno
+045	Vileplume	erba/veleno
+046	Paras	coleottero/erba
+047	Parasect	coleottero/erba
+048	Venonat	coleottero/veleno
+049	Venomoth	coleottero/veleno
+050	Diglett	terra
+051	Dugtrio	terra
+052	Meowth	normale
+053	Persian	normale
+054	Psyduck	acqua
+055	Golduck	acqua
+056	Mankey	lotta
+057	Primeape	lotta
+058	Growlithe	fuoco
+059	Arcanine	fuoco
+060	Poliwag	acqua
+061	Poliwhirl	acqua
+062	Poliwrath	acqua/lotta
+063	Abra	psico
+064	Kadabra	psico
+065	Alakazam	psico
+066	Machop	lotta
+067	Machoke	lotta
+068	Machamp	lotta
+069	Bellsprout	erba/veleno
+070	Weepinbell	erba/veleno
+071	Victreebel	erba/veleno
+072	Tentacool	acqua/veleno
+073	Tentacruel	acqua/veleno
+074	Geodude	roccia/terra
+075	Graveler	roccia/terra
+076	Golem	roccia/terra
+077	Ponyta	fuoco
+078	Rapidash	fuoco
+079	Slowpoke	acqua/psico
+080	Slowbro	acqua/psico
+081	Magnemite	elettro/acciaio
+082	Magneton	elettro/acciaio
+083	Farfetch'd	normale/volante
+084	Doduo	normale/volante
+085	Dodrio	normale/volante
+086	Seel	acqua
+087	Dewgong	acqua/ghiaccio
+088	Grimer	veleno
+089	Muk	veleno
+090	Shellder	acqua
+091	Cloyster	acqua/ghiaccio
+092	Gastly	spettro/veleno
+093	Haunter	spettro/veleno
+094	Gengar	spettro/veleno
+095	Onix	roccia/terra
+096	Drowzee	psico
+097	Hypno	psico
+098	Krabby	acqua
+099	Kingler	acqua
+100	Voltorb	elettro
+101	Electrode	elettro
+102	Exeggcute	erba/psico
+103	Exeggutor	erba/psico
+104	Cubone	terra
+105	Marowak	terra
+106	Hitmonlee	lotta
+107	Hitmonchan	lotta
+108	Lickitung	normale
+109	Koffing	veleno
+110	Weezing	veleno
+111	Rhyhorn	terra/roccia
+112	Rhydon	terra/roccia
+113	Chansey	normale
+114	Tangela	erba
+115	Kangaskhan	normale
+116	Horsea	acqua
+117	Seadra	acqua
+118	Goldeen	acqua
+119	Seaking	acqua
+120	Staryu	acqua
+121	Starmie	acqua/psico
+122	Mr. Mime	psico/folletto
+123	Scyther	coleottero/volante
+124	Jynx	ghiaccio/psico
+125	Electabuzz	elettro
+126	Magmar	fuoco
+127	Pinsir	coleottero
+128	Tauros	normale
+129	Magikarp	acqua
+130	Gyarados	acqua/volante
+131	Lapras	acqua/ghiaccio
+132	Ditto	normale
+133	Eevee	normale
+134	Vaporeon	acqua
+135	Jolteon	elettro
+136	Flareon	fuoco
+137	Porygon	normale
+138	Omanyte	roccia/acqua
+139	Omastar	roccia/acqua
+140	Kabuto	roccia/acqua
+141	Kabutops	roccia/acqua
+142	Aerodactyl	roccia/volante
+143	Snorlax	normale
+144	Articuno	ghiaccio/volante
+145	Zapdos	elettro/volante
+146	Moltres	fuoco/volante
+147	Dratini	drago
+148	Dragonair	drago
+149	Dragonite	drago/volante
+150	Mewtwo	psico
+151	Mew	psico
+152	Chikorita	erba
+153	Bayleef	erba
+154	Meganium	erba
+155	Cyndaquil	fuoco
+156	Quilava	fuoco
+157	Typhlosion	fuoco
+158	Totodile	acqua
+159	Croconaw	acqua
+160	Feraligatr	acqua
+161	Sentret	normale
+162	Furret	normale
+163	Hoothoot	normale/volante
+164	Noctowl	normale/volante
+165	Ledyba	coleottero/volante
+166	Ledian	coleottero/volante
+167	Spinarak	coleottero/veleno
+168	Ariados	coleottero/veleno
+169	Crobat	veleno/volante
+170	Chinchou	acqua/elettro
+171	Lanturn	acqua/elettro
+172	Pichu	elettro
+173	Cleffa	folletto
+174	Igglybuff	normale/folletto
+175	Togepi	folletto
+176	Togetic	folletto/volante
+177	Natu	psico/volante
+178	Xatu	psico/volante
+179	Mareep	elettro
+180	Flaaffy	elettro
+181	Ampharos	elettro
+182	Bellossom	erba
+183	Marill	acqua/folletto
+184	Azumarill	acqua/folletto
+185	Sudowoodo	roccia
+186	Politoed	acqua
+187	Hoppip	erba/volante
+188	Skiploom	erba/volante
+189	Jumpluff	erba/volante
+190	Aipom	normale
+191	Sunkern	erba
+192	Sunflora	erba
+193	Yanma	coleottero/volante
+194	Wooper	acqua/terra
+195	Quagsire	acqua/terra
+196	Espeon	psico
+197	Umbreon	buio
+198	Murkrow	buio/volante
+199	Slowking	acqua/psico
+200	Misdreavus	spettro
+201	Unown	psico
+202	Wobbuffet	psico
+203	Girafarig	normale/psico
+204	Pineco	coleottero
+205	Forretress	coleottero/acciaio
+206	Dunsparce	normale
+207	Gligar	terra/volante
+208	Steelix	acciaio/terra
+209	Snubbull	folletto
+210	Granbull	folletto
+211	Qwilfish	acqua/veleno
+212	Scizor	coleottero/acciaio
+213	Shuckle	coleottero/roccia
+214	Heracross	coleottero/lotta
+215	Sneasel	buio/ghiaccio
+216	Teddiursa	normale
+217	Ursaring	normale
+218	Slugma	fuoco
+219	Magcargo	fuoco/roccia
+220	Swinub	ghiaccio/terra
+221	Piloswine	ghiaccio/terra
+222	Corsola	acqua/roccia
+223	Remoraid	acqua
+224	Octillery	acqua
+225	Delibird	ghiaccio/volante
+226	Mantine	acqua/volante
+227	Skarmory	acciaio/volante
+228	Houndour	buio/fuoco
+229	Houndoom	buio/fuoco
+230	Kingdra	acqua/drago
+231	Phanpy	terra
+232	Donphan	terra
+233	Porygon2	normale
+234	Stantler	normale
+235	Smeargle	normale
+236	Tyrogue	lotta
+237	Hitmontop	lotta
+238	Smoochum	ghiaccio/psico
+239	Elekid	elettro
+240	Magby	fuoco
+241	Miltank	normale
+242	Blissey	normale
+243	Raikou	elettro
+244	Entei	fuoco
+245	Suicune	acqua
+246	Larvitar	roccia/terra
+247	Pupitar	roccia/terra
+248	Tyranitar	roccia/buio
+249	Lugia	psico/volante
+250	Ho-Oh	fuoco/volante
+251	Celebi	psico/erba
+252	Treecko	erba
+253	Grovyle	erba
+254	Sceptile	erba
+255	Torchic	fuoco
+256	Combusken	fuoco/lotta
+257	Blaziken	fuoco/lotta
+258	Mudkip	acqua
+259	Marshtomp	acqua/terra
+260	Swampert	acqua/terra
+261	Poochyena	buio
+262	Mightyena	buio
+263	Zigzagoon	normale
+264	Linoone	normale
+265	Wurmple	coleottero
+266	Silcoon	coleottero
+267	Beautifly	coleottero/volante
+268	Cascoon	coleottero
+269	Dustox	coleottero/veleno
+270	Lotad	acqua/erba
+271	Lombre	acqua/erba
+272	Ludicolo	acqua/erba
+273	Seedot	erba
+274	Nuzleaf	erba/buio
+275	Shiftry	erba/buio
+276	Taillow	normale/volante
+277	Swellow	normale/volante
+278	Wingull	acqua/volante
+279	Pelipper	acqua/volante
+280	Ralts	psico/folletto
+281	Kirlia	psico/folletto
+282	Gardevoir	psico/folletto
+283	Surskit	coleottero/acqua
+284	Masquerain	coleottero/volante
+285	Shroomish	erba
+286	Breloom	erba/lotta
+287	Slakoth	normale
+288	Vigoroth	normale
+289	Slaking	normale
+290	Nincada	coleottero/terra
+291	Ninjask	coleottero/volante
+292	Shedinja	coleottero/spettro
+293	Whismur	normale
+294	Loudred	normale
+295	Exploud	normale
+296	Makuhita	lotta
+297	Hariyama	lotta
+298	Azurill	normale/folletto
+299	Nosepass	roccia
+300	Skitty	normale
+301	Delcatty	normale
+302	Sableye	buio/spettro
+303	Mawile	acciaio/folletto
+304	Aron	acciaio/roccia
+305	Lairon	acciaio/roccia
+306	Aggron	acciaio/roccia
+307	Meditite	lotta/psico
+308	Medicham	lotta/psico
+309	Electrike	elettro
+310	Manectric	elettro
+311	Plusle	elettro
+312	Minun	elettro
+313	Volbeat	coleottero
+314	Illumise	coleottero
+315	Roselia	erba/veleno
+316	Gulpin	veleno
+317	Swalot	veleno
+318	Carvanha	acqua/buio
+319	Sharpedo	acqua/buio
+320	Wailmer	acqua
+321	Wailord	acqua
+322	Numel	fuoco/terra
+323	Camerupt	fuoco/terra
+324	Torkoal	fuoco
+325	Spoink	psico
+326	Grumpig	psico
+327	Spinda	normale
+328	Trapinch	terra
+329	Vibrava	terra/drago
+330	Flygon	terra/drago
+331	Cacnea	erba
+332	Cacturne	erba/buio
+333	Swablu	normale/volante
+334	Altaria	drago/volante
+335	Zangoose	normale
+336	Seviper	veleno
+337	Lunatone	roccia/psico
+338	Solrock	roccia/psico
+339	Barboach	acqua/terra
+340	Whiscash	acqua/terra
+341	Corphish	acqua
+342	Crawdaunt	acqua/buio
+343	Baltoy	terra/psico
+344	Claydol	terra/psico
+345	Lileep	roccia/erba
+346	Cradily	roccia/erba
+347	Anorith	roccia/coleottero
+348	Armaldo	roccia/coleottero
+349	Feebas	acqua
+350	Milotic	acqua
+351	Castform	normale
+352	Kecleon	normale
+353	Shuppet	spettro
+354	Banette	spettro
+355	Duskull	spettro
+356	Dusclops	spettro
+357	Tropius	erba/volante
+358	Chimecho	psico
+359	Absol	buio
+360	Wynaut	psico
+361	Snorunt	ghiaccio
+362	Glalie	ghiaccio
+363	Spheal	ghiaccio/acqua
+364	Sealeo	ghiaccio/acqua
+365	Walrein	ghiaccio/acqua
+366	Clamperl	acqua
+367	Huntail	acqua
+368	Gorebyss	acqua
+369	Relicanth	acqua/roccia
+370	Luvdisc	acqua
+371	Bagon	drago
+372	Shelgon	drago
+373	Salamence	drago/volante
+374	Beldum	acciaio/psico
+375	Metang	acciaio/psico
+376	Metagross	acciaio/psico
+377	Regirock	roccia
+378	Regice	ghiaccio
+379	Registeel	acciaio
+380	Latias	drago/psico
+381	Latios	drago/psico
+382	Kyogre	acqua
+383	Groudon	terra
+384	Rayquaza	drago/volante
+385	Jirachi	acciaio/psico
+386	Deoxys	psico
+387	Turtwig	erba
+388	Grotle	erba
+389	Torterra	erba/terra
+390	Chimchar	fuoco
+391	Monferno	fuoco/lotta
+392	Infernape	fuoco/lotta
+393	Piplup	acqua
+394	Prinplup	acqua
+395	Empoleon	acqua/acciaio
+396	Starly	normale/volante
+397	Staravia	normale/volante
+398	Staraptor	normale/volante
+399	Bidoof	normale
+400	Bibarel	normale/acqua
+401	Kricketot	coleottero
+402	Kricketune	coleottero
+403	Shinx	elettro
+404	Luxio	elettro
+405	Luxray	elettro
+406	Budew	erba/veleno
+407	Roserade	erba/veleno
+408	Cranidos	roccia
+409	Rampardos	roccia
+410	Shieldon	roccia/acciaio
+411	Bastiodon	roccia/acciaio
+412	Burmy	coleottero
+413	Wormadam	coleottero/erba
+414	Mothim	coleottero/volante
+415	Combee	coleottero/volante
+416	Vespiquen	coleottero/volante
+417	Pachirisu	elettro
+418	Buizel	acqua
+419	Floatzel	acqua
+420	Cherubi	erba
+421	Cherrim	erba
+422	Shellos	acqua
+423	Gastrodon	acqua/terra
+424	Ambipom	normale
+425	Drifloon	spettro/volante
+426	Drifblim	spettro/volante
+427	Buneary	normale
+428	Lopunny	normale
+429	Mismagius	spettro
+430	Honchkrow	buio/volante
+431	Glameow	normale
+432	Purugly	normale
+433	Chingling	psico
+434	Stunky	veleno/buio
+435	Skuntank	veleno/buio
+436	Bronzor	acciaio/psico
+437	Bronzong	acciaio/psico
+438	Bonsly	roccia
+439	Mime Jr.	psico/folletto
+440	Happiny	normale
+441	Chatot	normale/volante
+442	Spiritomb	spettro/buio
+443	Gible	drago/terra
+444	Gabite	drago/terra
+445	Garchomp	drago/terra
+446	Munchlax	normale
+447	Riolu	lotta
+448	Lucario	lotta/acciaio
+449	Hippopotas	terra
+450	Hippowdon	terra
+451	Skorupi	veleno/coleottero
+452	Drapion	veleno/buio
+453	Croagunk	veleno/lotta
+454	Toxicroak	veleno/lotta
+455	Carnivine	erba
+456	Finneon	acqua
+457	Lumineon	acqua
+458	Mantyke	acqua/volante
+459	Snover	erba/ghiaccio
+460	Abomasnow	erba/ghiaccio
+461	Weavile	buio/ghiaccio
+462	Magnezone	elettro/acciaio
+463	Lickilicky	normale
+464	Rhyperior	terra/roccia
+465	Tangrowth	erba
+466	Electivire	elettro
+467	Magmortar	fuoco
+468	Togekiss	folletto/volante
+469	Yanmega	coleottero/volante
+470	Leafeon	erba
+471	Glaceon	ghiaccio
+472	Gliscor	terra/volante
+473	Mamoswine	ghiaccio/terra
+474	Porygon-Z	normale
+475	Gallade	psico/lotta
+476	Probopass	roccia/acciaio
+477	Dusknoir	spettro
+478	Froslass	ghiaccio/spettro
+479	Rotom	elettro/spettro
+480	Uxie	psico
+481	Mesprit	psico
+482	Azelf	psico
+483	Dialga	acciaio/drago
+484	Palkia	acqua/drago
+485	Heatran	fuoco/acciaio
+486	Regigigas	normale
+487	Giratina	spettro/drago
+488	Cresselia	psico
+489	Phione	acqua
+490	Manaphy	acqua
+491	Darkrai	buio
+492	Shaymin	erba
+493	Arceus	normale
+494	Victini	psico/fuoco
+495	Snivy	erba
+496	Servine	erba
+497	Serperior	erba
+498	Tepig	fuoco
+499	Pignite	fuoco/lotta
+500	Emboar	fuoco/lotta
+501	Oshawott	acqua
+502	Dewott	acqua
+503	Samurott	acqua
+504	Patrat	normale
+505	Watchog	normale
+506	Lillipup	normale
+507	Herdier	normale
+508	Stoutland	normale
+509	Purrloin	buio
+510	Liepard	buio
+511	Pansage	erba
+512	Simisage	erba
+513	Pansear	fuoco
+514	Simisear	fuoco
+515	Panpour	acqua
+516	Simipour	acqua
+517	Munna	psico
+518	Musharna	psico
+519	Pidove	normale/volante
+520	Tranquill	normale/volante
+521	Unfezant	normale/volante
+522	Blitzle	elettro
+523	Zebstrika	elettro
+524	Roggenrola	roccia
+525	Boldore	roccia
+526	Gigalith	roccia
+527	Woobat	psico/volante
+528	Swoobat	psico/volante
+529	Drilbur	terra
+530	Excadrill	terra/acciaio
+531	Audino	normale
+532	Timburr	lotta
+533	Gurdurr	lotta
+534	Conkeldurr	lotta
+535	Tympole	acqua
+536	Palpitoad	acqua/terra
+537	Seismitoad	acqua/terra
+538	Throh	lotta
+539	Sawk	lotta
+540	Sewaddle	coleottero/erba
+541	Swadloon	coleottero/erba
+542	Leavanny	coleottero/erba
+543	Venipede	coleottero/veleno
+544	Whirlipede	coleottero/veleno
+545	Scolipede	coleottero/veleno
+546	Cottonee	erba/folletto
+547	Whimsicott	erba/folletto
+548	Petilil	erba
+549	Lilligant	erba
+550	Basculin	acqua
+551	Sandile	terra/buio
+552	Krokorok	terra/buio
+553	Krookodile	terra/buio
+554	Darumaka	fuoco
+555	Darmanitan	fuoco
+556	Maractus	erba
+557	Dwebble	coleottero/roccia
+558	Crustle	coleottero/roccia
+559	Scraggy	buio/lotta
+560	Scrafty	buio/lotta
+561	Sigilyph	psico/volante
+562	Yamask	spettro
+563	Cofagrigus	spettro
+564	Tirtouga	acqua/roccia
+565	Carracosta	acqua/roccia
+566	Archen	roccia/volante
+567	Archeops	roccia/volante
+568	Trubbish	veleno
+569	Garbodor	veleno
+570	Zorua	buio
+571	Zoroark	buio
+572	Minccino	normale
+573	Cinccino	normale
+574	Gothita	psico
+575	Gothorita	psico
+576	Gothitelle	psico
+577	Solosis	psico
+578	Duosion	psico
+579	Reuniclus	psico
+580	Ducklett	acqua/volante
+581	Swanna	acqua/volante
+582	Vanillite	ghiaccio
+583	Vanillish	ghiaccio
+584	Vanilluxe	ghiaccio
+585	Deerling	normale/erba
+586	Sawsbuck	normale/erba
+587	Emolga	elettro/volante
+588	Karrablast	coleottero
+589	Escavalier	coleottero/acciaio
+590	Foongus	erba/veleno
+591	Amoonguss	erba/veleno
+592	Frillish	acqua/spettro
+593	Jellicent	acqua/spettro
+594	Alomomola	acqua
+595	Joltik	coleottero/elettro
+596	Galvantula	coleottero/elettro
+597	Ferroseed	erba/acciaio
+598	Ferrothorn	erba/acciaio
+599	Klink	acciaio
+600	Klang	acciaio
+601	Klinklang	acciaio
+602	Tynamo	elettro
+603	Eelektrik	elettro
+604	Eelektross	elettro
+605	Elgyem	psico
+606	Beheeyem	psico
+607	Litwick	spettro/fuoco
+608	Lampent	spettro/fuoco
+609	Chandelure	spettro/fuoco
+610	Axew	drago
+611	Fraxure	drago
+612	Haxorus	drago
+613	Cubchoo	ghiaccio
+614	Beartic	ghiaccio
+615	Cryogonal	ghiaccio
+616	Shelmet	coleottero
+617	Accelgor	coleottero
+618	Stunfisk	terra/elettro
+619	Mienfoo	lotta
+620	Mienshao	lotta
+621	Druddigon	drago
+622	Golett	terra/spettro
+623	Golurk	terra/spettro
+624	Pawniard	buio/acciaio
+625	Bisharp	buio/acciaio
+626	Bouffalant	normale
+627	Rufflet	normale/volante
+628	Braviary	normale/volante
+629	Vullaby	buio/volante
+630	Mandibuzz	buio/volante
+631	Heatmor	fuoco
+632	Durant	coleottero/acciaio
+633	Deino	buio/drago
+634	Zweilous	buio/drago
+635	Hydreigon	buio/drago
+636	Larvesta	coleottero/fuoco
+637	Volcarona	coleottero/fuoco
+638	Cobalion	acciaio/lotta
+639	Terrakion	roccia/lotta
+640	Virizion	erba/lotta
+641	Tornadus	volante
+642	Thundurus	elettro/volante
+643	Reshiram	drago/fuoco
+644	Zekrom	drago/elettro
+645	Landorus	terra/volante
+646	Kyurem	drago/ghiaccio
+647	Keldeo	acqua/lotta
+648	Meloetta	normale/psico
+649	Genesect	coleottero/acciaio
+905	Enamorus	folletto/volante
