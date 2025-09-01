@@ -100,209 +100,118 @@
     <td class="name">X Attack</td><td class="location">Gifted by Roughneck</td></tr>
 <!-----Chiusura tabella Item----->
 </table></div>
+            
+<h2>Pokemon</h2>
+<!----------Apertura tabella Encounters-------->
+<div class="tcontainer"><table id="wildspawns" class="round green border-bold">
+<tr><th class="name roundtl">Pokemon</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate</th></tr>
+<!----Encounter Method---->
+<tr><th colspan="4">Walking</th></tr><tr>
+<!-----Standard Entry----->
+<td class="pokemon"><table><tr><td>
+<div class="bg-sprite normal"><img src="..\src\Pokemon\0263.png" alt="Zigzagoon" class="sprite-medium"></div></td>
+<td class="name">Zigzagoon</td></tr></table></td>
+<td class="levels">5-7</td><td colspan="2">40%</td></tr>
+<!-----Time-sensitive Entry----->
+<tr>
+<td class="pokemon"><table><tr><td>
+<div class="bg-sprite normal"><img src="..\src\Pokemon\0519.png" alt="Pidove" class="sprite-medium"></div></td>
+<td class="name">Pidove</td></tr></table></td>
+<td class="levels">5-7</td><td class="day">35%</td><td class="night">0%</td></tr>
+<!-----Time-sensitive Entry----->
+<tr>
+<td class="pokemon"><table><tr><td>
+<div class="bg-sprite psychic"><img src="..\src\Pokemon\0527.png" alt="Woobat" class="sprite-medium"></div></td>
+<td class="name">Woobat</td></tr></table></td>
+<td class="levels">5-8</td><td class="day">0%</td><td class="night">35%</td></tr>
+<!----Encounter Method---->
+<tr><th colspan="4">Double-exclusive</th></tr>
+<!-----Standard Entry----->
+<tr>
+<td class="pokemon"><table><tr><td>
+<div class="bg-sprite fighting"><img src="..\src\Pokemon\0532.png" alt="Timburr" class="sprite-medium"></div></td>
+<td class="name">Timburr</td></tr></table></td>
+<td class="levels">9-10</td><td colspan="2">25%</td></tr>
+<!---------Chiusura Tabella Encounters-------->
+</table></div>
+        
+<h2>Trainers</h2>
 
-
-            <div class="tcontainer">
-            <table id="items" class="round red border-bold">
+<h4>Cargo Handling Yards</h4>
+<!----------TRAINERS---------------->
+<div class="tcontainer">
+            <table class="trainers round green border-bold">
+            <tr><th class="name">Trainer</th><th class="pokemonlist">Pokémon</th></tr>
+            <!--------- Entry ---------->
+                <tr><td><table class="icon">
+                <tr><td><img src="https://archives.bulbagarden.net/media/upload/archive/7/74/20120731134117%21Spr_B2W2_Guitarist.png" alt="pkmn trainer" class="sprite"></td></tr>
+                <tr><td>Guitarist Regina</td></tr></table></td>
+                <!-----Pokemon 1-------->
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0532.png" alt="Timburr" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="round fightinghl">Fighting</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Timburr Lv.8</td></tr></table></td></tr>
+<!--------- Entry ---------->
+                <tr><td rowspan="2"><table class="icon">
+                <tr><td><img src="https://archives.bulbagarden.net/media/upload/6/63/Spr_BW_Roughneck.png" alt="pkmn trainer" class="sprite"></td></tr>
+                <tr><td>Drummer Fabian</td></tr></table></td>
+                <!-----Pokemon 1-------->
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0519.png" alt="Pidove" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="roundleft normalhl">Normal</td><td class="roundright flyinghl">Flying</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Pidove Lv.8</td></tr></table></td></tr>
+                <!-----Pokemon 2-------->
                 <tr>
-                    <th colspan="2">Item</th>
-                    <th class="loc">Location</th>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/0/0d/Bag_Escape_Rope_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">Escape Rope</td>         
-                    <td class="location">Behind containers, southern edge</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/9/9a/Bag_TM_Normal_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">TM83 (Work Up)</td>         
-                    <td class="location">Inside tall grass in Cargo Handling Yards</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/a/a3/Bag_Super_Potion_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">Super Potion</td>         
-                    <td class="location">In front of left-most warehouse (hidden)</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/6/69/Bag_Magnet_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">Magnet</td>         
-                    <td class="location">Upper right corner (hidden)</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">Poké Ball</td>         
-                    <td class="location">Gifted by xx in Arrivals Office</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/2/25/Bag_Zinc_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">Zinc</td>         
-                    <td class="location">Gifted by Worker</td>
-                </tr>
-                <tr>                    
-                    <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/f/f5/Bag_X_Attack_Sprite.png" alt="Bag TM Normal Sprite" class="sprite"></td>
-                    <td class="name">X Attack</td>         
-                    <td class="location">Gifted by Roughneck</td>
-                </tr>
-            </table>
-            </div> <!-- Fine della <table class="items"> -->      
-        <h2>Pokemon</h2>
-        <div class="tcontainer">
-        <table id="wildspawns" class="round green border-bold">
-            <tr>
-                <th class="name roundtl">Pokemon</th>
-                <th class="level">Levels</th>
-                <th class="rate roundtr" colspan="2">Rate</th>
-            </tr>
-            <tr><th colspan="4">Walking</th></tr>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td><div class="bg-sprite normal">
-                            <img src="..\src\Pokemon\0263.png" alt="Zigzagoon" class="sprite-medium">
-                        </div></td>
-                        <td class="name">Zigzagoon</td>
-                    </tr>
-                </table></td>
-                <td class="levels">5-7</td>
-                <td colspan="2">40%</td>
-            </tr>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td>
-                            <div class="bg-sprite normal"><img src="..\src\Pokemon\0519.png" alt="Pidove" class="sprite-medium"></div>
-                        </td>
-                        <td class="name">Pidove</td>
-                    </tr>
-                </table></td>
-                <td  class="levels">5-7</td>
-                <td class="day">35%</td>
-                <td class="night">0%</td>
-
-            </tr>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td>
-                            <div class="bg-sprite psychic"><img src="..\src\Pokemon\0527.png" alt="Woobat" class="sprite-medium"></div>
-                        </td>
-                        <td class="name">Woobat</td>
-                    </tr>
-                </table></td>
-                <td class="levels">5-8</td>
-                <td class="day">0%</td>
-                <td class="night">35%</td>
-            </tr>
-
-            <tr><th colspan="4">Walking (Special)</th></tr>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td>
-                            <div class="bg-sprite fighting"><img src="..\src\Pokemon\0532.png" alt="Timburr" class="sprite-medium"></div>
-                        </td>
-                        <td class="name">Timburr</td>
-                    </tr>
-                </table></td>
-                <td class="levels">9-10</td>
-                <td colspan="2">25%</td>
-            </tr>
-        </table> <!-- Fine della <table class="pkmnencounter"> -->
-        </div> <!-- Fine del <div class="spawncontainer"> -->        
-        <h2>Trainers</h2>
-        <h4>Cargo Handling Yards</h4>
-        <div class="tcontainer">
-        <table class="trainers round green border-bold">
-            <tr>
-                <th class="name">Trainer</th>
-                <th class="pokemonlist">Pokémon</th>
-            </tr>
-            <tr> <!-- Worker George -->
-                <td rowspan="1"><table class="icon">
-                    <tr ><td><img src="..\src\Trainer\worker-gen7.png" alt="pkmn trainer" class="sprite"></td></tr>
-                    <tr><td>Worker George</td></tr>
-                </table></td> <!-- Fine della colonna allenatore -->
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/c/c9/Menu_HOME_0532.png" alt="Timburr" class="sprite-medium"></td>
-                        <td>Timburr Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr> 
-
-            <tr> <!-- Worker Luke -->
-                <td rowspan="2"><table class="icon">
-                    <tr><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite"></td></tr>
-                    <tr><td>Worker Luke</td></tr>
-                </table></td> <!-- Fine della colonna allenatore -->
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/d/df/Menu_HOME_0519.png" alt="Pidove" class="sprite-medium"></td>
-                        <td>Pidove Lv.8</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr>
-            <tr>
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/d/df/Menu_HOME_0519.png" alt="Pidove" class="sprite-medium"></td>
-                        <td>Pidove Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr>
-            
-            <tr> <!-- Worker Kevin -->
-                <td rowspan="3" style="justify-content: center; align-items: center;"><table class="icon">
-                    <tr><td><img src="..\src\Trainer\worker.png" alt="pkmn trainer" class="sprite"></td></tr>
-                    <tr><td>Worker Kevin</td></tr>
-                </table></td> <!-- Fine della colonna allenatore -->
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/d/db/Menu_HOME_0263.png" alt="Zigzagoon" class="sprite-medium"></td>
-                        <td>Zigzagoon Lv.8</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr>
-            <tr>
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/d/db/Menu_HOME_0263.png" alt="Zigzagoon" class="sprite-medium"></td>
-                        <td>Zigzagoon Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr> 
-            <tr>
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/9/99/Menu_HOME_0190.png" alt="Aipom" class="sprite-medium"></td>
-                        <td>Aipom Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr> 
-            
-            <tr> <!-- Worker Jacques -->
-                <td rowspan="1"><table class="icon">
-                    <tr><td><img src="..\src\Trainer\workerice.png" alt="pkmn trainer" class="sprite"></td></tr>
-                    <tr><td>Worker Jacques</td></tr>
-                </table></td> <!-- Fine della colonna allenatore -->
-                <td><table>
-                    <tr>
-                        <td rowspan="2"><img src="https://archives.bulbagarden.net/media/upload/b/b7/Menu_HOME_0299.png" alt="Nosepass" class="sprite-medium"></td>
-                        <td>Nosepass Lv.9</td>
-                    </tr>
-                    <tr><td>no item</td></tr>
-                </table></td> <!-- Fine della colonna Pokémon -->
-            </tr>
-        </table>
-    </div>
-
-
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0519.png" alt="Pidove" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="roundleft normalhl">Normal</td><td class="roundright flyinghl">Flying</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Pidove Lv.9</td></tr></table></td></tr>
+<!--------- Entry ---------->
+                <tr><td rowspan="3"><table class="icon">
+                <tr><td><img src="https://archives.bulbagarden.net/media/upload/6/63/Spr_BW_Roughneck.png" alt="pkmn trainer" class="sprite"></td></tr>
+                <tr><td>Worker Kevin</td></tr></table></td>
+                <!-----Pokemon 1-------->
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0263.png" alt="Zigzagoon" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Zigzagoon Lv.8</td></tr></table></td></tr>
+                <!-----Pokemon 2-------->
+                <tr>
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0263.png" alt="Zigzagoon" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Zigzagoon Lv.9</td></tr></table></td></tr>
+                <!-----Pokemon 3-------->
+                <tr>
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0190.png" alt="Aipom" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Aipom Lv.9</td></tr></table></td></tr>
+<!--------- Entry ---------->
+                <tr><td rowspan="2"><table class="icon">
+                <tr><td><img src="https://archives.bulbagarden.net/media/upload/6/63/Spr_BW_Roughneck.png" alt="pkmn trainer" class="sprite"></td></tr>
+                <tr><td>Worker Jacques</td></tr></table></td>
+                <!-----Pokemon 1-------->
+                <td><table class="pkmn round transparent border-none">
+                    <tr><td class="round"><img src="..\src\Pokemon\0299.png" alt="Nosepass" class="sprite-medium"></td>
+                    <td class="transparent" rowspan="2"><dl>
+                    <dt>Type:</dt><dt><table><tr><td class="round rockhl">Rock</td></tr></table></dt>
+                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
+                    <tr><td class="round">Nosepass Lv.9</td></tr></table></td></tr>
+<!--------- Chiusura Tabella ---------->
+</table></div>
 
 <h3>Arrivals Office</h3>
 <!----------TRAINERS---------------->
@@ -310,26 +219,26 @@
 <table class="trainers round green border-bold">
 <tr><th class="name">Trainer</th><th class="pokemonlist">Pokémon</th></tr>
 <!--------- Entry ---------->
-                <tr><td rowspan="2"><table class="icon">
-                <tr><td><img src="https://archives.bulbagarden.net/media/upload/6/63/Spr_BW_Roughneck.png" alt="pkmn trainer" class="sprite"></td></tr>
-                <tr><td>White Collar Theodora</td></tr></table></td>
-                <!-----Pokemon 1-------->
-                <td><table class="pkmn round transparent border-none">
-                    <tr><td class="round"><img src="..\src\Pokemon\0298.png" alt="Azurill" class="sprite-medium"></td>
-                    <td class="transparent" rowspan="2"><dl>
-                    <dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
-                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
-                    <tr><td class="round">Azurill Lv.10</td></tr></table></td></tr>
-                <!-----Pokemon 2-------->
-                <tr>
-                <td><table class="pkmn round transparent border-none">
-                    <tr><td class="round"><img src="..\src\Pokemon\0427.png" alt="Buneary" class="sprite-medium"></td>
-                    <td class="transparent" rowspan="2"><dl>
-                    <dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
-                    <dt>Held Item</dt><dt>None</dt></dl></td></tr>
-                    <tr><td class="round">Buneary Lv.9</td></tr></table></td></tr>
-            <!--------- Chiusura Tabella ---------->
-            </table></div>
+<tr><td rowspan="2"><table class="icon">
+<tr><td><img src="https://archives.bulbagarden.net/media/upload/6/63/Spr_BW_Roughneck.png" alt="pkmn trainer" class="sprite"></td></tr>
+<tr><td>White Collar Theodora</td></tr></table></td>
+<!-----Pokemon 1-------->
+<td><table class="pkmn round transparent border-none"><tr><td class="round">
+<img src="..\src\Pokemon\0298.png" alt="Azurill" class="sprite-medium"></td>
+<td class="transparent" rowspan="2"><dl>
+<dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+<dt>Held Item</dt><dt>None</dt></dl></td></tr>
+<tr><td class="round">Azurill Lv.10</td></tr></table></td></tr>
+<!-----Pokemon 2-------->
+<tr>
+<td><table class="pkmn round transparent border-none"><tr><td class="round">
+<img src="..\src\Pokemon\0427.png" alt="Buneary" class="sprite-medium"></td>
+<td class="transparent" rowspan="2"><dl>
+<dt>Type:</dt><dt><table><tr><td class="round normalhl">Normal</td></tr></table></dt>
+<dt>Held Item</dt><dt>None</dt></dl></td></tr>
+<tr><td class="round">Buneary Lv.9</td></tr></table></td></tr>
+<!--------- Chiusura Tabella ---------->
+</table></div>
          
 </table>    
     <h1>Related Articles</h1>
