@@ -1,16 +1,59 @@
 <!-- Funzionamento -->
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Item List</title><link rel="stylesheet" href="..\\src\Styles\Style.css"></head>
+<title>Pokémon Mechanics</title><link rel="stylesheet" href="..\\src\Styles\Style.css"></head>
 <body><a href="../index.html"><-- Home</a>
 <div class="container">
 
-<h1>Move Documentation</h1>
+<h1>Pokémon Mechanics</h1>
 
-<h2>MT/MN list and locations</h2>
+<h2>Catchable Species</h2>
+<p>A total of <strong>650 Pokémon</strong> are available, covering all Pokémon up to Generation V, plus <strong>Enamorus</strong> to complete the seasonal quartet.</p>
 
-<h2>Tutor Moves
+<p>All Pokémon, moves and items use <strong>Generation V</strong> data. This includes:</p>
+  <ul>
+    <li>Personal information</li>
+    <li>Learnsets</li>
+    <li>Items effects</li>
+    <li>Move mechanics</li>
+    <li>New and Hidden Abilities</li>
+  </ul>
+  <p>For authoritative reference and verification, consult <a href="https://bulbapedia.bulbagarden.net" target="_blank" rel="noopener">Bulbapedia</a>.</p>
 
+<h2>Encounter Methods</h2>
+
+<p>Pokémon can be encountered using multiple methods:</p>
+  <ul><li>Walking in tall grass</li>
+    <li>Exploring dungeons</li>
+    <li>Surfing water bodies</li>
+    <li>Using the Fishing Rod</li>
+    <li>Interacting with them in the environment</li></ul>
+
+<p>In addition:</p>
+  <ul><li>Some trainers offer in-game trades.</li>
+    <li>Certain special Pokémon can be obtained as Gifts or by fulfilling different criteria.</li>
+    <li>Fossil Pokémon can be found in Digging Spots and revived at the Fossil Caravan.</li></ul>
+
+<p><strong>Rare Pokémon</strong> can only be encountered under specific conditions:</p>
+<ul>
+  <li>If you have more than one Pokémon in your party, <strong>Wild Double Battles</strong> may occur. In these battles, a special species unique to that location has a 5% chance of appearing.</li>
+  <li><strong>Fishing Spots</strong>, found across various bodies of water, allow special encounters when using the Fishing Rod. These also have a 5% chance of yielding a rare species.</li>
+</ul>
+<p>Pokémon obtained through these methods are marked in the documentation accordingly.</p>
+
+<h2>Experience Formula</h2>
+<p>The experience calculation is based on Generation V but simplified and rebalanced to reward effort more directly.</p>
+
+<h4>Standard Multipliers</h4>
+<ul><li><strong>x1.5</strong> for Trainer Battles</li><li><strong>x1.5</strong> if the Pokémon was received via trade</li><li><strong>x1.5</strong> if the Pokémon holds an experience-boosting item (e.g., <em>Lucky Egg</em>)</li></ul>
+
+<h4>Effort Multiplier</h4>
+<p>The level-based effort multiplier is calculated as:</p>
+
+<ul><li><code>L_v</code>: Level of the <em>victorious</em> Pokémon</li><li><code>L_s</code>: Level of the <em>defeated</em> Pokémon</li><li><code>B</code>: Baseline value, set to <code>0.1</code></li><li><code>F</code>: Linear flattening coefficient, set to <code>15</code></li></ul>
+
+<h4>Notes</h4>
+<ul><li>When <code>L_v = L_s</code>, numerator and denominator are equal; the multiplier becomes <code>1 + B</code>, granting a slight bonus to experience.</li><li>Defeating a higher-level Pokémon grants a larger experience bonus, scaling with the level gap according to the formula above.</li></ul>
 
 <!-- Chiusura Pagina -->
 </div></body></html>
