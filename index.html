@@ -3,224 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="Locations/Style.css">
+    <title>Wiki ? Home</title>
+    <link rel="stylesheet" href="src/Styles/Style.css">
+    <style>
+        /* ÑüÑü Home-page overrides ÑüÑü */
+        body {
+            background: #2c2c2c;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .home-wrapper {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* Hero banner */
+        .hero {
+            text-align: center;
+            padding: 48px 20px 36px;
+            background: linear-gradient(135deg, #3a7d44 0%, #62b36b 50%, #8fd694 100%);
+            border-radius: 16px;
+            margin-bottom: 36px;
+            box-shadow: 0 6px 24px rgba(0,0,0,.35);
+        }
+        .hero h1 {
+            font-family: var(--font-verve);
+            font-size: 44px;
+            font-weight: normal;
+            color: #fff;
+            margin: 0 0 6px;
+            border: none;
+            padding: 0;
+            text-shadow: 0 2px 6px rgba(0,0,0,.3);
+        }
+        .hero p {
+            font-family: var(--font-nunito);
+            color: #d4f5d8;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Category section */
+        .category {
+            margin-bottom: 32px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: #3d3d3d;
+            transition: background .2s;
+        }
+        .category-header:hover {
+            background: #4a4a4a;
+        }
+        .category-header h2 {
+            font-family: var(--font-verve);
+            font-size: 26px;
+            font-weight: normal;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            border: none;
+            flex: 1;
+        }
+        .category-header .chevron {
+            font-size: 18px;
+            color: #aaa;
+            transition: transform .25s ease;
+        }
+        .category.collapsed .chevron {
+            transform: rotate(-90deg);
+        }
+        .category.collapsed .card-grid {
+            display: none;
+        }
+
+        /* Subcategory label */
+        .subcategory-label {
+            font-family: var(--font-nunito);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #999;
+            margin: 18px 0 8px 4px;
+        }
+
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 12px;
+            padding: 14px 4px 4px;
+        }
+
+        /* Individual card */
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #eeeee3;
+            border-radius: 10px;
+            border-left: 4px solid transparent;
+            text-decoration: none;
+            color: #232323;
+            font-family: var(--font-nunito);
+            font-size: 14.5px;
+            font-weight: 600;
+            transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,.12);
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,.22);
+        }
+        .card .icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Category-specific accent colours */
+        .card[data-cat="locations"]:hover   { border-left-color: #4AA14D; }
+        .card[data-cat="docs"]:hover        { border-left-color: #4AA1FF; }
+        .card[data-cat="base"]:hover        { border-left-color: #FFA146; }
+        .card[data-cat="support"]:hover     { border-left-color: #9b4fdd; }
+
+        /* Badge for subcategory */
+        .card .badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: auto;
+            flex-shrink: 0;
+            color: #fff;
+        }
+        .badge.city     { background: #4AA14D; }
+        .badge.dungeon  { background: #d8411b; }
+        .badge.landmark { background: #4AA1FF; }
+        .badge.shop     { background: #FFA146; color: #333; }
+        .badge.route    { background: #7a7a7a; }
+
+        /* Footer */
+        .home-footer {
+            text-align: center;
+            padding: 30px 0 0;
+            color: #666;
+            font-size: 12px;
+            font-family: var(--font-nunito);
+        }
+    </style>
 </head>
 <body>
-    <div class="container">     
-        <h1>Home</h1>
 
-</table>   
+<div class="home-wrapper">
 
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Wiki Home</h1>
+        <p>Browse every page ? organised by category</p>
+    </div>
 
-<div class="tcontainer">
-        <table id="wildspawns" class="round green border-bold">
-            <tr>
-                <th class="name roundtl">Game Mechanics</th>
-            </tr>
-
-            <th>Pok√©mon & Battle System</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        Encounter Methods -
-                        Frenzy Battles - 
-                        Custom Items -
-                        Useful NPCs - 
-                        Pok√©mon Contests -
-                        Battle Frontier - 
-                        Online Functionalities
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-
-
-            <th>Environment</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        Seasons Cycle - 
-                        Climate Zones - 
-                        Space-Time Distortions - 
-                        Phenomena - 
-                        Homebase Editing -
-                        Daily and Weekly Events -
-                        List of Gimmicks - 
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
+    <!-- ??????????????? LOCATIONS ??????????????? -->
+    <div class="category" id="cat-locations">
+        <div class="category-header" onclick="toggleCategory('cat-locations')">
+            <h2>? Locations</h2>
+            <span class="chevron">Å•</span>
         </div>
-        <p>&nbsp</p>
+        <div class="card-grid">
+            <!-- Cities -->
+            <div class="subcategory-label" style="grid-column:1/-1;">Cities</div>
+            <a class="card" data-cat="locations" href="Locations/Cities/Solaceon.html">
+                <span class="icon">??</span> Solaceon
+                <span class="badge city">City</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Cities/Veilstone.html">
+                <span class="icon">??</span> Veilstone
+                <span class="badge city">City</span>
+            </a>
 
-            <div class="tcontainer">
-        <table id="wildspawns" class="round green border-bold">
-            <tr>
-                <th class="name roundtl">Locations</th>
-            </tr>
+            <!-- Dungeons -->
+            <div class="subcategory-label" style="grid-column:1/-1;">Dungeons</div>
+            <a class="card" data-cat="locations" href="Locations/Dungeons/Galaxias_Labs.html">
+                <span class="icon">?</span> Galaxias Labs
+                <span class="badge dungeon">Dungeon</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Dungeons/Galaxias_Pilot_Plant.html">
+                <span class="icon">??</span> Galaxias Pilot Plant
+                <span class="badge dungeon">Dungeon</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Dungeons/Veilstain.html">
+                <span class="icon">??</span> The Veilstain
+                <span class="badge dungeon">Dungeon</span>
+            </a>
 
-            <th>Settlements</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">Veilstone City - Solaceon Town - Celestic Town - New Hearthome City -
-                            Eterna City - Floaroma Town - Rockfrost Point
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Routes</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">204 - 205 -206 - 207 - 208 - 209 - 210 - 211 - 212 - 213 - 214 - 215 - 216 - 217</td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Natural Landmarks</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        Windrose Cliff - 
-                        Lily Park - 
-                        Crossing Slope -
-                        Mount Coronet (North Passage - Highlands) - 
-                        Amity Square -
-                        Valley Windworks -
-                        Wayward Cave - 
-                        Aquifer Grotto -
-                        Eterna Forest -
-                        Heartwood Path -
-                        Iron Island -
-                        Rockfrost Bay -
-                        Stalak Gorge -
-                        Icepeak Cave - 
-                        Lake Verity -
-                        Lake Valor - 
-                        Lake Acuity
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Artificial Landmarks</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        <a href="Locations/Veilstone_Harbor.html">Veilstone Harbor</a> - 
-                        <a href="Locations/Pristine_Lounge.html">Pristine Lounge</a> - 
-                        <a href="Locations/Veilstain.html">The Veilstain</a> - 
-                        <a href="Locations/Galaxias_Pilot_Plant.html">Galaxias Pilot Plant</a> -
-                        <a href="Locations/Galaxias_Labs.html">Galaxias Labs</a> 
-                        Maniac Tunnel -
-                        Powerhouse Amp√©re - 
-                        Rapidash Ranch - 
-                        Galerie Pradau - 
-                        DreamLab - 
-                        Solaceon Ruins - 
-                        Solace Caf√® -
-                        Pok√©mon Academy - 
-                        Lustrous Cave -
-                        Abandoned Warehouse -
-                        Secret Hideout -
-                        Solitary Hill - 
-                        Titania's Pyramid - 
-                        Hearthome Airport -
-                        Adamant Crypt -
-                        Old Archive -
-                        Sylvan Docks - 
-                        ICI HQ - 
-                        Galaxias HH Terminal - 
-                        Spear Pillar
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Utilities</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        Pok√©mon Center - 
-                        <a href="Locations/Veilstone_Marketplace.html">Veilstone Marketplace</a> -
-                        Celestic Emporium
-                        Galaxias Store -
-                        Candy Shop -
-                        Contest Hall -
-                        Fossil Caravan    
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Worlds beyond, and more</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">
-                        S.S. Minerva - 
-                        Miragescape (Mirage Gateway - Mirage Manor - Dream Celestic - Somewhere Station)
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
+            <!-- Landmarks -->
+            <div class="subcategory-label" style="grid-column:1/-1;">Landmarks</div>
+            <a class="card" data-cat="locations" href="Locations/Landmarks/Meerou_Exhibition.html">
+                <span class="icon">??</span> Meerou Exhibition
+                <span class="badge landmark">Landmark</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Landmarks/Pristine_Lounge.html">
+                <span class="icon">??</span> Pristine Lounge
+                <span class="badge landmark">Landmark</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Landmarks/Rapidash_Ranch.html">
+                <span class="icon">?</span> Rapidash Ranch
+                <span class="badge landmark">Landmark</span>
+            </a>
+            <a class="card" data-cat="locations" href="Locations/Landmarks/Veilstone_Harbor.html">
+                <span class="icon">?</span> Veilstone Harbor
+                <span class="badge landmark">Landmark</span>
+            </a>
+
+            <!-- Shops -->
+            <div class="subcategory-label" style="grid-column:1/-1;">Shops</div>
+            <a class="card" data-cat="locations" href="Locations/Shops/Veilstone_Marketplace.html">
+                <span class="icon">?</span> Veilstone Marketplace
+                <span class="badge shop">Shop</span>
+            </a>
         </div>
-        
+    </div>
 
-        <div class="tcontainer">
-        <table id="wildspawns" class="round green border-bold">
-            <tr>
-                <th class="name roundtl">Characters</th>
-            </tr>
-
-            <th>Main Cast</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">Platinum Berlitz - 
-                        Agent Fortis - 
-                        Cynthia -
-                        Galaxias Novus (Cyrus - Titania - Mars - Jupiter - Saturn) - 
-                        The I.C.I. (Agent Eagle - Looker - Diana - Losse) - 
-                        Volkner -
-                        Desperia -
-                        Lark
-                        </td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Supporting Cast</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">J. Meerou - Prof. Rowan - Prof. Burnett - Riley - Maylene</td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <th>Cameos and more</th>
-            <tr>
-                <td class="pokemon"><table>
-                    <tr>
-                        <td class="name">Useful NPCs</td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
+    <!-- ??????????????? DOCS ??????????????? -->
+    <div class="category" id="cat-docs">
+        <div class="category-header" onclick="toggleCategory('cat-docs')">
+            <h2>? Docs</h2>
+            <span class="chevron">Å•</span>
         </div>
-            
-</div>                
+        <div class="card-grid">
+            <a class="card" data-cat="docs" href="Docs/Climate_System.html">
+                <span class="icon">??</span> Climate System
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Credits.html">
+                <span class="icon">?</span> Credits
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Homebase.html">
+                <span class="icon">?</span> Homebase
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Item_List.html">
+                <span class="icon">?</span> Item List
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Moves_List.html">
+                <span class="icon">??</span> Moves List
+            </a>
+            <a class="card" data-cat="docs" href="Docs/NPCs.html">
+                <span class="icon">?????</span> NPCs
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Phenomena.html">
+                <span class="icon">?</span> Phenomena
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Pokedex.html">
+                <span class="icon">?</span> Pok?dex
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Pokemon.html">
+                <span class="icon">?</span> Pok?mon
+            </a>
+            <a class="card" data-cat="docs" href="Docs/Spacetime.html">
+                <span class="icon">?</span> Spacetime
+            </a>
+        </div>
+    </div>
+
+    <!-- ??????????????? BASE HTML ??????????????? -->
+    <div class="category" id="cat-base">
+        <div class="category-header" onclick="toggleCategory('cat-base')">
+            <h2>? Base HTML</h2>
+            <span class="chevron">Å•</span>
+        </div>
+        <div class="card-grid">
+            <a class="card" data-cat="base" href="BaseHTML/[Tables].html">
+                <span class="icon">?</span> Tables
+            </a>
+            <a class="card" data-cat="base" href="BaseHTML/Templates.html">
+                <span class="icon">?</span> Templates
+            </a>
+        </div>
+    </div>
+
+    <!-- ??????????????? SUPPORT FILES ??????????????? -->
+    <div class="category" id="cat-support">
+        <div class="category-header" onclick="toggleCategory('cat-support')">
+            <h2>?? Support Files</h2>
+            <span class="chevron">Å•</span>
+        </div>
+        <div class="card-grid">
+            <a class="card" data-cat="support" href="FilediSupporto/BulbaVeilStone.html">
+                <span class="icon">?</span> BulbaVeilStone
+            </a>
+        </div>
+    </div>
+
+    <div class="home-footer">Wiki Home &middot; <span id="page-count"></span> pages</div>
+</div>
+
+<script>
+    /* Toggle collapsed state */
+    function toggleCategory(id) {
+        document.getElementById(id).classList.toggle('collapsed');
+    }
+
+    /* Count cards */
+    document.getElementById('page-count').textContent =
+        document.querySelectorAll('.card').length;
+</script>
+
 </body>
 </html>
