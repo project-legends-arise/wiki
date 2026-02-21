@@ -187,4 +187,52 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.spoiler').forEach(el => {
         el.addEventListener('click', () => el.classList.toggle('revealed'));
     });
+
+
+    /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       5.  PAGE FOOTER ? Last-updated & category tags
+       Reads <meta name="wiki-updated">, wiki-category,
+       wiki-tags and renders a footer bar at the bottom
+       of .container.
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
+    const metaUpdated  = document.querySelector('meta[name="wiki-updated"]');
+    const metaCategory = document.querySelector('meta[name="wiki-category"]');
+    const metaTags     = document.querySelector('meta[name="wiki-tags"]');
+
+    if (metaUpdated || metaTags) {
+        const footer = document.createElement('div');
+        footer.className = 'wiki-page-footer';
+
+        if (metaCategory) {
+            const catSpan = document.createElement('span');
+            catSpan.className = 'wiki-footer-category';
+            catSpan.textContent = metaCategory.content;
+            footer.appendChild(catSpan);
+        }
+
+        if (metaTags) {
+            const tagsDiv = document.createElement('div');
+            tagsDiv.className = 'wiki-footer-tags';
+            metaTags.content.split(',').forEach(t => {
+                const tag = t.trim();
+                if (!tag) return;
+                const pill = document.createElement('span');
+                pill.className = 'wiki-footer-tag';
+                pill.textContent = tag;
+                tagsDiv.appendChild(pill);
+            });
+            footer.appendChild(tagsDiv);
+        }
+
+        if (metaUpdated) {
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'wiki-footer-date';
+            const d = new Date(metaUpdated.content + 'T00:00:00');
+            const formatted = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            dateSpan.textContent = 'Last updated: ' + formatted;
+            footer.appendChild(dateSpan);
+        }
+
+        container.appendChild(footer);
+    }
 });

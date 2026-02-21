@@ -22,10 +22,9 @@
         /* Hero banner */
         .hero {
             text-align: center;
-            padding: 48px 20px 36px;
+            padding: 48px 20px 24px;
             background: linear-gradient(135deg, #3a7d44 0%, #62b36b 50%, #8fd694 100%);
-            border-radius: 16px;
-            margin-bottom: 36px;
+            border-radius: 16px 16px 0 0;
             box-shadow: 0 6px 24px rgba(0,0,0,.35);
         }
         .hero h1 {
@@ -44,6 +43,90 @@
             font-size: 16px;
             margin: 0;
         }
+
+        /* ÑüÑü Search bar ÑüÑü */
+        .search-bar {
+            background: #345a38;
+            border-radius: 0 0 16px 16px;
+            padding: 16px 24px 18px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,.25);
+        }
+        .search-bar input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 16px;
+            border: 2px solid #5a9e5e;
+            border-radius: 8px;
+            background: #eeeee3;
+            font-family: var(--font-nunito);
+            font-size: 15px;
+            color: #232323;
+            outline: none;
+            transition: border-color .2s;
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #8fd694;
+        }
+        .search-bar input[type="text"]::placeholder {
+            color: #999;
+        }
+        .search-results-count {
+            font-family: var(--font-nunito);
+            font-size: 13px;
+            color: #a5d6a7;
+            white-space: nowrap;
+        }
+
+        /* ÑüÑü Tag filter pills ÑüÑü */
+        .tag-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 24px;
+            padding: 0 4px;
+        }
+        .tag-pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 14px;
+            background: #3d3d3d;
+            color: #bbb;
+            font-family: var(--font-nunito);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .15s, color .15s;
+            user-select: none;
+            border: 1px solid #555;
+        }
+        .tag-pill:hover {
+            background: #4a4a4a;
+            color: #e0e0e0;
+        }
+        .tag-pill.active {
+            background: #4AA14D;
+            color: #fff;
+            border-color: #3a8a3d;
+        }
+        .tag-clear {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 14px;
+            background: none;
+            color: #888;
+            font-family: var(--font-nunito);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px dashed #666;
+            transition: color .15s;
+        }
+        .tag-clear:hover { color: #d8411b; border-color: #d8411b; }
 
         /* Category section */
         .category {
@@ -73,6 +156,12 @@
             border: none;
             flex: 1;
         }
+        .category-header .cat-count {
+            font-family: var(--font-nunito);
+            font-size: 13px;
+            color: #888;
+            margin-right: 8px;
+        }
         .category-header .chevron {
             font-size: 18px;
             color: #aaa;
@@ -84,6 +173,7 @@
         .category.collapsed .card-grid {
             display: none;
         }
+        .category.hidden { display: none; }
 
         /* Subcategory label */
         .subcategory-label {
@@ -99,7 +189,7 @@
         /* Card grid */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 12px;
             padding: 14px 4px 4px;
         }
@@ -107,7 +197,7 @@
         /* Individual card */
         .card {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
             padding: 14px 18px;
             background: #eeeee3;
@@ -120,14 +210,35 @@
             font-weight: 600;
             transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,.12);
+            flex-wrap: wrap;
         }
         .card:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 18px rgba(0,0,0,.22);
         }
+        .card.hidden { display: none; }
         .card .icon {
             font-size: 20px;
             flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .card .card-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .card .card-title {
+            display: block;
+        }
+        .card .card-meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 4px;
+        }
+        .card .updated {
+            font-size: 10px;
+            font-weight: 400;
+            color: #888;
         }
 
         /* Category-specific accent colours */
@@ -144,7 +255,6 @@
             letter-spacing: .6px;
             padding: 2px 7px;
             border-radius: 4px;
-            margin-left: auto;
             flex-shrink: 0;
             color: #fff;
         }
@@ -153,6 +263,17 @@
         .badge.landmark { background: #4AA1FF; }
         .badge.shop     { background: #FFA146; color: #333; }
         .badge.route    { background: #7a7a7a; }
+
+        /* "No results" message */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-family: var(--font-nunito);
+            font-size: 15px;
+        }
+        .no-results.visible { display: block; }
 
         /* Footer */
         .home-footer {
@@ -174,63 +295,108 @@
         <p>Browse every page ? organised by category</p>
     </div>
 
+    <!-- Search bar -->
+    <div class="search-bar">
+        <input type="text" id="wiki-search" placeholder="Search pagesÅc (e.g. Veilstone, items, chapter-1)" autocomplete="off">
+        <span class="search-results-count" id="results-count"></span>
+    </div>
+
+    <!-- Tag filter pills -->
+    <div class="tag-filter-bar" id="tag-bar">
+        <span class="tag-clear" id="clear-tags" title="Clear all filters">? Clear</span>
+    </div>
+
+    <!-- No-results message -->
+    <div class="no-results" id="no-results">No pages match your search.</div>
+
     <!-- ??????????????? LOCATIONS ??????????????? -->
     <div class="category" id="cat-locations">
         <div class="category-header" onclick="toggleCategory('cat-locations')">
             <h2>? Locations</h2>
+            <span class="cat-count" data-cat-counter="cat-locations"></span>
             <span class="chevron">Å•</span>
         </div>
         <div class="card-grid">
             <!-- Cities -->
             <div class="subcategory-label" style="grid-column:1/-1;">Cities</div>
-            <a class="card" data-cat="locations" href="Locations/Cities/Solaceon.html">
-                <span class="icon">??</span> Solaceon
-                <span class="badge city">City</span>
+            <a class="card" data-cat="locations" data-tags="location, city, solaceon, pokemon, trainers, items" data-updated="2026-02-22" href="Locations/Cities/Solaceon.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Solaceon Town</span>
+                    <span class="card-meta"><span class="badge city">City</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Cities/Veilstone.html">
-                <span class="icon">??</span> Veilstone
-                <span class="badge city">City</span>
+            <a class="card" data-cat="locations" data-tags="location, city, veilstone, pokemon, trainers, items, homebase" data-updated="2026-02-22" href="Locations/Cities/Veilstone.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Veilstone City</span>
+                    <span class="card-meta"><span class="badge city">City</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
 
             <!-- Dungeons -->
             <div class="subcategory-label" style="grid-column:1/-1;">Dungeons</div>
-            <a class="card" data-cat="locations" href="Locations/Dungeons/Galaxias_Labs.html">
-                <span class="icon">?</span> Galaxias Labs
-                <span class="badge dungeon">Dungeon</span>
+            <a class="card" data-cat="locations" data-tags="location, dungeon, galaxias, veilstone, pokemon, trainers, items, chapter-4" data-updated="2026-02-22" href="Locations/Dungeons/Galaxias_Labs.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Galaxias Labs</span>
+                    <span class="card-meta"><span class="badge dungeon">Dungeon</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Dungeons/Galaxias_Pilot_Plant.html">
-                <span class="icon">??</span> Galaxias Pilot Plant
-                <span class="badge dungeon">Dungeon</span>
+            <a class="card" data-cat="locations" data-tags="location, dungeon, galaxias, veilstone, trainers, items, chapter-2" data-updated="2026-02-22" href="Locations/Dungeons/Galaxias_Pilot_Plant.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Galaxias Pilot Plant</span>
+                    <span class="card-meta"><span class="badge dungeon">Dungeon</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Dungeons/Veilstain.html">
-                <span class="icon">??</span> The Veilstain
-                <span class="badge dungeon">Dungeon</span>
+            <a class="card" data-cat="locations" data-tags="location, dungeon, veilstone, veilstain, pokemon, trainers, items" data-updated="2026-02-22" href="Locations/Dungeons/Veilstain.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">The Veilstain</span>
+                    <span class="card-meta"><span class="badge dungeon">Dungeon</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
 
             <!-- Landmarks -->
             <div class="subcategory-label" style="grid-column:1/-1;">Landmarks</div>
-            <a class="card" data-cat="locations" href="Locations/Landmarks/Meerou_Exhibition.html">
-                <span class="icon">??</span> Meerou Exhibition
-                <span class="badge landmark">Landmark</span>
+            <a class="card" data-cat="locations" data-tags="location, landmark, veilstone, legendary, pokemon, relics" data-updated="2026-02-22" href="Locations/Landmarks/Meerou_Exhibition.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Meerou Exhibition</span>
+                    <span class="card-meta"><span class="badge landmark">Landmark</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Landmarks/Pristine_Lounge.html">
-                <span class="icon">??</span> Pristine Lounge
-                <span class="badge landmark">Landmark</span>
+            <a class="card" data-cat="locations" data-tags="location, landmark, veilstone, pristine-lounge, lark, starters, trainers, items, chapter-1" data-updated="2026-02-22" href="Locations/Landmarks/Pristine_Lounge.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Pristine Lounge</span>
+                    <span class="card-meta"><span class="badge landmark">Landmark</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Landmarks/Rapidash_Ranch.html">
-                <span class="icon">?</span> Rapidash Ranch
-                <span class="badge landmark">Landmark</span>
+            <a class="card" data-cat="locations" data-tags="location, landmark, solaceon, pokemon, trainers, items, rapidash" data-updated="2026-02-22" href="Locations/Landmarks/Rapidash_Ranch.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Rapidash Ranch</span>
+                    <span class="card-meta"><span class="badge landmark">Landmark</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="locations" href="Locations/Landmarks/Veilstone_Harbor.html">
-                <span class="icon">?</span> Veilstone Harbor
-                <span class="badge landmark">Landmark</span>
+            <a class="card" data-cat="locations" data-tags="location, landmark, veilstone, harbor, pokemon, trainers, items" data-updated="2026-02-22" href="Locations/Landmarks/Veilstone_Harbor.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Veilstone Harbor</span>
+                    <span class="card-meta"><span class="badge landmark">Landmark</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
 
             <!-- Shops -->
             <div class="subcategory-label" style="grid-column:1/-1;">Shops</div>
-            <a class="card" data-cat="locations" href="Locations/Shops/Veilstone_Marketplace.html">
-                <span class="icon">?</span> Veilstone Marketplace
-                <span class="badge shop">Shop</span>
+            <a class="card" data-cat="locations" data-tags="location, shop, veilstone, marketplace, items" data-updated="2026-02-22" href="Locations/Shops/Veilstone_Marketplace.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Veilstone Marketplace</span>
+                    <span class="card-meta"><span class="badge shop">Shop</span><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
         </div>
     </div>
@@ -239,38 +405,79 @@
     <div class="category" id="cat-docs">
         <div class="category-header" onclick="toggleCategory('cat-docs')">
             <h2>? Docs</h2>
+            <span class="cat-count" data-cat-counter="cat-docs"></span>
             <span class="chevron">Å•</span>
         </div>
         <div class="card-grid">
-            <a class="card" data-cat="docs" href="Docs/Climate_System.html">
-                <span class="icon">??</span> Climate System
+            <a class="card" data-cat="docs" data-tags="docs, mechanics, environment, weather, seasons" data-updated="2026-02-22" href="Docs/Climate_System.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Climate System</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Credits.html">
-                <span class="icon">?</span> Credits
+            <a class="card" data-cat="docs" data-tags="docs, credits, meta" data-updated="2026-02-22" href="Docs/Credits.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Credits</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Homebase.html">
-                <span class="icon">?</span> Homebase
+            <a class="card" data-cat="docs" data-tags="docs, mechanics, homebase, customization, furniture, veilstone" data-updated="2026-02-22" href="Docs/Homebase.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Homebase</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Item_List.html">
-                <span class="icon">?</span> Item List
+            <a class="card" data-cat="docs" data-tags="docs, items, mechanics, coins, candies, relics, key-items" data-updated="2026-02-22" href="Docs/Item_List.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Item List</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Moves_List.html">
-                <span class="icon">??</span> Moves List
+            <a class="card" data-cat="docs" data-tags="docs, moves, mechanics, tutor, tm" data-updated="2026-02-22" href="Docs/Moves_List.html">
+                <span class="icon">??</span>
+                <span class="card-body">
+                    <span class="card-title">Moves List</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/NPCs.html">
-                <span class="icon">?????</span> NPCs
+            <a class="card" data-cat="docs" data-tags="docs, npcs, characters, merchants, tutor" data-updated="2026-02-22" href="Docs/NPCs.html">
+                <span class="icon">?????</span>
+                <span class="card-body">
+                    <span class="card-title">NPCs</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Phenomena.html">
-                <span class="icon">?</span> Phenomena
+            <a class="card" data-cat="docs" data-tags="docs, mechanics, environment, phenomena, mining, wisps" data-updated="2026-02-22" href="Docs/Phenomena.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Phenomena</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Pokedex.html">
-                <span class="icon">?</span> Pok?dex
+            <a class="card" data-cat="docs" data-tags="docs, pokemon, pokedex" data-updated="2026-02-22" href="Docs/Pokedex.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Pok?dex</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Pokemon.html">
-                <span class="icon">?</span> Pok?mon
+            <a class="card" data-cat="docs" data-tags="docs, pokemon, mechanics, encounters, experience" data-updated="2026-02-22" href="Docs/Pokemon.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Pok?mon</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="docs" href="Docs/Spacetime.html">
-                <span class="icon">?</span> Spacetime
+            <a class="card" data-cat="docs" data-tags="docs, lore, spacetime, distortions" data-updated="2026-02-22" href="Docs/Spacetime.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Spacetime</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
         </div>
     </div>
@@ -279,14 +486,30 @@
     <div class="category" id="cat-base">
         <div class="category-header" onclick="toggleCategory('cat-base')">
             <h2>? Base HTML</h2>
+            <span class="cat-count" data-cat-counter="cat-base"></span>
             <span class="chevron">Å•</span>
         </div>
         <div class="card-grid">
-            <a class="card" data-cat="base" href="BaseHTML/[Tables].html">
-                <span class="icon">?</span> Tables
+            <a class="card" data-cat="base" data-tags="base, template, reference" data-updated="2026-02-22" href="BaseHTML/[Tables].html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Tables</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
-            <a class="card" data-cat="base" href="BaseHTML/Templates.html">
-                <span class="icon">?</span> Templates
+            <a class="card" data-cat="base" data-tags="base, template, reference" data-updated="2026-02-22" href="BaseHTML/Templates.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Templates</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
+            </a>
+            <a class="card" data-cat="base" data-tags="base, template, starter" data-updated="2026-02-22" href="BaseHTML/Template_Page.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">Page Template</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
         </div>
     </div>
@@ -295,11 +518,16 @@
     <div class="category" id="cat-support">
         <div class="category-header" onclick="toggleCategory('cat-support')">
             <h2>?? Support Files</h2>
+            <span class="cat-count" data-cat-counter="cat-support"></span>
             <span class="chevron">Å•</span>
         </div>
         <div class="card-grid">
-            <a class="card" data-cat="support" href="FilediSupporto/BulbaVeilStone.html">
-                <span class="icon">?</span> BulbaVeilStone
+            <a class="card" data-cat="support" data-tags="support, bulbapedia, reference, veilstone" data-updated="2026-02-22" href="FilediSupporto/BulbaVeilStone.html">
+                <span class="icon">?</span>
+                <span class="card-body">
+                    <span class="card-title">BulbaVeilStone</span>
+                    <span class="card-meta"><span class="updated">Feb 22, 2026</span></span>
+                </span>
             </a>
         </div>
     </div>
@@ -308,14 +536,119 @@
 </div>
 
 <script>
-    /* Toggle collapsed state */
+    /* ÑüÑü Toggle collapsed state ÑüÑü */
     function toggleCategory(id) {
         document.getElementById(id).classList.toggle('collapsed');
     }
 
-    /* Count cards */
-    document.getElementById('page-count').textContent =
-        document.querySelectorAll('.card').length;
+    /* ÑüÑü All cards & categories ÑüÑü */
+    const allCards = Array.from(document.querySelectorAll('.card'));
+    const categories = Array.from(document.querySelectorAll('.category'));
+    const noResults = document.getElementById('no-results');
+    const resultsCount = document.getElementById('results-count');
+    const searchInput = document.getElementById('wiki-search');
+
+    /* ÑüÑü Build tag pills from all data-tags ÑüÑü */
+    const tagSet = new Set();
+    allCards.forEach(card => {
+        (card.dataset.tags || '').split(',').forEach(t => {
+            const tag = t.trim();
+            if (tag) tagSet.add(tag);
+        });
+    });
+    const sortedTags = Array.from(tagSet).sort();
+    const tagBar = document.getElementById('tag-bar');
+    const activeTags = new Set();
+
+    sortedTags.forEach(tag => {
+        const pill = document.createElement('span');
+        pill.className = 'tag-pill';
+        pill.textContent = tag;
+        pill.dataset.tag = tag;
+        pill.addEventListener('click', () => {
+            if (activeTags.has(tag)) {
+                activeTags.delete(tag);
+                pill.classList.remove('active');
+            } else {
+                activeTags.add(tag);
+                pill.classList.add('active');
+            }
+            applyFilters();
+        });
+        tagBar.appendChild(pill);
+    });
+
+    /* Clear all tags */
+    document.getElementById('clear-tags').addEventListener('click', () => {
+        activeTags.clear();
+        tagBar.querySelectorAll('.tag-pill.active').forEach(p => p.classList.remove('active'));
+        applyFilters();
+    });
+
+    /* ÑüÑü Filter logic (search + tags) ÑüÑü */
+    function applyFilters() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        allCards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const tags = (card.dataset.tags || '').toLowerCase();
+            const cat = (card.dataset.cat || '').toLowerCase();
+            const searchable = title + ' ' + tags + ' ' + cat;
+
+            // Text match
+            const textMatch = !query || searchable.includes(query);
+
+            // Tag match ? card must have ALL active tags
+            let tagMatch = true;
+            if (activeTags.size > 0) {
+                const cardTags = new Set(tags.split(',').map(t => t.trim()));
+                for (const at of activeTags) {
+                    if (!cardTags.has(at)) { tagMatch = false; break; }
+                }
+            }
+
+            const show = textMatch && tagMatch;
+            card.classList.toggle('hidden', !show);
+            if (show) visibleCount++;
+        });
+
+        // Show/hide categories based on visible cards
+        categories.forEach(cat => {
+            const catCards = cat.querySelectorAll('.card');
+            const anyVisible = Array.from(catCards).some(c => !c.classList.contains('hidden'));
+            cat.classList.toggle('hidden', !anyVisible);
+            // Update counter
+            const counter = cat.querySelector('[data-cat-counter]');
+            if (counter) {
+                const visCount = Array.from(catCards).filter(c => !c.classList.contains('hidden')).length;
+                counter.textContent = visCount + ' page' + (visCount !== 1 ? 's' : '');
+            }
+        });
+
+        // Results feedback
+        if (query || activeTags.size > 0) {
+            resultsCount.textContent = visibleCount + ' result' + (visibleCount !== 1 ? 's' : '');
+            noResults.classList.toggle('visible', visibleCount === 0);
+        } else {
+            resultsCount.textContent = '';
+            noResults.classList.remove('visible');
+        }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    /* ÑüÑü Initial count ÑüÑü */
+    document.getElementById('page-count').textContent = allCards.length;
+
+    /* ÑüÑü Update category counters ÑüÑü */
+    categories.forEach(cat => {
+        const counter = cat.querySelector('[data-cat-counter]');
+        if (counter) {
+            const count = cat.querySelectorAll('.card').length;
+            counter.textContent = count + ' page' + (count !== 1 ? 's' : '');
+        }
+    });
 </script>
 
 </body>
