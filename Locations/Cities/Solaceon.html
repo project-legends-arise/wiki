@@ -1,8 +1,9 @@
 <!-- Apertura Pagina -->
 <!DOCTYPE html><html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solaceon Town</title><link rel="stylesheet" href="..\..\src\Styles\Style.css"></head>
+<title>Solaceon Town</title><link rel="stylesheet" href="../../src/Styles/Style.css"></head>
 <body><div class="container">
+<nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">&rsaquo;</span> Locations <span class="sep">&rsaquo;</span> Solaceon Town</nav>
 
 <h1>Solaceon Town</h1>
     
@@ -15,7 +16,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="..\src\Header\harbor.png" alt="Veilstone Harbor" class="cover"></td>
+                    <td><img src="../../src/Header/harbor.png" alt="Veilstone Harbor" class="cover"></td>
                 </tr>
                 <tr>
                     <td><table>
@@ -53,7 +54,7 @@
                                 <th style="background-color: #775c04;">Location</th>
                             </tr>
                             <tr>
-                                <td><img src="..\src\Townmap\harbormap.png" alt="Veilstone Harbor" class="cover"></td>
+                                <td><img src="../../src/Townmap/harbormap.png" alt="Veilstone Harbor" class="cover"></td>
                             </tr>
                             
                         </table></td>
@@ -63,7 +64,6 @@
 <h1>Solaceon Town</h1>
 <p>The Pristine Lounge is a vibrant jazz club located in the northern district of Veilstone City, nestled at the foot of the Galaxias Pilot Plant and just above the underground area known as the Veilstain. The player character receives here their first Pokémon.
         
-<h3>Qui ci va indice</h3>   
         
 <h2>Description</h2>
 <div class="justified-text">
@@ -82,7 +82,7 @@
 
 <h2>Items</h2>
 <!-----Apertura tabella Item----->
-<div class="tcontainer"><table id="items" class="round red border-bold"><tr><th colspan="2">Item</th><th class="loc">Location</th></tr>
+<div class="tcontainer"><table class="items-table round red border-bold"><tr><th colspan="2">Item</th><th class="loc">Location</th></tr>
 <!-----Entry----->
 <tr>
 <td class="icon"><img src="https://archives.bulbagarden.net/media/upload/d/db/Bag_Data_Card_Sprite.png" alt="Trainer card" class="sprite"></td>
@@ -92,13 +92,13 @@
             
 <h2>Pokemon</h2>
 <!----------Apertura tabella Encounters-------->
-<div class="tcontainer"><table id="wildspawns" class="round gray border-bold">
+<div class="tcontainer"><table class="wildspawns-table round gray border-bold">
 <tr><th class="name roundtl">Pokemon</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate</th></tr>
 <!----Encounter Method---->
 <tr><th colspan="4">Surfing</th></tr><tr>
 <!-----Standard Entry----->
 <td class="pokemon"><table><tr><td>
-<div class="bg-sprite normal"><img src="..\..\src\Pokemon\0263.png" alt="Zigzagoon" class="sprite-medium"></div></td>
+<div class="bg-sprite normal"><img src="../../src/Pokemon/0263.png" alt="Zigzagoon" class="sprite-medium"></div></td>
 <td class="name">Zigzagoon</td></tr></table></td>
 <td class="levels">5-7</td><td colspan="2">40%</td></tr>
 <!----Encounter Method---->
@@ -106,7 +106,7 @@
 <!-----Standard Entry----->
 <tr>
 <td class="pokemon"><table><tr><td>
-<div class="bg-sprite fighting"><img src="..\..\src\Pokemon\0532.png" alt="Timburr" class="sprite-medium"></div></td>
+<div class="bg-sprite fighting"><img src="../../src/Pokemon/0532.png" alt="Timburr" class="sprite-medium"></div></td>
 <td class="name">Timburr</td></tr></table></td>
 <td class="levels">9-10</td><td colspan="2">25%</td></tr>
 <!---------Chiusura Tabella Encounters-------->
@@ -116,4 +116,5 @@
 
 <h1>Related Articles</h1>
 <!-- Chiusura Pagina -->
-</div></body></html>
+</div><script src="../../src/wiki.js"></script>
+</body></html>

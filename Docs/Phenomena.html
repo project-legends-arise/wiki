@@ -1,9 +1,10 @@
 <!-- Funzionamento -->
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phenomena</title><link rel="stylesheet" href="..\\src\Styles\Style.css"></head>
-<body><a href="../index.html"><-- Home</a>
+<title>Phenomena</title><link rel="stylesheet" href="../src/Styles/Style.css"></head>
+<body>
 <div class="container">
+<nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">?</span> Docs <span class="sep">?</span> Phenomena</nav>
 
 <h1>Phenomena</h1>
 <p>Phenomena are recurring overworld events designed to grant the player access to special items. They are triggered simply by walking around in an area, and only one phenomenon can be active at a time.</p>
@@ -18,7 +19,7 @@
 
 <!-----Apertura tabella Item----->
 <div class="tcontainer">
-  <table id="items" class="round grass border-bold">
+  <table class="items-table round grass border-bold">
     <tr>
       <th class="loc">Climate Zone</th>
       <th class="loc">Common</th>
@@ -79,7 +80,7 @@
 
 <p>Mining Spots appear in certain caves after receiving the Mining Kit from the Mining Maniac located in the House on Route 207, just above Oreburgh City. They show up as sparkles on cave walls that can be excavated.</p>
 
-<p>The minigame plays like a mix of Battleship and Minesweeper: the wall is a grid with six soil/rock layers, and each strike with the pick or hammer removes layers (the pick breaks fewer tiles, the hammer breaks more, including diagonals). Each wall hides 2–4 items along with immovable iron blocks that block damage spread. The wall collapses after a set number of strikes, and the player keeps whatever was dug up before collapse.</p>
+<p>The minigame plays like a mix of Battleship and Minesweeper: the wall is a grid with six soil/rock layers, and each strike with the pick or hammer removes layers (the pick breaks fewer tiles, the hammer breaks more, including diagonals). Each wall hides 2�?4 items along with immovable iron blocks that block damage spread. The wall collapses after a set number of strikes, and the player keeps whatever was dug up before collapse.</p>
 
 <p>The Mining Kit improves through <strong>continued successful excavation</strong>. The game tracks the player’s overall mining performance across all Mining Spots.  Each completed excavation contributes progress points. Partial success still counts, while fully uncovering every hidden item is rewarded more strongly. These points accumulate over time and are never lost.</p>
 
@@ -95,4 +96,6 @@
 <p>Gathering 108 Wisps and offering them to the keystone-shaped rock at Solitary Hill will summon Spiritomb. This event can be repeated indefinitely, provided you collect the required number of Wisps each time.</p>
 
 <!-- Chiusura Pagina -->
-</div></body></html>
+</div>
+<script src="../src/wiki.js"></script>
+</body></html>
