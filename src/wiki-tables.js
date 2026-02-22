@@ -594,7 +594,7 @@ ${(rewardCell || ballsCell) ? `<tr>${rewardCell}${ballsCell}</tr>` : ''}
 
        Usage:  <table data-sortable ...>
        „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
-    document.querySelectorAll('table[data-sortable], .items-table, .wildspawns-table, [class*="items-doc"]').forEach(table => {
+    document.querySelectorAll('table[data-sortable], [class*="items-doc"]').forEach(table => {
         const headerRow = table.querySelector('tr');
         if (!headerRow) return;
         const ths = Array.from(headerRow.querySelectorAll('th'));
