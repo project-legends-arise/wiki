@@ -322,8 +322,10 @@ ${movesHtml}
         table.querySelectorAll('tr[data-pokemon], tr[data-name], tr[data-method]').forEach(tr => {
             if (tr.dataset.method !== undefined) {
                 // Encounter method separator
-                tr.innerHTML = `<th colspan="4">${tr.dataset.method}</th>`;
+                const mClass = tr.dataset.methodClass ? ` class="${tr.dataset.methodClass}"` : '';
+                tr.innerHTML = `<th colspan="4"${mClass}>${tr.dataset.method}</th>`;
                 tr.removeAttribute('data-method');
+                tr.removeAttribute('data-method-class');
                 return;
             }
             const name   = tr.dataset.name;

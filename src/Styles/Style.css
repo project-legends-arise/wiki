@@ -517,6 +517,50 @@ table.intro {
     text-align: center;
 }
 
+/* Encounter method / phenomena stripe labels */
+#wildspawns th.enc-walking, .wildspawns-table th.enc-walking {
+    background-color: #2e7d32;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-surfing, .wildspawns-table th.enc-surfing {
+    background-color: #1565c0;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-shadow, .wildspawns-table th.enc-shadow {
+    background-color: #311b5e;
+    color: #d4b4ff;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-double, .wildspawns-table th.enc-double {
+    background-color: #c07a00;
+    color: #fff8dc;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-ripple, .wildspawns-table th.enc-ripple {
+    background-color: #00838f;
+    color: #e0f7fa;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-day, .wildspawns-table th.enc-day {
+    background-color: #e8a800;
+    color: #1a1000;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-night, .wildspawns-table th.enc-night {
+    background-color: #1a2f4a;
+    color: #9ab8d4;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+
 /*Stili ALLENATORI COMUNI*/
 .trainers{
     width: fit-content;
