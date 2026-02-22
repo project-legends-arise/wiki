@@ -383,16 +383,21 @@ ${movesHtml}
                 });
             }
             // Additional (2..6)
+            // NOTE: data-pkmn-name-2 Å® dataset key is 'pkmnName-2' (not 'pkmnName2')
+            // because the digit after the hyphen is not camelCased by the dataset API.
+            // Use getAttribute to avoid this gotcha.
             for (let i = 2; i <= 6; i++) {
-                if (tr.dataset['pkmnName' + i] || tr.dataset['pokemon' + i]) {
-                    const pName = tr.dataset['pkmnName' + i] || '';
+                const pkmnNameI = tr.getAttribute('data-pkmn-name-' + i);
+                const pokemonI  = tr.getAttribute('data-pokemon-' + i);
+                if (pkmnNameI || pokemonI) {
+                    const pName = pkmnNameI || '';
                     const pLookup = resolvePkmn(pName);
                     team.push({
-                        dex:   tr.dataset['pokemon' + i] || (pLookup ? pLookup.d : '0000'),
+                        dex:   pokemonI || (pLookup ? pLookup.d : '0000'),
                         name:  pName,
-                        type:  tr.dataset['pkmnType' + i] || (pLookup ? pLookup.t : 'normal'),
-                        level: tr.dataset['pkmnLevel' + i] || '?',
-                        item:  tr.dataset['pkmnItem' + i] || 'None'
+                        type:  tr.getAttribute('data-pkmn-type-' + i) || (pLookup ? pLookup.t : 'normal'),
+                        level: tr.getAttribute('data-pkmn-level-' + i) || '?',
+                        item:  tr.getAttribute('data-pkmn-item-' + i) || 'None'
                     });
                 }
             }

@@ -1094,6 +1094,7 @@ table.striped tr:nth-child(even) td {
     transform: translateY(-50%) translateX(calc(-100% + 26px));
 }
 .wiki-sidebar-toggle {
+    order: 1;  /* Place toggle AFTER content so it stays visible when collapsed */
     writing-mode: vertical-lr;
     display: flex;
     align-items: center;

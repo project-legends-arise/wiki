@@ -243,11 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle collapse
             const toggleBtn = sidebar.querySelector('.wiki-sidebar-toggle');
             const collapsed = localStorage.getItem('wiki-sidebar-collapsed') === '1';
-            if (collapsed) sidebar.classList.add('collapsed');
+            if (collapsed) {
+                sidebar.classList.add('collapsed');
+                toggleBtn.textContent = '?';
+            }
             toggleBtn.addEventListener('click', () => {
                 sidebar.classList.toggle('collapsed');
-                localStorage.setItem('wiki-sidebar-collapsed',
-                    sidebar.classList.contains('collapsed') ? '1' : '0');
+                const isCollapsed = sidebar.classList.contains('collapsed');
+                toggleBtn.textContent = isCollapsed ? '?' : '?';
+                localStorage.setItem('wiki-sidebar-collapsed', isCollapsed ? '1' : '0');
             });
         }
     }
