@@ -86,39 +86,25 @@
 
 <h2>Items</h2>
 <!-----Apertura tabella Item----->
-<div class="tcontainer"><table class="items-table round red border-bold"><tr><th colspan="2">Item</th><th class="loc">Location</th></tr>
-<!-----Entry----->
-<tr>
-<td class="icon"><img src="https://archives.bulbagarden.net/media/upload/d/db/Bag_Data_Card_Sprite.png" alt="Trainer card" class="sprite"></td>
-<td class="name">Escape Rope</td><td class="location">Processing Room, next to</td></tr>
-<!-----Chiusura tabella Item----->
-</table></div>
+<div class="tcontainer">
+<table class="items-table round red border-bold" data-wiki-table="items">
+<tr data-item-id="0" data-name="Escape Rope" data-loc="Processing Room, next to"></tr>
+</table>
+</div>
             
 <h2>Pokemon</h2>
 <!----------Apertura tabella Encounters-------->
-<div class="tcontainer"><table class="wildspawns-table round gray border-bold">
-<tr><th class="name roundtl">Pokemon</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate</th></tr>
-<!----Encounter Method---->
-<tr><th colspan="4">Surfing</th></tr><tr>
-<!-----Standard Entry----->
-<td class="pokemon"><table><tr><td>
-<div class="bg-sprite normal"><img src="../../src/Pokemon/0263.png" alt="Zigzagoon" class="sprite-medium"></div></td>
-<td class="name">Zigzagoon</td></tr></table></td>
-<td class="levels">5-7</td><td colspan="2">40%</td></tr>
-<!----Encounter Method---->
-<tr><th colspan="4">Super Rod</th></tr>
-<!-----Standard Entry----->
-<tr>
-<td class="pokemon"><table><tr><td>
-<div class="bg-sprite fighting"><img src="../../src/Pokemon/0532.png" alt="Timburr" class="sprite-medium"></div></td>
-<td class="name">Timburr</td></tr></table></td>
-<td class="levels">9-10</td><td colspan="2">25%</td></tr>
-<!---------Chiusura Tabella Encounters-------->
-</table></div>
-         
-</table>    
+<div class="tcontainer">
+<table class="wildspawns-table round gray border-bold" data-wiki-table="wild">
+<tr data-method="Surfing"></tr>
+<tr data-pokemon="0263" data-name="Zigzagoon" data-type="normal" data-levels="5-7" data-rate="40%"></tr>
+<tr data-method="Super Rod"></tr>
+<tr data-pokemon="0532" data-name="Timburr" data-type="fighting" data-levels="9-10" data-rate="25%"></tr>
+</table>
+</div>
 
 <h1>Related Articles</h1>
 <!-- Chiusura Pagina -->
-</div><script src="../../src/wiki.js"></script>
+</div><script src="../../src/wiki-tables.js"></script>
+<script src="../../src/wiki.js"></script>
 </body></html>
