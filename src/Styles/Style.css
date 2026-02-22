@@ -39,7 +39,7 @@ body{
 }
 
 .container {
-    float: center;
+    margin: 0 auto;
     padding: 20px;
     width: 1000px;
     border: 1px solid gray;
@@ -133,108 +133,42 @@ div.tcontainer{
 }
 .round {
     border-radius: var(--table-border-radius);
-    -moz-border-radius: var(--table-border-radius);
-    -webkit-border-radius: var(--table-border-radius);
-    -khtml-border-radius: var(--table-border-radius);
-    -icab-border-radius: var(--table-border-radius);
-    -o-border-radius: var(--table-border-radius);
 }
 
 .roundtl {
     border-top-left-radius: var(--table-border-radius);
-    -moz-border-radius-topleft: var(--table-border-radius);
-    -webkit-border-top-left-radius: var(--table-border-radius);
-    -khtml-border-top-left-radius: var(--table-border-radius);
-    -icab-border-top-left-radius: var(--table-border-radius);
-    -o-border-top-left-radius: var(--table-border-radius);
 }
 
 .roundtr {
     border-top-right-radius: var(--table-border-radius);
-    -moz-border-radius-topright: var(--table-border-radius);
-    -webkit-border-top-right-radius: var(--table-border-radius);
-    -khtml-border-top-right-radius: var(--table-border-radius);
-    -icab-border-top-right-radius: var(--table-border-radius);
-    -o-border-top-right-radius: var(--table-border-radius);
 }
 
 .roundbl {
     border-bottom-left-radius: var(--table-border-radius);
-    -moz-border-radius-bottomleft: var(--table-border-radius);
-    -webkit-border-bottom-left-radius: var(--table-border-radius);
-    -khtml-border-bottom-left-radius: var(--table-border-radius);
-    -icab-border-bottom-left-radius: var(--table-border-radius);
-    -o-border-bottom-left-radius: var(--table-border-radius);
 }
 
 .roundbr {
     border-bottom-right-radius: var(--table-border-radius);
-    -moz-border-radius-bottomright: var(--table-border-radius);
-    -webkit-border-bottom-right-radius: var(--table-border-radius);
-    -khtml-border-bottom-right-radius: var(--table-border-radius);
-    -icab-border-bottom-right-radius: var(--table-border-radius);
-    -o-border-bottom-right-radius: var(--table-border-radius);
 }
 
 .roundbottom {
     border-bottom-left-radius: var(--table-border-radius);
     border-bottom-right-radius: var(--table-border-radius);
-    -moz-border-radius-bottomleft: var(--table-border-radius);
-    -moz-border-radius-bottomright: var(--table-border-radius);
-    -webkit-border-bottom-left-radius: var(--table-border-radius);
-    -webkit-border-bottom-right-radius: var(--table-border-radius);
-    -khtml-border-bottom-left-radius: var(--table-border-radius);
-    -khtml-border-bottom-right-radius: var(--table-border-radius);
-    -icab-border-bottom-left-radius: var(--table-border-radius);
-    -icab-border-bottom-right-radius: var(--table-border-radius);
-    -o-border-bottom-left-radius: var(--table-border-radius);
-    -o-border-bottom-right-radius: var(--table-border-radius);
 }
 
 .roundtop {
     border-top-left-radius: var(--table-border-radius);
     border-top-right-radius: var(--table-border-radius);
-    -moz-border-radius-topleft: var(--table-border-radius);
-    -moz-border-radius-topright: var(--table-border-radius);
-    -webkit-border-top-left-radius: var(--table-border-radius);
-    -webkit-border-top-right-radius: var(--table-border-radius);
-    -khtml-border-top-left-radius: var(--table-border-radius);
-    -khtml-border-top-right-radius: var(--table-border-radius);
-    -icab-border-top-left-radius: var(--table-border-radius);
-    
-    -icab-border-top-right-radius: var(--table-border-radius);
-    -o-border-top-left-radius: var(--table-border-radius);
-    -o-border-top-right-radius: var(--table-border-radius);
 }
 
 .roundleft {
     border-top-left-radius: var(--table-border-radius);
     border-bottom-left-radius: var(--table-border-radius);
-    -moz-border-radius-topleft: var(--table-border-radius);
-    -moz-border-radius-bottomleft: var(--table-border-radius);
-    -webkit-border-top-left-radius: var(--table-border-radius);
-    -webkit-border-bottom-left-radius: var(--table-border-radius);
-    -khtml-border-top-left-radius: var(--table-border-radius);
-    -khtml-border-bottom-left-radius: var(--table-border-radius);
-    -icab-border-top-left-radius: var(--table-border-radius);
-    -icab-border-bottom-left-radius: var(--table-border-radius);
-    -o-border-top-left-radius: var(--table-border-radius);
-    -o-border-bottom-left-radius: var(--table-border-radius);
 }
 
 .roundright {
     border-bottom-right-radius: var(--table-border-radius);
     border-top-right-radius: var(--table-border-radius);
-    -moz-border-radius-bottomright: var(--table-border-radius);
-    -moz-border-radius-topright: var(--table-border-radius);
-    -webkit-border-bottom-right-radius: var(--table-border-radius);
-    -webkit-border-top-right-radius: var(--table-border-radius);
-    -khtml-border-bottom-right-radius: var(--table-border-radius);
-    -khtml-border-top-right-radius: var(--table-border-radius);
-    -icab-border-bottom-right-radius: var(--table-border-radius);
-    -icab-border-top-right-radius: var(--table-border-radius);
-    -o-border-bottom-right-radius: var(--table-border-radius);
-    -o-border-top-right-radius: var(--table-border-radius);
 }
 
 .gridlayout {
@@ -1140,4 +1074,137 @@ table.striped tr:nth-child(even) td {
     margin-left: auto;
     font-style: italic;
     white-space: nowrap;
+}
+
+/* ???????????????????????????????????????????
+   SIDEBAR QUICK-NAV  (generated by wiki.js)
+   Toggle off:  localStorage.setItem('wiki-sidebar','off')
+   ??????????????????????????????????????????? */
+.wiki-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 200;
+    display: flex;
+    align-items: stretch;
+    transition: transform .25s ease;
+}
+.wiki-sidebar.collapsed {
+    transform: translateY(-50%) translateX(calc(-100% + 26px));
+}
+.wiki-sidebar-toggle {
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    padding: 12px 0;
+    background: #3a7d44;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0 6px 6px 0;
+    user-select: none;
+    letter-spacing: 1px;
+    box-shadow: 2px 0 8px rgba(0,0,0,.18);
+    transition: background .15s;
+}
+.wiki-sidebar-toggle:hover { background: #2e6336; }
+.wiki-sidebar.collapsed .wiki-sidebar-toggle::after {
+    content: ' Nav';
+    font-size: 11px;
+    margin-top: 6px;
+}
+.wiki-sidebar-content {
+    background: #eeeee3;
+    border: 2px solid #c5c5b5;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    min-width: 170px;
+    max-width: 220px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 12px rgba(0,0,0,.15);
+}
+.wiki-sidebar-title {
+    font-family: var(--font-nunito);
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+.wiki-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.wiki-sidebar li {
+    margin: 2px 0;
+}
+.wiki-sidebar li a {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #002bb8;
+    text-decoration: none;
+    font-family: var(--font-nunito);
+    font-size: 13px;
+    transition: background .12s;
+}
+.wiki-sidebar li a:hover {
+    background: #d6e9d8;
+}
+.wiki-sidebar li.current a {
+    background: #4AA14D;
+    color: #fff;
+    font-weight: 700;
+}
+.wiki-sidebar-home {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #ccc;
+}
+.wiki-sidebar-home a {
+    color: #666;
+    text-decoration: none;
+    font-family: var(--font-nunito);
+    font-size: 12px;
+}
+.wiki-sidebar-home a:hover { color: #002bb8; }
+
+/* Hide sidebar on narrow screens */
+@media (max-width: 900px) {
+    .wiki-sidebar { display: none; }
+}
+
+/* ???????????????????????????????????????????
+   TABLE FILTER INPUT  (generated by wiki-tables.js)
+   ??????????????????????????????????????????? */
+.wiki-table-filter {
+    display: block;
+    width: 100%;
+    max-width: var(--table-max-width);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border: 2px solid #c5c5b5;
+    border-radius: 6px;
+    background: #f9f9f0;
+    font-family: var(--font-nunito);
+    font-size: 13px;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .2s;
+}
+.wiki-table-filter:focus {
+    border-color: #4AA14D;
+}
+.wiki-table-filter::placeholder {
+    color: #aaa;
 }

@@ -740,3 +740,65 @@ const TRAINER_ALIASES = {
   "Worker SM":           "Worker_SM",
   "Worker Wint":         "Worker_Wint"
 };
+
+/* ═══════════════════════════════════════════
+   WIKI_NAV — Page manifest for sidebar navigation.
+   Keys are section labels; each entry is { href, title }.
+   Paths are relative to the wiki root.
+   ═══════════════════════════════════════════ */
+const WIKI_NAV = {
+  "Cities": [
+    { href: "Locations/Cities/Solaceon.html",              title: "Solaceon Town" },
+    { href: "Locations/Cities/Veilstone.html",             title: "Veilstone City" }
+  ],
+  "Routes": [
+    { href: "Locations/Routes/Route_205.html",             title: "Route 205" },
+    { href: "Locations/Routes/Route_206.html",             title: "Route 206" },
+    { href: "Locations/Routes/Route_207.html",             title: "Route 207" },
+    { href: "Locations/Routes/Route_208.html",             title: "Route 208" },
+    { href: "Locations/Routes/Route_209.html",             title: "Route 209" },
+    { href: "Locations/Routes/Route_210.html",             title: "Route 210" },
+    { href: "Locations/Routes/Route_211.html",             title: "Route 211" },
+    { href: "Locations/Routes/Route_215.html",             title: "Route 215" },
+    { href: "Locations/Routes/Route_216.html",             title: "Route 216" },
+    { href: "Locations/Routes/Route_217.html",             title: "Route 217" }
+  ],
+  "Dungeons": [
+    { href: "Locations/Dungeons/Galaxias_Labs.html",       title: "Galaxias Labs" },
+    { href: "Locations/Dungeons/Galaxias_Pilot_Plant.html",title: "Galaxias Pilot Plant" },
+    { href: "Locations/Dungeons/Veilstain.html",           title: "The Veilstain" },
+    { href: "Locations/Dungeons/Solaceon_Ruins.html",      title: "Solaceon Ruins" },
+    { href: "Locations/Dungeons/The_Miragescape.html",     title: "The Miragescape" },
+    { href: "Locations/Dungeons/Abandoned_Warehouse.html", title: "Abandoned Warehouse" },
+    { href: "Locations/Dungeons/Mount_Coronet.html",       title: "Mount Coronet" }
+  ],
+  "Landmarks": [
+    { href: "Locations/Landmarks/Meerou_Exhibition.html",  title: "Meerou Exhibition" },
+    { href: "Locations/Landmarks/Pristine_Lounge.html",    title: "Pristine Lounge" },
+    { href: "Locations/Landmarks/Rapidash_Ranch.html",     title: "Rapidash Ranch" },
+    { href: "Locations/Landmarks/Veilstone_Harbor.html",   title: "Veilstone Harbor" },
+    { href: "Locations/Landmarks/Galerie_Pradau.html",     title: "Galerie Pradau" },
+    { href: "Locations/Landmarks/DreamLab.html",           title: "DreamLab" },
+    { href: "Locations/Landmarks/Lily_Park.html",          title: "Lily Park" },
+    { href: "Locations/Landmarks/Windrose_Cliffs.html",    title: "Windrose Cliffs" },
+    { href: "Locations/Landmarks/Lustrous_Academy.html",   title: "Lustrous Academy" },
+    { href: "Locations/Landmarks/Celestica_Memorial.html", title: "Celestica Memorial" }
+  ],
+  "Shops": [
+    { href: "Locations/Shops/Veilstone_Marketplace.html",  title: "Veilstone Marketplace" },
+    { href: "Locations/Shops/Solace_Cafe.html",            title: "Solace Café" },
+    { href: "Locations/Shops/Coronet_Apothecary.html",     title: "Coronet Apothecary" }
+  ],
+  "Docs": [
+    { href: "Docs/Climate_System.html",  title: "Climate System" },
+    { href: "Docs/Credits.html",         title: "Credits" },
+    { href: "Docs/Homebase.html",        title: "Homebase" },
+    { href: "Docs/Item_List.html",       title: "Item List" },
+    { href: "Docs/Moves_List.html",      title: "Moves List" },
+    { href: "Docs/NPCs.html",            title: "NPCs" },
+    { href: "Docs/Phenomena.html",       title: "Phenomena" },
+    { href: "Docs/Pokedex.html",         title: "Pokédex" },
+    { href: "Docs/Pokemon.html",         title: "Pokémon" },
+    { href: "Docs/Spacetime.html",       title: "Spacetime" }
+  ]
+};

@@ -190,7 +190,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
-       5.  PAGE FOOTER ? Last-updated & category tags
+       5.  SIDEBAR QUICK-NAV
+       Builds a collapsible sidebar listing sibling
+       pages in the same section (uses WIKI_NAV from
+       wiki-data.js).
+
+       TOGGLE OFF:
+         Set  localStorage.setItem('wiki-sidebar','off')
+         in your browser console to disable the sidebar.
+         To re-enable:  localStorage.removeItem('wiki-sidebar')
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
+    const sidebarEnabled = typeof WIKI_NAV !== 'undefined'
+        && localStorage.getItem('wiki-sidebar') !== 'off';
+    if (sidebarEnabled) {
+        // Determine current page path relative to wiki root
+        const pagePath = location.pathname.replace(/\\/g, '/');
+
+        // Find which section contains this page
+        let currentSection = null;
+        let currentPages   = null;
+        for (const [section, pages] of Object.entries(WIKI_NAV)) {
+            if (pages.some(p => pagePath.endsWith(p.href) || pagePath.endsWith('/' + p.href))) {
+                currentSection = section;
+                currentPages = pages;
+                break;
+            }
+        }
+
+        if (currentSection && currentPages && currentPages.length > 1) {
+            // Resolve relative prefix from Style.css link
+            const styleLink2 = document.querySelector('link[href*="Style.css"]');
+            let navPrefix = '../../';
+            if (styleLink2) {
+                const href2 = styleLink2.getAttribute('href');
+                navPrefix = href2.replace(/src\/Styles\/Style\.css$/, '');
+            }
+
+            const sidebar = document.createElement('nav');
+            sidebar.className = 'wiki-sidebar';
+            sidebar.innerHTML = `
+                <div class="wiki-sidebar-toggle" title="Toggle sidebar">?</div>
+                <div class="wiki-sidebar-content">
+                    <div class="wiki-sidebar-title">${currentSection}</div>
+                    <ul>${currentPages.map(p => {
+                        const isCurrent = pagePath.endsWith(p.href) || pagePath.endsWith('/' + p.href);
+                        return `<li${isCurrent ? ' class="current"' : ''}><a href="${navPrefix}${p.href}">${p.title}</a></li>`;
+                    }).join('')}</ul>
+                    <div class="wiki-sidebar-home"><a href="${navPrefix}index.html">© Home</a></div>
+                </div>`;
+            document.body.appendChild(sidebar);
+
+            // Toggle collapse
+            const toggleBtn = sidebar.querySelector('.wiki-sidebar-toggle');
+            const collapsed = localStorage.getItem('wiki-sidebar-collapsed') === '1';
+            if (collapsed) sidebar.classList.add('collapsed');
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                localStorage.setItem('wiki-sidebar-collapsed',
+                    sidebar.classList.contains('collapsed') ? '1' : '0');
+            });
+        }
+    }
+
+
+    /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       6.  PAGE FOOTER ? Last-updated & category tags
        Reads <meta name="wiki-updated">, wiki-category,
        wiki-tags and renders a footer bar at the bottom
        of .container.

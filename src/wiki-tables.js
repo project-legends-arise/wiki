@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         return `<div class="tcontainer"><table class="pkmn round ${primaryType}"><tr>
-<td class="round"><img src="${pkmnImg(dex)}" alt="${name}" class="sprite-large"></td>
+<td class="round"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-large"></td>
 <td class="transparent" rowspan="2"><dl>
 <dt>Type:</dt><dt>${typeBadges(type)}</dt>
 ${abilityHtml}
@@ -254,7 +254,7 @@ ${movesHtml}
             const id   = tr.dataset.itemId;
             const name = tr.dataset.name;
             const loc  = tr.dataset.loc || '';
-            tr.innerHTML = `<td class="icon"><img src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${loc}</td>`;
+            tr.innerHTML = `<td class="icon"><img loading="lazy" src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${loc}</td>`;
             tr.removeAttribute('data-item-id');
             tr.removeAttribute('data-name');
             tr.removeAttribute('data-loc');
@@ -280,7 +280,7 @@ ${movesHtml}
             const pocket = tr.dataset.pocket || '';
             const effect = tr.dataset.effect || '';
             const price  = tr.dataset.price || '';
-            tr.innerHTML = `<td class="icon"><img src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${pocket}</td><td class="location">${effect}</td><td class="location">${price}</td>`;
+            tr.innerHTML = `<td class="icon"><img loading="lazy" src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${pocket}</td><td class="location">${effect}</td><td class="location">${price}</td>`;
             clearDataAttrs(tr);
         });
         table.removeAttribute('data-wiki-table');
@@ -302,7 +302,7 @@ ${movesHtml}
             const name    = tr.dataset.name;
             const loc     = tr.dataset.loc || '';
             const purpose = tr.dataset.purpose || '';
-            tr.innerHTML = `<td class="icon"><img src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${loc}</td><td class="location">${purpose}</td>`;
+            tr.innerHTML = `<td class="icon"><img loading="lazy" src="${itemImg(id)}" alt="${name}" class="sprite"></td><td class="name">${name}</td><td class="location">${loc}</td><td class="location">${purpose}</td>`;
             clearDataAttrs(tr);
         });
         table.removeAttribute('data-wiki-table');
@@ -330,6 +330,7 @@ ${movesHtml}
             const lookup = resolvePkmn(name);
             const dex    = tr.dataset.pokemon || (lookup ? lookup.d : '0000');
             const type   = (tr.dataset.type || (lookup ? lookup.t : 'normal')).toLowerCase();
+            const primaryType = type.split(',')[0].trim();
             const levels = tr.dataset.levels || '';
             const rate   = tr.dataset.rate;
             const day    = tr.dataset.day;
@@ -342,7 +343,7 @@ ${movesHtml}
                 rateHtml = `<td colspan="2">${rate || ''}</td>`;
             }
 
-            tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${type}"><img src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name">${name}</td></tr></table></td><td class="levels">${levels}</td>${rateHtml}`;
+            tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name">${name}</td></tr></table></td><td class="levels">${levels}</td>${rateHtml}`;
             clearDataAttrs(tr);
         });
         table.removeAttribute('data-wiki-table');
@@ -399,7 +400,7 @@ ${movesHtml}
             const teamCount = team.length || 1;
 
             // Build trainer icon cell
-            let trainerIconHtml = `<table class="icon"><tr><td><img src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
+            let trainerIconHtml = `<table class="icon"><tr><td><img loading="lazy" src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
             if (dblBattle) {
                 trainerIconHtml += `<tr><td class="round electrichl">Double Battle</td></tr>`;
             }
@@ -408,7 +409,7 @@ ${movesHtml}
             // Build Pok?mon cells
             const pkmnCells = team.map(p => {
                 const types = p.type;
-                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round">${p.name} Lv.${p.level}</td></tr></table></td>`;
+                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img loading="lazy" src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round">${p.name} Lv.${p.level}</td></tr></table></td>`;
             });
 
             // Replace the data row with trainer row(s)
@@ -477,7 +478,7 @@ ${movesHtml}
         const spriteColorClass = vitColor === 'lark' ? 'lark-light' : vitColor;
 
         // Build trainer info area
-        let trainerSprites = `<td class="transparent"><div class="trainer-bgsprite ${spriteColorClass}"><img src="${trainerImg(trainerFile)}" class="sprite-large"></div></td>`;
+        let trainerSprites = `<td class="transparent"><div class="trainer-bgsprite ${spriteColorClass}"><img loading="lazy" src="${trainerImg(trainerFile)}" class="sprite-large"></div></td>`;
 
         let infoBlock = `<td class="info round ${infoColorClass}"><dl>`;
         if (trainerTitle) infoBlock += `<dt><table-text-big><b>${trainerTitle}</b></table-text-big></dt>`;
@@ -488,15 +489,15 @@ ${movesHtml}
         if (trainer2File) {
             const spriteColor2 = vitColor2 || vitColor;
             trainerSprites += infoBlock;
-            trainerSprites += `<td class="transparent"><div class="trainer-bgsprite ${spriteColor2}"><img src="${trainerImg(trainer2File)}" class="sprite-large"></div></td>`;
+            trainerSprites += `<td class="transparent"><div class="trainer-bgsprite ${spriteColor2}"><img loading="lazy" src="${trainerImg(trainer2File)}" class="sprite-large"></div></td>`;
         } else {
             trainerSprites += infoBlock;
         }
 
         // Pok?ball preview
         let ballsHtml = '';
-        for (let i = 0; i < ballsFull; i++)  ballsHtml += `<img src="${BALLFULL}" alt="Pok?mon">`;
-        for (let i = 0; i < ballsEmpty; i++) ballsHtml += `<img src="${BALLEMPTY}" alt="Empty">`;
+        for (let i = 0; i < ballsFull; i++)  ballsHtml += `<img loading="lazy" src="${BALLFULL}" alt="Pok?mon">`;
+        for (let i = 0; i < ballsEmpty; i++) ballsHtml += `<img loading="lazy" src="${BALLEMPTY}" alt="Empty">`;
 
         const rewardCell = reward
             ? `<td class="transparent"><table-text-small>Reward:<br><b>${reward}</b></table-text-small></td>`
@@ -541,7 +542,7 @@ ${movesHtml}
             }
 
             teamCards += `<table class="pkmn round ${primaryType}"><tr>
-<td class="round"><img src="${pkmnImg(dex)}" alt="${name}" class="sprite-large"></td>
+<td class="round"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-large"></td>
 <td class="transparent" rowspan="2"><dl>
 <dt>Type:</dt><dt>${typeBadges(type)}</dt>
 ${abilityHtml}
@@ -582,4 +583,126 @@ ${(rewardCell || ballsCell) ? `<tr>${rewardCell}${ballsCell}</tr>` : ''}
         const attrs = Array.from(el.attributes).filter(a => a.name.startsWith('data-'));
         attrs.forEach(a => el.removeAttribute(a.name));
     }
+
+
+    /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       SORTABLE TABLES  (opt-in via data-sortable)
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       Adds click-to-sort on header cells for any
+       table with the data-sortable attribute OR for
+       items-doc tables (auto-enabled).
+
+       Usage:  <table data-sortable ...>
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
+    document.querySelectorAll('table[data-sortable], .items-table, .wildspawns-table, [class*="items-doc"]').forEach(table => {
+        const headerRow = table.querySelector('tr');
+        if (!headerRow) return;
+        const ths = Array.from(headerRow.querySelectorAll('th'));
+        if (ths.length === 0) return;
+
+        // Track sort state per column
+        const sortState = {};  // colIndex ¨ 'asc' | 'desc'
+
+        ths.forEach((th, colIdx) => {
+            // Skip columns with colspan > 1 unless it's the "Item" header (colspan=2)
+            const cs = parseInt(th.getAttribute('colspan') || '1');
+            if (cs > 2) return;
+
+            th.style.cursor = 'pointer';
+            th.style.userSelect = 'none';
+            th.title = 'Click to sort';
+            const indicator = document.createElement('span');
+            indicator.className = 'sort-indicator';
+            indicator.textContent = ' ?';
+            indicator.style.fontSize = '11px';
+            indicator.style.opacity = '0.5';
+            th.appendChild(indicator);
+
+            th.addEventListener('click', () => {
+                const dir = sortState[colIdx] === 'asc' ? 'desc' : 'asc';
+                sortState[colIdx] = dir;
+
+                // Reset other indicators
+                ths.forEach((h, i) => {
+                    const ind = h.querySelector('.sort-indicator');
+                    if (ind) ind.textContent = i === colIdx
+                        ? (dir === 'asc' ? ' £' : ' ¥')
+                        : ' ?';
+                });
+
+                // Gather sortable rows (skip header & method separator rows)
+                const rows = Array.from(table.querySelectorAll('tr')).filter(r => {
+                    if (r === headerRow) return false;
+                    // Skip method separators (rows that are all <th>)
+                    if (r.querySelector('th') && !r.querySelector('td')) return false;
+                    return true;
+                });
+
+                // Determine the actual cell index accounting for colspan
+                let actualIdx = 0;
+                for (let i = 0; i < colIdx; i++) {
+                    actualIdx += parseInt(ths[i].getAttribute('colspan') || '1');
+                }
+
+                rows.sort((a, b) => {
+                    const cellA = a.children[actualIdx];
+                    const cellB = b.children[actualIdx];
+                    if (!cellA || !cellB) return 0;
+                    let valA = (cellA.textContent || '').trim();
+                    let valB = (cellB.textContent || '').trim();
+
+                    // Try numeric comparison
+                    const numA = parseFloat(valA.replace(/[^0-9.\-]/g, ''));
+                    const numB = parseFloat(valB.replace(/[^0-9.\-]/g, ''));
+                    if (!isNaN(numA) && !isNaN(numB)) {
+                        return dir === 'asc' ? numA - numB : numB - numA;
+                    }
+                    // String comparison
+                    return dir === 'asc'
+                        ? valA.localeCompare(valB)
+                        : valB.localeCompare(valA);
+                });
+
+                // Re-append in sorted order
+                const parent = rows[0]?.parentNode;
+                if (parent) rows.forEach(r => parent.appendChild(r));
+            });
+        });
+
+        table.removeAttribute('data-sortable');
+    });
+
+
+    /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       FILTERABLE TABLES  (opt-in via data-filterable)
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       Adds a search/filter input above the table.
+       Auto-enabled for items-doc tables.
+
+       Usage:  <table data-filterable ...>
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
+    document.querySelectorAll('table[data-filterable], [class*="items-doc"]').forEach(table => {
+        const wrapper = table.closest('.tcontainer') || table.parentElement;
+
+        const filterInput = document.createElement('input');
+        filterInput.type = 'text';
+        filterInput.placeholder = 'Filter rowsc';
+        filterInput.className = 'wiki-table-filter';
+        wrapper.insertBefore(filterInput, table);
+
+        filterInput.addEventListener('input', () => {
+            const query = filterInput.value.trim().toLowerCase();
+            const rows = Array.from(table.querySelectorAll('tr'));
+            rows.forEach((r, i) => {
+                if (i === 0) return; // skip header
+                // Keep method separators visible
+                if (r.querySelector('th') && !r.querySelector('td')) return;
+                const text = (r.textContent || '').toLowerCase();
+                r.style.display = !query || text.includes(query) ? '' : 'none';
+            });
+        });
+
+        table.removeAttribute('data-filterable');
+    });
+
 });
