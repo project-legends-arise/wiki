@@ -1,13 +1,21 @@
 /**
  * wiki-tables.js ? Plug-and-play table generator for the wiki.
- * Include BEFORE wiki.js:
+ *
+ * REQUIRED: Load wiki-data.js FIRST for auto-resolve:
+ *   <script src="../../src/wiki-data.js"></script>
  *   <script src="../../src/wiki-tables.js"></script>
  *   <script src="../../src/wiki.js"></script>
  *
  * „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
  *  HOW TO USE ? write simple data rows, the script builds the
- *  full tables automatically. Image paths are resolved from
- *  data attributes (item IDs, Pok?dex numbers, trainer names).
+ *  full tables automatically.
+ *
+ *  AUTO-RESOLVE (when wiki-data.js is loaded):
+ *    ? Pok?mon sprite + type are resolved from data-name alone
+ *      ¨ data-pokemon and data-type are OPTIONAL
+ *    ? Trainer sprite filename is resolved from data-trainer
+ *      ¨ Use friendly names like "White Collar F" or exact
+ *        filenames like "WhiteCollar_F" ? both work
  * „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
  *
  *  PATH DEPTH
@@ -22,20 +30,13 @@
  *  <table class="items-table round red border-bold"
  *         data-wiki-table="items">
  *    <tr data-item-id="293" data-name="Escape Rope" data-loc="1F, near stairs"></tr>
- *    <tr data-item-id="10"  data-name="Potion"      data-loc="Hidden behind crate"></tr>
  *  </table>
- *
- *  The script will:
- *    ? Add the header row (<th> Item / Location)
- *    ? Replace each <tr> with the full icon + name + location cells
- *    ? Image: src/{depth}/Item/{id}.png
  *
  *  ???????????????????????????????????????????
  *  2)  ITEMS TABLE  (docs ? 5 cols)
  *  ???????????????????????????????????????????
  *
- *  <table class="items-table round red border-bold"
- *         data-wiki-table="items-doc">
+ *  <table data-wiki-table="items-doc">
  *    <tr data-item-id="293" data-name="Spring Coin" data-pocket="General"
  *        data-effect="A prized jade-colored coin." data-price="1000 P"></tr>
  *  </table>
@@ -44,76 +45,69 @@
  *  3)  ITEMS TABLE  (key items ? 4 cols)
  *  ???????????????????????????????????????????
  *
- *  <table class="items-table round red border-bold"
- *         data-wiki-table="items-key">
+ *  <table data-wiki-table="items-key">
  *    <tr data-item-id="293" data-name="Trainer Card" data-loc="Gifted by Lark"
  *        data-purpose="Stores your trainer data."></tr>
  *  </table>
  *
  *  ???????????????????????????????????????????
- *  4)  WILD SPAWNS TABLE
+ *  4)  WILD SPAWNS TABLE  (auto-resolve!)
  *  ???????????????????????????????????????????
  *
  *  <table class="wildspawns-table round green border-bold"
  *         data-wiki-table="wild">
- *    <tr data-pokemon="0263" data-name="Zigzagoon" data-type="normal"
- *        data-levels="5-7" data-rate="40%"></tr>
- *    <!-- Time-sensitive: use data-day / data-night instead of data-rate -->
- *    <tr data-pokemon="0519" data-name="Pidove" data-type="normal"
- *        data-levels="5-7" data-day="35%" data-night="0%"></tr>
+ *    <!-- Just the name ? sprite + type auto-resolved -->
+ *    <tr data-name="Zigzagoon" data-levels="5-7" data-rate="40%"></tr>
+ *    <!-- Time-sensitive -->
+ *    <tr data-name="Pidove" data-levels="5-7" data-day="35%" data-night="0%"></tr>
  *    <!-- Encounter method separator -->
  *    <tr data-method="Surfing"></tr>
  *  </table>
  *
  *  ???????????????????????????????????????????
- *  5)  TRAINERS TABLE (standard)
+ *  5)  TRAINERS TABLE  (auto-resolve!)
  *  ???????????????????????????????????????????
  *
  *  <table class="trainers round gray border-bold"
  *         data-wiki-table="trainers">
  *
- *    <!-- Single-pok?mon trainer -->
- *    <tr data-trainer="Guitarist" data-trainer-name="Regina"
- *        data-pokemon="0532" data-pkmn-name="Timburr" data-pkmn-type="fighting"
- *        data-pkmn-level="8" data-pkmn-item="None"></tr>
+ *    <!-- Single Pok?mon ? no dex number or type needed -->
+ *    <tr data-trainer="Guitarist" data-trainer-name="Guitarist Regina"
+ *        data-pkmn-name="Timburr" data-pkmn-level="8" data-pkmn-item="None"></tr>
  *
- *    <!-- Multi-pok?mon trainer: add data-pokemon-N for each extra -->
- *    <tr data-trainer="Drummer" data-trainer-name="Fabian"
- *        data-pokemon="0519" data-pkmn-name="Pidove" data-pkmn-type="normal,flying"
- *        data-pkmn-level="8" data-pkmn-item="None"
- *        data-pokemon-2="0519" data-pkmn-name-2="Pidove" data-pkmn-type-2="normal,flying"
- *        data-pkmn-level-2="9" data-pkmn-item-2="None"></tr>
+ *    <!-- Multi Pok?mon -->
+ *    <tr data-trainer="Drummer" data-trainer-name="Drummer Fabian"
+ *        data-pkmn-name="Pidove" data-pkmn-level="8" data-pkmn-item="None"
+ *        data-pkmn-name-2="Pidove" data-pkmn-level-2="9" data-pkmn-item-2="None"></tr>
+ *
+ *    <!-- Friendly alias for trainer class -->
+ *    <tr data-trainer="White Collar F" data-trainer-name="White Collar Theodora"
+ *        data-pkmn-name="Meowth" data-pkmn-level="10" data-pkmn-item="None"></tr>
  *
  *  </table>
  *
- *  Trainer images come from: src/{depth}/Trainer/{TrainerClass}.png
- *  (data-trainer value = filename without extension)
- *
  *  ???????????????????????????????????????????
- *  6)  EVENT / INTERACTABLE POK?MON
+ *  6)  EVENT / INTERACTABLE POK?MON  (auto-resolve!)
  *  ???????????????????????????????????????????
  *
  *  <div class="event transparent" data-wiki-table="event">
- *    <div data-pokemon="0387" data-name="Turtwig" data-type="grass"
- *         data-level="5" data-ability="Overgrow" data-item="Oran Berry"
+ *    <div data-name="Turtwig" data-level="5" data-ability="Overgrow"
+ *         data-item="Oran Berry"
  *         data-move1="Tackle|normal|physical"
- *         data-move2="Withdraw|water|status"
- *         data-move3="Sand Tomb|ground|physical"></div>
+ *         data-move2="Withdraw|water|status"></div>
  *  </div>
  *
  *  ???????????????????????????????????????????
- *  7)  VIT / BOSS TRAINER
+ *  7)  VIT / BOSS TRAINER  (auto-resolve!)
  *  ???????????????????????????????????????????
  *
  *  <div data-wiki-table="vit"
  *       data-vit-class="VITalt" data-vit-color="lark" data-vit-border="border-bold"
  *       data-trainer="Lark" data-trainer-title="Rising Star"
- *       data-trainer-subtitle=""
  *       data-reward="$2800" data-balls-full="2" data-balls-empty="4">
  *
- *    <!-- Each child div = one team Pok?mon (same syntax as event) -->
- *    <div data-pokemon="0531" data-name="Audino" data-type="normal"
- *         data-level="3" data-ability="Regenerator" data-item="None"
+ *    <div data-name="Audino" data-level="3" data-ability="Regenerator"
+ *         data-item="None"
  *         data-move1="Leer|normal|status"
  *         data-move2="Tackle|normal|physical"
  *         data-move3="Odor Sleuth|normal|status"></div>
@@ -153,6 +147,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${srcPrefix}/Trainer/${name}.png`;
     }
 
+    /* „Ÿ„Ÿ Auto-resolve: Pok?mon name ¨ { dex, type } „Ÿ„Ÿ */
+    const _hasPokeDex = typeof POKEDEX !== 'undefined';
+    function resolvePkmn(name) {
+        if (!_hasPokeDex || !name) return null;
+        return POKEDEX[name] || POKEDEX[cap(name.toLowerCase())] || null;
+    }
+
+    /* „Ÿ„Ÿ Auto-resolve: Trainer class name ¨ sprite filename „Ÿ„Ÿ */
+    const _hasTrainerAliases = typeof TRAINER_ALIASES !== 'undefined';
+    function resolveTrainer(classOrAlias) {
+        if (!classOrAlias) return classOrAlias;
+        // 1) Check alias table first (e.g. "White Collar F" ¨ "WhiteCollar_F")
+        if (_hasTrainerAliases && TRAINER_ALIASES[classOrAlias]) {
+            return TRAINER_ALIASES[classOrAlias];
+        }
+        // 2) Already a valid filename (e.g. "Guitarist") ? return as-is
+        return classOrAlias;
+    }
+
     /* „Ÿ„Ÿ Helper: Build type badge(s) „Ÿ„Ÿ */
     function typeBadges(typeStr) {
         const types = typeStr.split(',').map(t => t.trim().toLowerCase());
@@ -177,9 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* „Ÿ„Ÿ Helper: Build full Pok?mon card (event / VIT style) „Ÿ„Ÿ */
     function pkmnCard(el) {
-        const dex     = el.dataset.pokemon;
         const name    = el.dataset.name;
-        const type    = el.dataset.type;
+        const lookup  = resolvePkmn(name);
+        const dex     = el.dataset.pokemon || (lookup ? lookup.d : '0000');
+        const type    = el.dataset.type || (lookup ? lookup.t : 'normal');
         const level   = el.dataset.level;
         const ability = el.dataset.ability || '';
         const item    = el.dataset.item || 'None';
@@ -305,16 +319,17 @@ ${movesHtml}
         thead.innerHTML = '<th class="name roundtl">Pokemon</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate</th>';
         table.prepend(thead);
 
-        table.querySelectorAll('tr[data-pokemon], tr[data-method]').forEach(tr => {
+        table.querySelectorAll('tr[data-pokemon], tr[data-name], tr[data-method]').forEach(tr => {
             if (tr.dataset.method !== undefined) {
                 // Encounter method separator
                 tr.innerHTML = `<th colspan="4">${tr.dataset.method}</th>`;
                 tr.removeAttribute('data-method');
                 return;
             }
-            const dex    = tr.dataset.pokemon;
             const name   = tr.dataset.name;
-            const type   = (tr.dataset.type || 'normal').toLowerCase();
+            const lookup = resolvePkmn(name);
+            const dex    = tr.dataset.pokemon || (lookup ? lookup.d : '0000');
+            const type   = (tr.dataset.type || (lookup ? lookup.t : 'normal')).toLowerCase();
             const levels = tr.dataset.levels || '';
             const rate   = tr.dataset.rate;
             const day    = tr.dataset.day;
@@ -347,29 +362,34 @@ ${movesHtml}
         const dataRows = Array.from(table.querySelectorAll('tr[data-trainer]'));
 
         dataRows.forEach(tr => {
-            const trainerClass = tr.dataset.trainer;
-            const trainerName  = tr.dataset.trainerName || trainerClass;
+            const trainerClassRaw = tr.dataset.trainer;
+            const trainerFile  = resolveTrainer(trainerClassRaw);
+            const trainerName  = tr.dataset.trainerName || trainerClassRaw;
             const dblBattle    = tr.dataset.doubleBattle !== undefined;
 
             // Gather all Pok?mon (primary + extras numbered 2..6)
             const team = [];
             // Primary
-            if (tr.dataset.pokemon) {
+            if (tr.dataset.pkmnName || tr.dataset.pokemon) {
+                const pName = tr.dataset.pkmnName || '';
+                const pLookup = resolvePkmn(pName);
                 team.push({
-                    dex:   tr.dataset.pokemon,
-                    name:  tr.dataset.pkmnName || '',
-                    type:  tr.dataset.pkmnType || 'normal',
+                    dex:   tr.dataset.pokemon || (pLookup ? pLookup.d : '0000'),
+                    name:  pName,
+                    type:  tr.dataset.pkmnType || (pLookup ? pLookup.t : 'normal'),
                     level: tr.dataset.pkmnLevel || '?',
                     item:  tr.dataset.pkmnItem || 'None'
                 });
             }
             // Additional (2..6)
             for (let i = 2; i <= 6; i++) {
-                if (tr.dataset['pokemon' + i]) {
+                if (tr.dataset['pkmnName' + i] || tr.dataset['pokemon' + i]) {
+                    const pName = tr.dataset['pkmnName' + i] || '';
+                    const pLookup = resolvePkmn(pName);
                     team.push({
-                        dex:   tr.dataset['pokemon' + i],
-                        name:  tr.dataset['pkmnName' + i] || '',
-                        type:  tr.dataset['pkmnType' + i] || 'normal',
+                        dex:   tr.dataset['pokemon' + i] || (pLookup ? pLookup.d : '0000'),
+                        name:  pName,
+                        type:  tr.dataset['pkmnType' + i] || (pLookup ? pLookup.t : 'normal'),
                         level: tr.dataset['pkmnLevel' + i] || '?',
                         item:  tr.dataset['pkmnItem' + i] || 'None'
                     });
@@ -379,7 +399,7 @@ ${movesHtml}
             const teamCount = team.length || 1;
 
             // Build trainer icon cell
-            let trainerIconHtml = `<table class="icon"><tr><td><img src="${trainerImg(trainerClass)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
+            let trainerIconHtml = `<table class="icon"><tr><td><img src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
             if (dblBattle) {
                 trainerIconHtml += `<tr><td class="round electrichl">Double Battle</td></tr>`;
             }
@@ -418,7 +438,7 @@ ${movesHtml}
        EVENT / INTERACTABLE POK?MON
        „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
     document.querySelectorAll('[data-wiki-table="event"]').forEach(container => {
-        const divs = Array.from(container.querySelectorAll('div[data-pokemon]'));
+        const divs = Array.from(container.querySelectorAll('div[data-name], div[data-pokemon]'));
         divs.forEach(div => {
             const html = pkmnCard(div);
             div.outerHTML = html;
@@ -438,16 +458,18 @@ ${movesHtml}
         const vitClass  = container.dataset.vitClass  || 'VITalt';
         const vitColor  = container.dataset.vitColor  || 'normal';
         const vitBorder = container.dataset.vitBorder || 'border-bold';
-        const trainerFile  = container.dataset.trainer;
+        const trainerFileRaw = container.dataset.trainer;
+        const trainerFile  = resolveTrainer(trainerFileRaw);
         const trainerTitle = container.dataset.trainerTitle || '';
-        const trainerName  = container.dataset.trainerName || trainerFile;
+        const trainerName  = container.dataset.trainerName || trainerFileRaw;
         const subtitle     = container.dataset.trainerSubtitle || '';
         const reward       = container.dataset.reward || '';
         const ballsFull    = parseInt(container.dataset.ballsFull || '0');
         const ballsEmpty   = parseInt(container.dataset.ballsEmpty || '0');
 
         // Dual trainer support
-        const trainer2File  = container.dataset.trainer2 || '';
+        const trainer2Raw   = container.dataset.trainer2 || '';
+        const trainer2File  = resolveTrainer(trainer2Raw);
         const vitColor2     = container.dataset.vitColor2 || '';
 
         // Info color class: use "{color}-light" if it exists, else same
@@ -485,14 +507,15 @@ ${movesHtml}
             : '';
 
         // Build team Pok?mon cards
-        const teamDivs = Array.from(container.querySelectorAll('div[data-pokemon]'));
+        const teamDivs = Array.from(container.querySelectorAll('div[data-name], div[data-pokemon]'));
         const teamGrid = container.dataset.vitClass === 'VIT' ? 'team' : 'teamalt';
         let teamCards = '';
         teamDivs.forEach(div => {
             // Build a card similar to event Pok?mon but inside a table directly
-            const dex     = div.dataset.pokemon;
             const name    = div.dataset.name;
-            const type    = div.dataset.type;
+            const pLookup = resolvePkmn(name);
+            const dex     = div.dataset.pokemon || (pLookup ? pLookup.d : '0000');
+            const type    = div.dataset.type || (pLookup ? pLookup.t : 'normal');
             const level   = div.dataset.level;
             const ability = div.dataset.ability || '';
             const item    = div.dataset.item || 'None';
