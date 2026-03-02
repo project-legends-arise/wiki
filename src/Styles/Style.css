@@ -511,7 +511,8 @@ table.intro {
 }
 .wildspawns-table .pkmn-type table {
     margin: 0;
-    width: auto;
+    width: 100%;
+    table-layout: fixed;
     border-spacing: 1px;
 }
 .wildspawns-table .pkmn-type td {
@@ -519,6 +520,7 @@ table.intro {
     padding: 1px 5px !important;
     height: auto !important;
     line-height: 1.4 !important;
+    box-sizing: border-box;
 }
 
 /* Method column */
@@ -594,15 +596,15 @@ table.intro {
 }
 #wildspawns th.enc-shadow, .wildspawns-table th.enc-shadow,
 #wildspawns td.enc-shadow, .wildspawns-table td.enc-shadow {
-    background-color: #311b5e;
-    color: #d4b4ff;
+    background-color: #757575;
+    color: #f5f5f5;
     font-style: italic;
     letter-spacing: 0.04em;
 }
 #wildspawns th.enc-double, .wildspawns-table th.enc-double,
 #wildspawns td.enc-double, .wildspawns-table td.enc-double {
-    background-color: #c07a00;
-    color: #fff8dc;
+    background-color: #c8e6c9;
+    color: #1b5e20;
     font-style: italic;
     letter-spacing: 0.04em;
 }

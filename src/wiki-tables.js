@@ -318,7 +318,7 @@ ${movesHtml}
         /* Icon + canonical label for each encounter-method CSS class */
         const METHOD_MAP = {
             'enc-walking':        { file: 'TallGrass',       label: 'Tall Grass' },
-            'enc-double':         { file: 'DoubleTallGrass', label: 'Double Grass' },
+            'enc-double':         { file: 'DoubleTallGrass', label: 'Double Battle' },
             'enc-surfing':        { file: 'Surf',            label: 'Surfing' },
             'enc-ripple':         { file: 'WaterRipple',     label: 'Surf Ripple' },
             'enc-shadow':         { file: 'Shadow',          label: 'Shadow' },
@@ -387,7 +387,7 @@ ${movesHtml}
         /* Rate footnote below the table */
         const footnote = document.createElement('p');
         footnote.className = 'enc-rate-footnote';
-        footnote.textContent = '* Rate shown assumes a full party of 6 Pok\u00e9mon. With fewer Pok\u00e9mon on your team, individual encounter rates increase proportionally.';
+        footnote.textContent = '* Rates are shown for a party of at least 2 Pok\u00e9mon. With only 1 Pok\u00e9mon, Double Battles cannot occur \u2014 species exclusive to double encounters will not appear, and the encounter rates of the remaining Pok\u00e9mon increase accordingly.';
         table.after(footnote);
 
         table.removeAttribute('data-wiki-table');
