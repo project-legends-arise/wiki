@@ -483,49 +483,54 @@ table.intro {
     width: auto;
 }
 
-/* Pok?mon column: inner table layout */
-#wildspawns .pokemon table, .wildspawns-table .pokemon table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-#wildspawns .pokemon table tr td:nth-child(1), .wildspawns-table .pokemon table tr td:nth-child(1) {
-    width: 66px;
-    padding: 2px;
-    vertical-align: middle;
-}
-#wildspawns .pokemon .name, .wildspawns-table .pokemon .name {
+/* Pok?mon column outer cell */
+#wildspawns td.pokemon, .wildspawns-table td.pokemon {
+    padding: 4px 6px;
     text-align: left;
-    width: 96px;
-    padding: 2px 4px;
-    vertical-align: middle;
 }
 
-/* Pok?mon name and type display inside wild table */
-.wildspawns-table .pkmn-name {
+/* Flex row: sprite + info block */
+.pokemon-cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Info block: name on top, types below */
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+/* Pok?mon name */
+.pkmn-name {
     display: block;
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
+    line-height: 1.2;
+    color: inherit;
 }
-.wildspawns-table .pkmn-type {
+
+/* Type chips row */
+.pkmn-type {
     display: flex;
     flex-direction: row;
     gap: 2px;
-    margin-top: 2px;
-    width: 100%;
 }
-.wildspawns-table .type-chip {
+.type-chip {
     flex: 1;
     min-width: 0;
     font-size: 9px;
+    font-weight: 600;
     text-align: center;
-    padding: 1px 3px;
+    padding: 1px 4px;
     border-radius: 4px;
-    line-height: 1.5;
+    line-height: 1.6;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 /* Method column */
@@ -1382,27 +1387,19 @@ table.striped tr:nth-child(even) td {
         font-size: 11px;
     }
 
-    /* Pok?mon column: tighter sprite + name cell */
-    #wildspawns .pokemon table tr td:nth-child(1),
-    .wildspawns-table .pokemon table tr td:nth-child(1) {
-        width: 46px;
-        padding: 1px;
+    /* Pok?mon column: tighter flex layout */
+    #wildspawns td.pokemon, .wildspawns-table td.pokemon {
+        padding: 3px 4px;
     }
-    #wildspawns .pokemon .name,
-    .wildspawns-table .pokemon .name {
-        width: 72px;
-        padding-left: 2px;
+    .pokemon-cell {
+        gap: 4px;
     }
-    .wildspawns-table .pkmn-name {
+    .pkmn-name {
         font-size: 10px;
         white-space: normal;
         word-break: break-word;
     }
-    .wildspawns-table .pkmn-type td {
-        font-size: 8px !important;
-        padding: 1px 3px !important;
-    }
-    .wildspawns-table .type-chip {
+    .type-chip {
         font-size: 8px;
         padding: 1px 2px;
     }

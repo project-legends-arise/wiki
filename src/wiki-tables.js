@@ -381,7 +381,7 @@ ${movesHtml}
 
                 const typeChips = type.split(',').map(t => t.trim().toLowerCase())
                     .map(t => `<span class="type-chip ${t}hl">${cap(t)}</span>`).join('');
-                tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeChips}</div></td></tr></table></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
+                tr.innerHTML = `<td class="pokemon"><div class="pokemon-cell"><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div><div class="pokemon-info"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeChips}</div></div></div></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
                 clearDataAttrs(tr);
             });
         });
