@@ -169,10 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* „Ÿ„Ÿ Helper: Build type badge(s) „Ÿ„Ÿ */
     function typeBadges(typeStr) {
         const types = typeStr.split(',').map(t => t.trim().toLowerCase());
-        if (types.length === 1) {
-            return `<table><tr><td class="round ${types[0]}hl">${cap(types[0])}</td></tr></table>`;
-        }
-        return `<table><tr><td class="roundleft ${types[0]}hl">${cap(types[0])}</td><td class="roundright ${types[1]}hl">${cap(types[1])}</td></tr></table>`;
+        const chips = types.map(t => `<span class="type-chip ${t}hl">${cap(t)}</span>`).join('');
+        return `<div class="type-chips">${chips}</div>`;
     }
 
     /* „Ÿ„Ÿ Helper: capitalize „Ÿ„Ÿ */
@@ -317,6 +315,7 @@ ${movesHtml}
 
         /* Icon + canonical label for each encounter-method CSS class */
         const METHOD_MAP = {
+            'enc-dungeon':        { file: 'Walking',         label: 'Walking' },
             'enc-walking':        { file: 'TallGrass',       label: 'Tall Grass' },
             'enc-double':         { file: 'DoubleTallGrass', label: 'Double-exclusive' },
             'enc-surfing':        { file: 'Surf',            label: 'Surfing' },
@@ -379,18 +378,18 @@ ${movesHtml}
 
                 const methodCell = idx === 0 ? buildMethodCell(group.methodClass, group.method, count) : '';
 
-                const typeChips = type.split(',').map(t => t.trim().toLowerCase())
-                    .map(t => `<span class="type-chip ${t}hl">${cap(t)}</span>`).join('');
-                tr.innerHTML = `<td class="pokemon"><div class="pokemon-cell"><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div><div class="pokemon-info"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeChips}</div></div></div></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
+                tr.innerHTML = `<td class="pokemon"><div class="pokemon-cell"><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div><div class="pokemon-info"><span class="pkmn-name">${name}</span>${typeBadges(type)}</div></div></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
                 clearDataAttrs(tr);
             });
         });
 
-        /* Rate footnote below the table */
-        const footnote = document.createElement('p');
-        footnote.className = 'enc-rate-footnote';
-        footnote.textContent = '* Rates are shown for a party of at least 2 Pok\u00e9mon. With only 1 Pok\u00e9mon, Double Battles cannot occur \u2014 species exclusive to double encounters will not appear, and the encounter rates of the remaining Pok\u00e9mon increase accordingly.';
-        (table.closest('.tcontainer') || table).after(footnote);
+        /* Rate footnote as last row inside table */
+        const tfoot = table.createTFoot();
+        const footRow = tfoot.insertRow();
+        const footCell = footRow.insertCell();
+        footCell.colSpan = 5;
+        footCell.className = 'enc-rate-footnote';
+        footCell.textContent = '* Rates are shown for a party of at least 2 Pok\u00e9mon. With only 1 Pok\u00e9mon, Double Battles cannot occur \u2014 species exclusive to double encounters will not appear, and the encounter rates of the remaining Pok\u00e9mon increase accordingly.';
 
         table.removeAttribute('data-wiki-table');
     });

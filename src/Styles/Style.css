@@ -487,6 +487,7 @@ table.intro {
 #wildspawns td.pokemon, .wildspawns-table td.pokemon {
     padding: 4px 6px;
     text-align: left;
+    width: 170px;
 }
 
 /* Flex row: sprite + info block */
@@ -503,6 +504,7 @@ table.intro {
     flex-direction: column;
     gap: 3px;
     min-width: 0;
+    flex: 1;
 }
 
 /* Pok?mon name */
@@ -515,15 +517,17 @@ table.intro {
     color: inherit;
 }
 
-/* Type chips row */
-.pkmn-type {
+/* Type chips ? used everywhere (wild table, trainer cards, VIT) */
+.type-chips {
     display: flex;
     flex-direction: row;
     gap: 2px;
+    justify-content: center;
 }
 .type-chip {
     flex: 1;
-    min-width: 0;
+    min-width: 38px;
+    max-width: 54px;
     font-size: 9px;
     font-weight: 600;
     text-align: center;
@@ -531,6 +535,7 @@ table.intro {
     border-radius: 4px;
     line-height: 1.6;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 /* Method column */
@@ -582,12 +587,15 @@ table.intro {
     text-align: center;
 }
 
-/* Encounter rate footnote */
+/* Encounter rate footnote ? rendered as tfoot row inside the table */
 .enc-rate-footnote {
     font-size: 10px;
     color: #555;
     font-style: italic;
-    margin: 2px 0 8px 4px;
+    text-align: left !important;
+    padding: 4px 8px !important;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    background-color: transparent !important;
 }
 
 /* Encounter method column cells (td) and legacy stripe headers (th) */
@@ -614,8 +622,15 @@ table.intro {
 }
 #wildspawns th.enc-double, .wildspawns-table th.enc-double,
 #wildspawns td.enc-double, .wildspawns-table td.enc-double {
-    background-color: #c8e6c9;
-    color: #1b5e20;
+    background-color: #fff176;
+    color: #4a3800;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-dungeon, .wildspawns-table th.enc-dungeon,
+#wildspawns td.enc-dungeon, .wildspawns-table td.enc-dungeon {
+    background-color: #795548;
+    color: #efebe9;
     font-style: italic;
     letter-spacing: 0.04em;
 }
@@ -755,7 +770,15 @@ dt table td{
     display: block;
     width : 100%;
     height: 20px !important;
+}
 
+/* Type chips inside trainer/VIT/event dt blocks */
+dt .type-chips {
+    width: 100px;
+}
+dt .type-chip {
+    min-width: 44px;
+    max-width: 54px;
 }
 
 .pkmn dl.info dt:nth-of-type(odd) {
