@@ -743,13 +743,13 @@ table.intro {
     font-size: 11px;
     font-weight: 600;
     display: block;
-    line-height: 1.3;
+    line-height: 1.1;
 }
 .pkmn-lvl {
     font-size: 10px;
     color: #666;
     display: block;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 

@@ -461,15 +461,15 @@ ${movesHtml}
                 trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-double">DOUBLE</span></td></tr>`;
             }
             if (multiPartner) {
-                const partnerLine = multiClass ? `${multiClass} ? with ${multiPartner}` : `with ${multiPartner}`;
-                trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-multi">MULTI</span><div class="trainer-badge-sub">${partnerLine}</div></td></tr>`;
+                const classLine = multiClass ? `<br>(${multiClass})` : '';
+                trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-multi">MULTI</span><div class="trainer-badge-sub">with ${multiPartner}${classLine}</div></td></tr>`;
             }
             trainerIconHtml += `</table>`;
 
             // Build Pok?mon cells
             const pkmnCells = team.map(p => {
                 const types = p.type;
-                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img loading="lazy" src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round"><span class="pkmn-trainer-name">${p.name}</span><br><span class="pkmn-lvl">Lv.${p.level}</span></td></tr></table></td>`;
+                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img loading="lazy" src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round"><span class="pkmn-trainer-name">${p.name}</span><span class="pkmn-lvl">Lv.${p.level}</span></td></tr></table></td>`;
             });
 
             // Replace the data row with trainer row(s)
