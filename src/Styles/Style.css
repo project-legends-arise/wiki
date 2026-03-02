@@ -486,7 +486,7 @@ table.intro {
 /* Pok?mon column outer cell */
 #wildspawns td.pokemon, .wildspawns-table td.pokemon {
     padding: 4px 6px;
-    text-align: left;
+    text-align: center;
     width: 170px;
 }
 
@@ -502,6 +502,7 @@ table.intro {
 .pokemon-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3px;
     min-width: 0;
     flex: 1;
@@ -515,6 +516,7 @@ table.intro {
     white-space: nowrap;
     line-height: 1.2;
     color: inherit;
+    text-align: center;
 }
 
 /* Type chips ? used everywhere (wild table, trainer cards, VIT) */
@@ -574,7 +576,8 @@ table.intro {
 }
 #wildspawns th.level, .wildspawns-table th.level,
 #wildspawns td.levels, .wildspawns-table td.levels {
-    width: 52px;
+    width: 40px;
+    max-width: 44px;
     white-space: nowrap;
 }
 #wildspawns td.day, .wildspawns-table td.day {
@@ -694,6 +697,33 @@ table.intro {
 
 .trainers .pokemonlist{
     width: 200px;
+}
+
+/* Trainer battle-type badges (DOUBLE / MULTI) */
+.trainer-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+.trainer-badge-double {
+    background: #fff9c4;
+    color: #5d4000;
+}
+.trainer-badge-multi {
+    background: #e8f5e9;
+    color: #1a5226;
+}
+.trainer-badge-sub {
+    font-size: 9px;
+    color: #555;
+    margin-top: 2px;
+    font-style: italic;
+    line-height: 1.3;
 }
 
 

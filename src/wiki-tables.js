@@ -412,6 +412,8 @@ ${movesHtml}
             const trainerFile  = resolveTrainer(trainerClassRaw);
             const trainerName  = tr.dataset.trainerName || trainerClassRaw;
             const dblBattle    = tr.dataset.doubleBattle !== undefined;
+            const multiClass   = tr.dataset.multiClass   || '';
+            const multiPartner = tr.dataset.multiPartner || '';
 
             // Gather all Pok?mon (primary + extras numbered 2..6)
             const team = [];
@@ -452,7 +454,11 @@ ${movesHtml}
             // Build trainer icon cell
             let trainerIconHtml = `<table class="icon"><tr><td><img loading="lazy" src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
             if (dblBattle) {
-                trainerIconHtml += `<tr><td class="round electrichl">Double Battle</td></tr>`;
+                trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-double">DOUBLE</span></td></tr>`;
+            }
+            if (multiPartner) {
+                const partnerLine = multiClass ? `${multiClass} ? with ${multiPartner}` : `with ${multiPartner}`;
+                trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-multi">MULTI</span><div class="trainer-badge-sub">${partnerLine}</div></td></tr>`;
             }
             trainerIconHtml += `</table>`;
 
