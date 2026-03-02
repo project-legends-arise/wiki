@@ -452,7 +452,11 @@ ${movesHtml}
             const teamCount = team.length || 1;
 
             // Build trainer icon cell
-            let trainerIconHtml = `<table class="icon"><tr><td><img loading="lazy" src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td>${trainerName}</td></tr>`;
+            const nameParts       = trainerName.trim().split(' ');
+            const trainerPersonal = nameParts.length > 1 ? nameParts[nameParts.length - 1] : '';
+            const trainerClass2   = nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : trainerName;
+
+            let trainerIconHtml = `<table class="icon"><tr><td><img loading="lazy" src="${trainerImg(trainerFile)}" alt="${trainerName}" class="sprite"></td></tr><tr><td class="trainer-class-label">${trainerClass2}</td></tr>${trainerPersonal ? `<tr><td class="trainer-personal-label">${trainerPersonal}</td></tr>` : ''}`;
             if (dblBattle) {
                 trainerIconHtml += `<tr><td><span class="trainer-badge trainer-badge-double">DOUBLE</span></td></tr>`;
             }
@@ -465,7 +469,7 @@ ${movesHtml}
             // Build Pok?mon cells
             const pkmnCells = team.map(p => {
                 const types = p.type;
-                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img loading="lazy" src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round">${p.name} Lv.${p.level}</td></tr></table></td>`;
+                return `<td><table class="pkmn round transparent border-none"><tr><td class="round"><img loading="lazy" src="${pkmnImg(p.dex)}" alt="${p.name}" class="sprite-medium"></td><td class="transparent" rowspan="2"><dl><dt>Type:</dt><dt>${typeBadges(types)}</dt><dt>Held Item</dt><dt>${p.item}</dt></dl></td></tr><tr><td class="round"><span class="pkmn-trainer-name">${p.name}</span><br><span class="pkmn-lvl">Lv.${p.level}</span></td></tr></table></td>`;
             });
 
             // Replace the data row with trainer row(s)
