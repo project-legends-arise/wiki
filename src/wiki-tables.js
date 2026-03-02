@@ -315,39 +315,81 @@ ${movesHtml}
     document.querySelectorAll('[data-wiki-table="wild"]').forEach(table => {
         wrapTcontainer(table);
 
+        /* Icon + canonical label for each encounter-method CSS class */
+        const METHOD_MAP = {
+            'enc-walking':        { file: 'TallGrass',       label: 'Tall Grass' },
+            'enc-double':         { file: 'DoubleTallGrass', label: 'Double Grass' },
+            'enc-surfing':        { file: 'Surf',            label: 'Surfing' },
+            'enc-ripple':         { file: 'WaterRipple',     label: 'Surf Ripple' },
+            'enc-shadow':         { file: 'Shadow',          label: 'Shadow' },
+            'enc-fishing':        { file: 'Fishing',         label: 'Fishing' },
+            'enc-fishing-ripple': { file: 'FishingRipple',   label: 'Fish Ripple' },
+        };
+
+        function buildMethodCell(methodClass, fallbackText, rowspan) {
+            const entry  = METHOD_MAP[methodClass];
+            const label  = entry ? entry.label : (fallbackText || '');
+            const imgTag = entry
+                ? `<img loading="lazy" src="${srcPrefix}/Methods/${entry.file}.png" alt="${label}" class="enc-icon">`
+                : '';
+            return `<td class="method-cell ${methodClass}" rowspan="${rowspan}"><div class="method-inner">${imgTag}<span class="method-label">${label}</span></div></td>`;
+        }
+
+        /* Build header */
         const thead = document.createElement('tr');
-        thead.innerHTML = '<th class="name roundtl">Pokemon</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate</th>';
+        thead.innerHTML = '<th class="pokemon-col roundtl">Pok\u00e9mon</th><th class="method-col">Method</th><th class="level">Levels</th><th class="rate roundtr" colspan="2">Rate*</th>';
         table.prepend(thead);
 
-        table.querySelectorAll('tr[data-pokemon], tr[data-name], tr[data-method]').forEach(tr => {
+        /* Collect all data rows, then group them by encounter method */
+        const allRows = Array.from(table.querySelectorAll('tr[data-pokemon], tr[data-name], tr[data-method]'));
+        const groups  = [];
+        let current   = null;
+
+        allRows.forEach(tr => {
             if (tr.dataset.method !== undefined) {
-                // Encounter method separator
-                const mClass = tr.dataset.methodClass ? ` class="${tr.dataset.methodClass}"` : '';
-                tr.innerHTML = `<th colspan="4"${mClass}>${tr.dataset.method}</th>`;
-                tr.removeAttribute('data-method');
-                tr.removeAttribute('data-method-class');
-                return;
-            }
-            const name   = tr.dataset.name;
-            const lookup = resolvePkmn(name);
-            const dex    = tr.dataset.pokemon || (lookup ? lookup.d : '0000');
-            const type   = (tr.dataset.type || (lookup ? lookup.t : 'normal')).toLowerCase();
-            const primaryType = type.split(',')[0].trim();
-            const levels = tr.dataset.levels || '';
-            const rate   = tr.dataset.rate;
-            const day    = tr.dataset.day;
-            const night  = tr.dataset.night;
-
-            let rateHtml;
-            if (day !== undefined || night !== undefined) {
-                rateHtml = `<td class="day">${day || ''}</td><td class="night">${night || ''}</td>`;
+                current = { method: tr.dataset.method, methodClass: tr.dataset.methodClass || '', rows: [] };
+                groups.push(current);
+                tr.remove();
             } else {
-                rateHtml = `<td colspan="2">${rate || ''}</td>`;
+                if (!current) { current = { method: '', methodClass: '', rows: [] }; groups.push(current); }
+                current.rows.push(tr);
             }
-
-            tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name">${name}</td></tr></table></td><td class="levels">${levels}</td>${rateHtml}`;
-            clearDataAttrs(tr);
         });
+
+        /* Render each group */
+        groups.forEach(group => {
+            const count = group.rows.length;
+            group.rows.forEach((tr, idx) => {
+                const name        = tr.dataset.name;
+                const lookup      = resolvePkmn(name);
+                const dex         = tr.dataset.pokemon || (lookup ? lookup.d : '0000');
+                const type        = (tr.dataset.type || (lookup ? lookup.t : 'normal')).toLowerCase();
+                const primaryType = type.split(',')[0].trim();
+                const levels      = tr.dataset.levels || '';
+                const rate        = tr.dataset.rate;
+                const day         = tr.dataset.day;
+                const night       = tr.dataset.night;
+
+                let rateHtml;
+                if (day !== undefined || night !== undefined) {
+                    rateHtml = `<td class="day">${day || ''}</td><td class="night">${night || ''}</td>`;
+                } else {
+                    rateHtml = `<td colspan="2">${rate || ''}</td>`;
+                }
+
+                const methodCell = idx === 0 ? buildMethodCell(group.methodClass, group.method, count) : '';
+
+                tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeBadges(type)}</div></td></tr></table></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
+                clearDataAttrs(tr);
+            });
+        });
+
+        /* Rate footnote below the table */
+        const footnote = document.createElement('p');
+        footnote.className = 'enc-rate-footnote';
+        footnote.textContent = '* Rate shown assumes a full party of 6 Pok\u00e9mon. With fewer Pok\u00e9mon on your team, individual encounter rates increase proportionally.';
+        table.after(footnote);
+
         table.removeAttribute('data-wiki-table');
     });
 

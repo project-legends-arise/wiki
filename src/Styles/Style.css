@@ -483,22 +483,74 @@ table.intro {
     width: auto;
 }
 
+/* Pok?mon column: inner table layout */
 #wildspawns .pokemon table, .wildspawns-table .pokemon table {
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 #wildspawns .pokemon table tr td:nth-child(1), .wildspawns-table .pokemon table tr td:nth-child(1) {
-    width: 50px;
+    width: 66px;
+    padding: 2px;
 }
 #wildspawns .pokemon .name, .wildspawns-table .pokemon .name {
     text-align: left;
+    width: 100px;
+    padding-left: 4px;
 }
 
-#wildspawns tr td:nth-child(3), .wildspawns-table tr td:nth-child(3) {
-    width: 75px;
+/* Pok?mon name and type display inside wild table */
+.wildspawns-table .pkmn-name {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.wildspawns-table .pkmn-type {
+    margin-top: 3px;
+}
+.wildspawns-table .pkmn-type table {
+    margin: 0;
+    width: auto;
+    border-spacing: 1px;
+}
+.wildspawns-table .pkmn-type td {
+    font-size: 9px !important;
+    padding: 1px 5px !important;
+    height: auto !important;
+    line-height: 1.4 !important;
 }
 
+/* Method column */
+#wildspawns .method-col, .wildspawns-table .method-col {
+    width: 80px;
+}
+#wildspawns .method-cell, .wildspawns-table .method-cell {
+    width: 80px;
+    vertical-align: middle;
+    padding: 4px 6px;
+}
+.method-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.enc-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.method-label {
+    font-size: 10px;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Rate column */
 #wildspawns th.rate, .wildspawns-table th.rate {
     width: 5%;
 }
@@ -517,44 +569,73 @@ table.intro {
     text-align: center;
 }
 
-/* Encounter method / phenomena stripe labels */
-#wildspawns th.enc-walking, .wildspawns-table th.enc-walking {
+/* Encounter rate footnote */
+.enc-rate-footnote {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    margin: 2px 0 8px 4px;
+}
+
+/* Encounter method column cells (td) and legacy stripe headers (th) */
+#wildspawns th.enc-walking, .wildspawns-table th.enc-walking,
+#wildspawns td.enc-walking, .wildspawns-table td.enc-walking {
     background-color: #2e7d32;
     color: #ffffff;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-surfing, .wildspawns-table th.enc-surfing {
+#wildspawns th.enc-surfing, .wildspawns-table th.enc-surfing,
+#wildspawns td.enc-surfing, .wildspawns-table td.enc-surfing {
     background-color: #1565c0;
     color: #ffffff;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-shadow, .wildspawns-table th.enc-shadow {
+#wildspawns th.enc-shadow, .wildspawns-table th.enc-shadow,
+#wildspawns td.enc-shadow, .wildspawns-table td.enc-shadow {
     background-color: #311b5e;
     color: #d4b4ff;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-double, .wildspawns-table th.enc-double {
+#wildspawns th.enc-double, .wildspawns-table th.enc-double,
+#wildspawns td.enc-double, .wildspawns-table td.enc-double {
     background-color: #c07a00;
     color: #fff8dc;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-ripple, .wildspawns-table th.enc-ripple {
+#wildspawns th.enc-ripple, .wildspawns-table th.enc-ripple,
+#wildspawns td.enc-ripple, .wildspawns-table td.enc-ripple {
     background-color: #00838f;
     color: #e0f7fa;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-day, .wildspawns-table th.enc-day {
+#wildspawns th.enc-fishing, .wildspawns-table th.enc-fishing,
+#wildspawns td.enc-fishing, .wildspawns-table td.enc-fishing {
+    background-color: #1a5276;
+    color: #d6eaf8;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-fishing-ripple, .wildspawns-table th.enc-fishing-ripple,
+#wildspawns td.enc-fishing-ripple, .wildspawns-table td.enc-fishing-ripple {
+    background-color: #0e3d52;
+    color: #a8d8ea;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+#wildspawns th.enc-day, .wildspawns-table th.enc-day,
+#wildspawns td.enc-day, .wildspawns-table td.enc-day {
     background-color: #e8a800;
     color: #1a1000;
     font-style: italic;
     letter-spacing: 0.04em;
 }
-#wildspawns th.enc-night, .wildspawns-table th.enc-night {
+#wildspawns th.enc-night, .wildspawns-table th.enc-night,
+#wildspawns td.enc-night, .wildspawns-table td.enc-night {
     background-color: #1a2f4a;
     color: #9ab8d4;
     font-style: italic;
@@ -589,10 +670,10 @@ table.intro {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow:hidden;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
     border-width: calc(var(--table-border-width) / 2);
     border-style: solid;
 }
