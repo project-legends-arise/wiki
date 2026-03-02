@@ -572,6 +572,11 @@ table.intro {
 #wildspawns th.rate, .wildspawns-table th.rate {
     width: 5%;
 }
+#wildspawns th.level, .wildspawns-table th.level,
+#wildspawns td.levels, .wildspawns-table td.levels {
+    width: 52px;
+    white-space: nowrap;
+}
 #wildspawns td.day, .wildspawns-table td.day {
     background-color: #96E0FF;
     width: auto;
