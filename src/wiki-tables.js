@@ -318,7 +318,7 @@ ${movesHtml}
         /* Icon + canonical label for each encounter-method CSS class */
         const METHOD_MAP = {
             'enc-walking':        { file: 'TallGrass',       label: 'Tall Grass' },
-            'enc-double':         { file: 'DoubleTallGrass', label: 'Double Battle' },
+            'enc-double':         { file: 'DoubleTallGrass', label: 'Double-exclusive' },
             'enc-surfing':        { file: 'Surf',            label: 'Surfing' },
             'enc-ripple':         { file: 'WaterRipple',     label: 'Surf Ripple' },
             'enc-shadow':         { file: 'Shadow',          label: 'Shadow' },
@@ -379,7 +379,9 @@ ${movesHtml}
 
                 const methodCell = idx === 0 ? buildMethodCell(group.methodClass, group.method, count) : '';
 
-                tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeBadges(type)}</div></td></tr></table></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
+                const typeChips = type.split(',').map(t => t.trim().toLowerCase())
+                    .map(t => `<span class="type-chip ${t}hl">${cap(t)}</span>`).join('');
+                tr.innerHTML = `<td class="pokemon"><table><tr><td><div class="bg-sprite ${primaryType}"><img loading="lazy" src="${pkmnImg(dex)}" alt="${name}" class="sprite-medium"></div></td><td class="name"><span class="pkmn-name">${name}</span><div class="pkmn-type">${typeChips}</div></td></tr></table></td>${methodCell}<td class="levels">${levels}</td>${rateHtml}`;
                 clearDataAttrs(tr);
             });
         });
@@ -388,7 +390,7 @@ ${movesHtml}
         const footnote = document.createElement('p');
         footnote.className = 'enc-rate-footnote';
         footnote.textContent = '* Rates are shown for a party of at least 2 Pok\u00e9mon. With only 1 Pok\u00e9mon, Double Battles cannot occur \u2014 species exclusive to double encounters will not appear, and the encounter rates of the remaining Pok\u00e9mon increase accordingly.';
-        table.after(footnote);
+        (table.closest('.tcontainer') || table).after(footnote);
 
         table.removeAttribute('data-wiki-table');
     });

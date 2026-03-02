@@ -507,20 +507,23 @@ table.intro {
     white-space: nowrap;
 }
 .wildspawns-table .pkmn-type {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
     margin-top: 3px;
-}
-.wildspawns-table .pkmn-type table {
-    margin: 0;
     width: 100%;
-    table-layout: fixed;
-    border-spacing: 1px;
 }
-.wildspawns-table .pkmn-type td {
-    font-size: 9px !important;
-    padding: 1px 5px !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-    box-sizing: border-box;
+.wildspawns-table .type-chip {
+    flex: 1;
+    min-width: 0;
+    font-size: 9px;
+    text-align: center;
+    padding: 1px 3px;
+    border-radius: 4px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Method column */
@@ -1335,4 +1338,124 @@ table.striped tr:nth-child(even) td {
 }
 .wiki-table-filter::placeholder {
     color: #aaa;
+}
+
+/* ???????????????????????????????????????????????????????????
+   RESPONSIVE ? MOBILE  (? 640 px)
+   ??????????????????????????????????????????????????????????? */
+@media (max-width: 640px) {
+
+    /* „Ÿ„Ÿ Page shell „Ÿ„Ÿ */
+    .container {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+
+    /* „Ÿ„Ÿ Hide sidebar (it overlaps content on narrow screens) „Ÿ„Ÿ */
+    .wiki-sidebar { display: none; }
+
+    /* „Ÿ„Ÿ General tables „Ÿ„Ÿ */
+    :root {
+        --table-min-width: 0px;
+        --table-max-width: 100%;
+    }
+
+    div.tcontainer {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* „Ÿ„Ÿ Wild spawns table „Ÿ„Ÿ */
+    #wildspawns, .wildspawns-table {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 11px;
+    }
+
+    /* Pok?mon column: tighter sprite + name cell */
+    #wildspawns .pokemon table tr td:nth-child(1),
+    .wildspawns-table .pokemon table tr td:nth-child(1) {
+        width: 46px;
+        padding: 1px;
+    }
+    #wildspawns .pokemon .name,
+    .wildspawns-table .pokemon .name {
+        width: 72px;
+        padding-left: 2px;
+    }
+    .wildspawns-table .pkmn-name {
+        font-size: 10px;
+        white-space: normal;
+        word-break: break-word;
+    }
+    .wildspawns-table .pkmn-type td {
+        font-size: 8px !important;
+        padding: 1px 3px !important;
+    }
+    .wildspawns-table .type-chip {
+        font-size: 8px;
+        padding: 1px 2px;
+    }
+
+    /* Sprite: smaller square */
+    .wildspawns-table .bg-sprite,
+    #wildspawns .bg-sprite {
+        width: 44px;
+        height: 44px;
+        border-radius: 6px;
+    }
+    .wildspawns-table .sprite-medium,
+    #wildspawns .sprite-medium {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    /* Method column */
+    #wildspawns .method-col, .wildspawns-table .method-col,
+    #wildspawns .method-cell, .wildspawns-table .method-cell {
+        width: 52px;
+        padding: 2px 3px;
+    }
+    .enc-icon {
+        width: 26px;
+        height: 26px;
+    }
+    .method-label {
+        font-size: 8px;
+    }
+
+    /* Levels + Rate columns */
+    #wildspawns td.levels, .wildspawns-table td.levels { font-size: 10px; }
+    #wildspawns td[colspan="2"], .wildspawns-table td[colspan="2"] { font-size: 10px; }
+
+    /* Footnote */
+    .enc-rate-footnote { font-size: 9px; }
+
+    /* „Ÿ„Ÿ Items table „Ÿ„Ÿ */
+    .items-table {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* „Ÿ„Ÿ Trainers table „Ÿ„Ÿ */
+    .trainers {
+        min-width: 0;
+        width: 100%;
+    }
+    .trainers .name  { width: 100px; }
+    .trainers .pokemonlist { width: auto; }
+
+    /* „Ÿ„Ÿ Breadcrumb wrapping „Ÿ„Ÿ */
+    .breadcrumb { flex-wrap: wrap; font-size: 12px; }
+
+    /* „Ÿ„Ÿ Footer „Ÿ„Ÿ */
+    .wiki-page-footer { flex-direction: column; align-items: flex-start; }
+    .wiki-footer-date  { margin-left: 0; }
 }
