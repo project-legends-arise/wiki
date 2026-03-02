@@ -486,17 +486,19 @@ table.intro {
 /* Pok?mon column: inner table layout */
 #wildspawns .pokemon table, .wildspawns-table .pokemon table {
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 #wildspawns .pokemon table tr td:nth-child(1), .wildspawns-table .pokemon table tr td:nth-child(1) {
     width: 66px;
     padding: 2px;
+    vertical-align: middle;
 }
 #wildspawns .pokemon .name, .wildspawns-table .pokemon .name {
     text-align: left;
-    width: 100px;
-    padding-left: 4px;
+    width: 96px;
+    padding: 2px 4px;
+    vertical-align: middle;
 }
 
 /* Pok?mon name and type display inside wild table */
@@ -510,7 +512,7 @@ table.intro {
     display: flex;
     flex-direction: row;
     gap: 2px;
-    margin-top: 3px;
+    margin-top: 2px;
     width: 100%;
 }
 .wildspawns-table .type-chip {
@@ -533,7 +535,8 @@ table.intro {
 #wildspawns .method-cell, .wildspawns-table .method-cell {
     width: 80px;
     vertical-align: middle;
-    padding: 4px 6px;
+    padding: 4px 8px;
+    border-left: 2px solid rgba(0,0,0,0.08);
 }
 .method-inner {
     display: flex;
