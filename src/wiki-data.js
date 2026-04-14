@@ -790,6 +790,7 @@ const WIKI_NAV = {
     { href: "Locations/Shops/Coronet_Apothecary.html",     title: "Coronet Apothecary" }
   ],
   "Docs": [
+    { href: "Docs/Calypsolens.html",   title: "Calypsolens" },
     { href: "Docs/Climate_System.html",  title: "Climate System" },
     { href: "Docs/Credits.html",         title: "Credits" },
     { href: "Docs/Homebase.html",        title: "Homebase" },
