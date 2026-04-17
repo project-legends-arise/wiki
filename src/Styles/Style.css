@@ -361,6 +361,56 @@ table.intro {
     text-align: left;
 }
 
+/* Item List page: pocket tables (ID, Icon, Name, Notes) */
+.item-list-intro,
+.item-list-meta {
+    margin: 0 0 8px 0;
+}
+
+.item-list-meta {
+    color: #555;
+    font-size: 13px;
+}
+
+.item-pocket-table {
+    width: 100%;
+    min-width: 760px;
+    max-width: none;
+}
+
+.item-pocket-table th.item-id-h {
+    width: 72px;
+}
+
+.item-pocket-table th.item-icon-h {
+    width: 60px;
+}
+
+.item-pocket-table th.item-name-h {
+    width: 240px;
+}
+
+.item-pocket-table td.item-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.item-pocket-table td.icon {
+    text-align: center;
+}
+
+.item-pocket-table td.name {
+    text-align: left;
+    font-weight: 600;
+}
+
+.item-pocket-table td.item-notes {
+    min-width: 320px;
+    text-align: left;
+}
+
 .market-good{
     background: #797979;
     width: 100%;
@@ -1526,6 +1576,19 @@ table.striped tr:nth-child(even) td {
     .items-table {
         min-width: 0;
         width: 100%;
+    }
+
+    .item-pocket-table {
+        min-width: 620px;
+    }
+    .item-pocket-table td.item-id {
+        font-size: 10px;
+    }
+    .item-pocket-table td.name {
+        min-width: 170px;
+    }
+    .item-pocket-table td.item-notes {
+        min-width: 220px;
     }
 
     /* „Ÿ„Ÿ Trainers table „Ÿ„Ÿ */
