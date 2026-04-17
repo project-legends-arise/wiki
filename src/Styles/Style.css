@@ -373,8 +373,8 @@ table.intro {
 }
 
 .item-pocket-table {
-    width: 100%;
-    min-width: 760px;
+    width: auto;
+    min-width: 0;
     max-width: none;
 }
 
@@ -407,7 +407,6 @@ table.intro {
 }
 
 .item-pocket-table td.item-notes {
-    min-width: 320px;
     text-align: left;
 }
 
@@ -1579,16 +1578,11 @@ table.striped tr:nth-child(even) td {
     }
 
     .item-pocket-table {
-        min-width: 620px;
+        width: auto;
+        min-width: 0;
     }
     .item-pocket-table td.item-id {
         font-size: 10px;
-    }
-    .item-pocket-table td.name {
-        min-width: 170px;
-    }
-    .item-pocket-table td.item-notes {
-        min-width: 220px;
     }
 
     /* „Ÿ„Ÿ Trainers table „Ÿ„Ÿ */
