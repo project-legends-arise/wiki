@@ -7,40 +7,61 @@ function Escape-Html([string]$text) {
 }
 
 function Infer-Pocket([int]$id, [string]$name, [string]$csvPocket) {
-    if ($csvPocket -and $csvPocket.Trim().Length -gt 0) {
-        return $csvPocket.Trim()
-    }
-
-    if ($name -eq 'None') { return 'General' }
-    if ($name -like 'Dummy*') { return 'Unused' }
-
-    if ($id -ge 63 -and $id -le 137) { return 'Remedies' }
+    # Strict contiguous pockets by ID range.
+    if ($id -ge 1   -and $id -le 62)  { return 'General' }
+    if ($id -ge 63  -and $id -le 137) { return 'Remedies' }
     if ($id -ge 138 -and $id -le 161) { return 'Pokeballs' }
     if ($id -ge 162 -and $id -le 261) { return 'Machines' }
     if ($id -ge 262 -and $id -le 325) { return 'Berries' }
-    if ($id -ge 326 -and $id -le 333) { return 'Battle Items' }
-    if (($id -ge 334 -and $id -le 417) -or ($id -ge 452 -and $id -le 485)) { return 'Held Items' }
-    if ($id -ge 418 -and $id -le 451) { return 'Valuables' }
-    if ($id -ge 505 -and $id -le 537) { return 'Key Items' }
-    if ($id -ge 538) { return 'Unused' }
+    if ($id -ge 326 -and $id -le 407) { return 'Battle Items' }
+    if ($id -ge 408 -and $id -le 518) { return 'Treasures' }
+    if ($id -ge 519 -and $id -le 537) { return 'Key Items' }
+    if ($id -ge 538 -and $id -le 559) { return 'Unused' }
 
-    return 'General'
+    return 'Unused'
 }
 
 $rows = @()
-Get-Content -Path $csvPath | ForEach-Object {
-    $line = $_.Trim()
-    if (-not $line) { return }
+$activePocket = ''
+foreach ($rawLine in Get-Content -Path $csvPath) {
+    $line = $rawLine.Trim()
+    if (-not $line) { continue }
 
     $parts = $line -split ',', 5
-    if ($parts.Count -lt 2) { return }
+    if ($parts.Count -lt 2) { continue }
 
-    $idRaw = $parts[0].Trim()
-    if (-not ($idRaw -match '^\d+$')) { return }
+    $col0 = if ($parts.Count -ge 1) { $parts[0].Trim() } else { '' }
+    $col1 = if ($parts.Count -ge 2) { $parts[1].Trim() } else { '' }
+    $col2 = if ($parts.Count -ge 3) { $parts[2].Trim() } else { '' }
+    $col3 = if ($parts.Count -ge 4) { $parts[3].Trim() } else { '' }
 
-    $name = $parts[1].Trim()
-    $csvPocket = if ($parts.Count -ge 3) { $parts[2].Trim() } else { '' }
-    $notes = if ($parts.Count -ge 4) { $parts[3].Trim() } else { '' }
+    $idRaw = ''
+    $name = ''
+    $csvPocket = ''
+
+    # Legacy format: ID,NAME,POCKET,NOTES,...
+    if ($col0 -match '^\d+$') {
+        $idRaw = $col0
+        $name = $col1
+        $csvPocket = $col2
+    }
+    # Pocket-prefixed format: POCKET,ID,NAME,NOTES,... then blank pocket for following rows.
+    elseif ($col1 -match '^\d+$') {
+        $idRaw = $col1
+        $name = $col2
+        if ($col0 -and -not ($col0 -match '^\d+$')) {
+            $activePocket = $col0
+        }
+        $csvPocket = $activePocket
+    }
+    else {
+        continue
+    }
+
+    if (-not $name) { continue }
+    if ([int]$idRaw -eq 0) { continue }
+
+    $notes = $col3
 
     $rows += [pscustomobject]@{
         IdRaw = $idRaw
@@ -58,8 +79,7 @@ $sectionOrder = @(
     'Machines',
     'Berries',
     'Battle Items',
-    'Held Items',
-    'Valuables',
+    'Treasures',
     'Key Items',
     'Unused'
 )
