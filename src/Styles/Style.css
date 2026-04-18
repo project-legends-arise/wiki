@@ -627,6 +627,11 @@ table.intro {
     border-color: #c8842f;
     color: #5f3600;
 }
+.note-chip-relic {
+    background: linear-gradient(180deg, #e7dcba 0%, #ccb06f 100%);
+    border-color: #8b6a2f;
+    color: #3f2e08;
+}
 .note-desc {
     display: block;
     line-height: 1.3;
