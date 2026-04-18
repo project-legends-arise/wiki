@@ -401,13 +401,14 @@ table.intro {
     text-align: center;
 }
 
+
 .item-pocket-table td.name {
-    text-align: left;
+    text-align: center;
     font-weight: 600;
 }
 
 .item-pocket-table td.item-notes {
-    text-align: left;
+    text-align: center;
 }
 
 .market-good{
