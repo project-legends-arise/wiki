@@ -594,31 +594,38 @@ table.intro {
 .note-chips {
     display: flex;
     flex-direction: row;
-    gap: 2px;
+    gap: 4px;
     justify-content: center;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .note-chip {
-    display: inline-block;
-    min-width: 56px;
-    max-width: 84px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    max-width: 112px;
     font-size: 9px;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
-    padding: 1px 4px;
-    border-radius: 4px;
-    line-height: 1.6;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    line-height: 1.4;
     white-space: nowrap;
     box-sizing: border-box;
     border: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 .note-chip-cross-gen {
-    background-color: #9bd4ff;
+    background: linear-gradient(180deg, #ccecff 0%, #9bd4ff 100%);
     border-color: #4f8db8;
+    color: #103d5a;
 }
 .note-chip-custom {
-    background-color: #ffd89a;
+    background: linear-gradient(180deg, #ffe7bf 0%, #ffd89a 100%);
     border-color: #c8842f;
+    color: #5f3600;
 }
 .note-desc {
     display: block;
@@ -1568,10 +1575,14 @@ table.striped tr:nth-child(even) td {
         white-space: normal;
         word-break: break-word;
     }
-    .type-chip,
-    .note-chip {
+    .type-chip {
         font-size: 8px;
         padding: 1px 2px;
+    }
+    .note-chip {
+        font-size: 8px;
+        padding: 1px 6px;
+        min-width: 64px;
     }
 
     /* Sprite: smaller square */
