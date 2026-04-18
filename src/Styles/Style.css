@@ -378,6 +378,11 @@ table.intro {
     max-width: none;
 }
 
+.item-pocket-table th,
+.item-pocket-table td {
+    padding: 6px 10px;
+}
+
 .item-pocket-table th.item-id-h {
     width: 72px;
 }
