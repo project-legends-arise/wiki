@@ -590,6 +590,41 @@ table.intro {
     box-sizing: border-box;
 }
 
+/* Item notes chips */
+.note-chips {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+.note-chip {
+    display: inline-block;
+    min-width: 56px;
+    max-width: 84px;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    padding: 1px 4px;
+    border-radius: 4px;
+    line-height: 1.6;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+.note-chip-cross-gen {
+    background-color: #9bd4ff;
+    border-color: #4f8db8;
+}
+.note-chip-custom {
+    background-color: #ffd89a;
+    border-color: #c8842f;
+}
+.note-desc {
+    display: block;
+    line-height: 1.3;
+}
+
 /* Method column */
 #wildspawns .method-col, .wildspawns-table .method-col {
     width: 80px;
@@ -1533,7 +1568,8 @@ table.striped tr:nth-child(even) td {
         white-space: normal;
         word-break: break-word;
     }
-    .type-chip {
+    .type-chip,
+    .note-chip {
         font-size: 8px;
         padding: 1px 2px;
     }
