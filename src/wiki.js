@@ -202,14 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.innerHTML = `
             <div class="wiki-lightbox-backdrop"></div>
             <div class="wiki-lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
-                <button type="button" class="wiki-lightbox-close" aria-label="Close image preview">Å~</button>
                 <img class="wiki-lightbox-image" alt="">
                 <div class="wiki-lightbox-caption"></div>
             </div>`;
         document.body.appendChild(lightbox);
 
-        const lightboxBackdrop = lightbox.querySelector('.wiki-lightbox-backdrop');
-        const lightboxClose = lightbox.querySelector('.wiki-lightbox-close');
         const lightboxImage = lightbox.querySelector('.wiki-lightbox-image');
         const lightboxCaption = lightbox.querySelector('.wiki-lightbox-caption');
 
@@ -256,8 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        lightboxBackdrop.addEventListener('click', closeLightbox);
-        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImage) {
+                closeLightbox();
+            }
+        });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('open')) {
