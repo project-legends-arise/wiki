@@ -18,92 +18,92 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
     const headings = container.querySelectorAll('h2, h3, h4');
-    if (headings.length < 2) return;         // don't bother if <2 sections
-
-    // Remove old Italian placeholder
-    container.querySelectorAll('h3').forEach(h => {
-        if (h.textContent.trim().toLowerCase().startsWith('qui ci va indice')) {
-            h.remove();
-        }
-    });
-
-    // Assign IDs to headings that lack them
-    const usedIds = new Set();
-    headings.forEach(h => {
-        if (!h.id) {
-            let base = h.textContent.trim()
-                .replace(/[^a-zA-Z0-9 ]/g, '')
-                .replace(/\s+/g, '-')
-                .toLowerCase();
-            while (usedIds.has(base)) base += '-2';
-            h.id = base;
-        }
-        usedIds.add(h.id);
-    });
-
-    // Build nested OL
-    const toc = document.createElement('details');
-    toc.className = 'wiki-toc';
-    toc.open = true;
-    const summary = document.createElement('summary');
-    summary.textContent = 'Contents';
-    toc.appendChild(summary);
-
-    const rootOl = document.createElement('ol');
-    let currentH2Li = null;
-    let currentH3Ol = null;
-    let currentH3Li = null;
-    let currentH4Ol = null;
-
-    headings.forEach(h => {
-        // Skip headings inside .toggle-content that aren't the main sections
-        // (e.g. nested tables) ? we only index direct-child section headings
-        const tag = h.tagName;
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent.trim();
-        li.appendChild(a);
-
-        if (tag === 'H2') {
-            rootOl.appendChild(li);
-            currentH2Li = li;
-            currentH3Ol = null;
-            currentH3Li = null;
-            currentH4Ol = null;
-        } else if (tag === 'H3') {
-            if (!currentH3Ol) {
-                currentH3Ol = document.createElement('ol');
-                (currentH2Li || rootOl).appendChild(currentH3Ol);
+    if (headings.length >= 2) {
+        // Remove old Italian placeholder
+        container.querySelectorAll('h3').forEach(h => {
+            if (h.textContent.trim().toLowerCase().startsWith('qui ci va indice')) {
+                h.remove();
             }
-            currentH3Ol.appendChild(li);
-            currentH3Li = li;
-            currentH4Ol = null;
-        } else if (tag === 'H4') {
-            if (!currentH4Ol) {
-                currentH4Ol = document.createElement('ol');
-                (currentH3Li || currentH2Li || rootOl).appendChild(currentH4Ol);
+        });
+
+        // Assign IDs to headings that lack them
+        const usedIds = new Set();
+        headings.forEach(h => {
+            if (!h.id) {
+                let base = h.textContent.trim()
+                    .replace(/[^a-zA-Z0-9 ]/g, '')
+                    .replace(/\s+/g, '-')
+                    .toLowerCase();
+                while (usedIds.has(base)) base += '-2';
+                h.id = base;
             }
-            currentH4Ol.appendChild(li);
-        }
-    });
+            usedIds.add(h.id);
+        });
 
-    toc.appendChild(rootOl);
+        // Build nested OL
+        const toc = document.createElement('details');
+        toc.className = 'wiki-toc';
+        toc.open = true;
+        const summary = document.createElement('summary');
+        summary.textContent = 'Contents';
+        toc.appendChild(summary);
 
-    // Insert TOC after h1 (or at top of container)
-    const h1 = container.querySelector('h1');
-    if (h1) {
-        // Insert after the intro table if one exists, otherwise after h1
-        const introTable = container.querySelector('#intro');
-        const anchor = introTable || h1;
-        // Walk to the next sibling that's not whitespace
-        let insertBefore = anchor.nextSibling;
-        while (insertBefore && insertBefore.nodeType === 3 && !insertBefore.textContent.trim()) {
-            insertBefore = insertBefore.nextSibling;
+        const rootOl = document.createElement('ol');
+        let currentH2Li = null;
+        let currentH3Ol = null;
+        let currentH3Li = null;
+        let currentH4Ol = null;
+
+        headings.forEach(h => {
+            // Skip headings inside .toggle-content that aren't the main sections
+            // (e.g. nested tables) ? we only index direct-child section headings
+            const tag = h.tagName;
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + h.id;
+            a.textContent = h.textContent.trim();
+            li.appendChild(a);
+
+            if (tag === 'H2') {
+                rootOl.appendChild(li);
+                currentH2Li = li;
+                currentH3Ol = null;
+                currentH3Li = null;
+                currentH4Ol = null;
+            } else if (tag === 'H3') {
+                if (!currentH3Ol) {
+                    currentH3Ol = document.createElement('ol');
+                    (currentH2Li || rootOl).appendChild(currentH3Ol);
+                }
+                currentH3Ol.appendChild(li);
+                currentH3Li = li;
+                currentH4Ol = null;
+            } else if (tag === 'H4') {
+                if (!currentH4Ol) {
+                    currentH4Ol = document.createElement('ol');
+                    (currentH3Li || currentH2Li || rootOl).appendChild(currentH4Ol);
+                }
+                currentH4Ol.appendChild(li);
+            }
+        });
+
+        toc.appendChild(rootOl);
+
+        // Insert TOC after h1 (or at top of container)
+        const h1 = container.querySelector('h1');
+        if (h1) {
+            // Insert after the intro table if one exists, otherwise after h1
+            const introTable = container.querySelector('#intro');
+            const anchor = introTable || h1;
+            // Walk to the next sibling that's not whitespace
+            let insertBefore = anchor.nextSibling;
+            while (insertBefore && insertBefore.nodeType === 3 && !insertBefore.textContent.trim()) {
+                insertBefore = insertBefore.nextSibling;
+            }
+            container.insertBefore(toc, insertBefore);
+        } else {
+            container.prepend(toc);
         }
-        container.insertBefore(toc, insertBefore);
-    } else {
-        container.prepend(toc);
     }
 
 
@@ -190,7 +190,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
-       5.  SIDEBAR QUICK-NAV
+       5.  GALLERY LIGHTBOX
+       Click gallery images to open enlarged view
+       on a darkened backdrop.
+       „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ */
+    const galleryImages = document.querySelectorAll('.wiki-gallery-image, .spawn-shot');
+    if (galleryImages.length) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'wiki-lightbox';
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.innerHTML = `
+            <div class="wiki-lightbox-backdrop"></div>
+            <div class="wiki-lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+                <button type="button" class="wiki-lightbox-close" aria-label="Close image preview">~</button>
+                <img class="wiki-lightbox-image" alt="">
+                <div class="wiki-lightbox-caption"></div>
+            </div>`;
+        document.body.appendChild(lightbox);
+
+        const lightboxBackdrop = lightbox.querySelector('.wiki-lightbox-backdrop');
+        const lightboxClose = lightbox.querySelector('.wiki-lightbox-close');
+        const lightboxImage = lightbox.querySelector('.wiki-lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.wiki-lightbox-caption');
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('wiki-lightbox-open');
+            lightboxImage.removeAttribute('src');
+            lightboxImage.removeAttribute('alt');
+            lightboxCaption.textContent = '';
+        };
+
+        const openLightbox = (img) => {
+            const fullSrc = img.getAttribute('data-full-src') || img.currentSrc || img.src;
+            if (!fullSrc) return;
+
+            lightboxImage.src = fullSrc;
+            lightboxImage.alt = img.alt || '';
+
+            let caption = img.getAttribute('data-caption') || '';
+            if (!caption) {
+                const figcaption = img.closest('figure')?.querySelector('figcaption');
+                if (figcaption) caption = figcaption.textContent.trim();
+            }
+            lightboxCaption.textContent = caption;
+            lightboxCaption.style.display = caption ? 'block' : 'none';
+
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('wiki-lightbox-open');
+        };
+
+        galleryImages.forEach(img => {
+            img.setAttribute('role', 'button');
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('title', 'Click to enlarge');
+
+            img.addEventListener('click', () => openLightbox(img));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(img);
+                }
+            });
+        });
+
+        lightboxBackdrop.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    }
+
+
+    /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+       6.  SIDEBAR QUICK-NAV
        Builds a collapsible sidebar listing sibling
        pages in the same section (uses WIKI_NAV from
        wiki-data.js).
@@ -258,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
-       6.  PAGE FOOTER ? Last-updated & category tags
+         7.  PAGE FOOTER ? Last-updated & category tags
        Reads <meta name="wiki-updated">, wiki-category,
        wiki-tags and renders a footer bar at the bottom
        of .container.
