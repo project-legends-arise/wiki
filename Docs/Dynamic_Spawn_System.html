@@ -4,58 +4,6 @@
 <meta name="wiki-tags" content="docs, mechanics, environment, dynamic-spawns, overworld, mining, wisps, spacetime">
 <meta name="wiki-category" content="Docs">
 <meta name="wiki-updated" content="2026-04-21">
-<style>
-  .spawn-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin: 12px 0 26px;
-  }
-
-  .spawn-card {
-    margin: 0;
-    padding: 8px;
-    border: 2px solid #86ad4c;
-    border-radius: 14px;
-    background: #b9d770;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  }
-
-  .spawn-shot {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border: 1px solid #86a25e;
-    border-radius: 10px;
-    background: #e8efd6;
-  }
-
-  .spawn-shot.is-fallback {
-    object-fit: contain;
-    padding: 16px;
-    background: #f4f7ea;
-  }
-
-  .spawn-card figcaption {
-    margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.35;
-    color: #1e1e1e;
-  }
-
-  .spawn-card figcaption strong {
-    display: block;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: #1f3d0f;
-  }
-
-  .spawn-gallery-note {
-    margin-bottom: 10px;
-  }
-</style>
 </head>
 <body>
 <div class="container">
@@ -96,51 +44,50 @@
     </ul>
   </li></ul>
 
-<h2>Gallery</h2>
-
-<div class="spawn-gallery">
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/grass_sparkles.png" alt="Grass Sparkles spawn in tall grass" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/TallGrass.png';">
-    <figcaption><strong>Grass Sparkles</strong> Tall-grass sparkles that mark temporary item pickups.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/mining_spot.png" alt="Mining Spot crack on a cave wall" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/531.png';">
-    <figcaption><strong>Mining Spots</strong> Wall cracks in caves that can be excavated with Mining Gear.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/rippling_water.png" alt="Rippling Water tile on a water route" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/WaterRipple.png';">
-    <figcaption><strong>Rippling Water</strong> Water ripples that unlock special surf and fishing encounters.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/overhead_shadow.png" alt="Overhead Shadow marker on the ground" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/Shadow.png';">
-    <figcaption><strong>Overhead Shadows</strong> Ground shadows that may hide Feathers or drop-in Pokemon.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/wisp.png" alt="Wisp floating above ground at night" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/56.png';">
-    <figcaption><strong>Wisps</strong> Rare spectral flames used for Spiritomb summoning and NPC trades.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/frenzy_pokemon.png" alt="Frenzy Pokemon encounter in a distortion" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/62.png';">
-    <figcaption><strong>Frenzy Pokemon</strong> Distortion-only aggressive encounters with Hidden Abilities.</figcaption>
-  </figure>
-
-  <figure class="spawn-card">
-    <img loading="lazy" class="spawn-shot" src="../src/Promo/Spawns/dust_cloud.png" alt="Dust Cloud item spawn in a distortion" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/Walking.png';">
-    <figcaption><strong>Dust Clouds</strong> Short-lived smoke markers that grant an item on contact.</figcaption>
-  </figure>
-</div>
-
-<h2>Spacetime Distortion Variants</h2>
 <p>During <a href="Spacetime.html">Spacetime Distortions</a>, the system can also generate the following event types:</p>
 <ul>
   <li><strong>FRENZY POKEMON:</strong> A Pokemon with the Frenzy status effect will immediately attack when approached. Frenzy Pokemon always have their Hidden Ability.</li>
   <li><strong>DUST CLOUDS:</strong> A brief dust-like smoke effect marks a temporary item spawn. Stepping onto it immediately grants the item.</li>
 </ul>
+
+<h2>Gallery</h2>
+
+<div class="wiki-gallery">
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/grass_sparkles.png" alt="Grass Sparkles spawn in tall grass" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/TallGrass.png';">
+    <figcaption><strong>Grass Sparkles</strong> Tall-grass sparkles that mark temporary item pickups.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/mining_spot.png" alt="Mining Spot crack on a cave wall" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/531.png';">
+    <figcaption><strong>Mining Spots</strong> Wall cracks in caves that can be excavated with Mining Gear.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/rippling_water.png" alt="Rippling Water tile on a water route" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/WaterRipple.png';">
+    <figcaption><strong>Rippling Water</strong> Water ripples that unlock special surf and fishing encounters.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/overhead_shadow.png" alt="Overhead Shadow marker on the ground" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/Shadow.png';">
+    <figcaption><strong>Overhead Shadows</strong> Ground shadows that may hide Feathers or drop-in Pokemon.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/wisp.png" alt="Wisp floating above ground at night" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/56.png';">
+    <figcaption><strong>Wisps</strong> Rare spectral flames used for Spiritomb summoning and NPC trades.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/frenzy_pokemon.png" alt="Frenzy Pokemon encounter in a distortion" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Item/62.png';">
+    <figcaption><strong>Frenzy Pokemon</strong> Distortion-only aggressive encounters with Hidden Abilities.</figcaption>
+  </figure>
+
+  <figure class="wiki-gallery-item">
+    <img loading="lazy" class="wiki-gallery-image" src="../src/Promo/Spawns/dust_cloud.png" alt="Dust Cloud item spawn in a distortion" onerror="this.onerror=null;this.classList.add('is-fallback');this.src='../src/Methods/Walking.png';">
+    <figcaption><strong>Dust Clouds</strong> Short-lived smoke markers that grant an item on contact.</figcaption>
+  </figure>
+</div>
 
 </div>
 <script src="../src/wiki.js"></script>
