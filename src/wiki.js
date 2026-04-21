@@ -229,7 +229,11 @@ document.addEventListener('DOMContentLoaded', () => {
             let caption = img.getAttribute('data-caption') || '';
             if (!caption) {
                 const figcaption = img.closest('figure')?.querySelector('figcaption');
-                if (figcaption) caption = figcaption.textContent.trim();
+                if (figcaption) {
+                    const clone = figcaption.cloneNode(true);
+                    clone.querySelectorAll('strong').forEach(el => el.remove());
+                    caption = clone.textContent.replace(/\s+/g, ' ').trim();
+                }
             }
             lightboxCaption.textContent = caption;
             lightboxCaption.style.display = caption ? 'block' : 'none';

@@ -1373,35 +1373,36 @@ table.striped tr:nth-child(even) td {
 .wiki-gallery,
 .spawn-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 240px));
-    gap: 14px;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 240px));
+    gap: 12px;
+    align-items: start;
     justify-content: center;
-    margin: 12px 0 26px;
+    margin: 12px 0 24px;
 }
 
 .wiki-gallery-item,
 .spawn-card {
     margin: 0;
-    padding: 8px;
-    border: 2px solid #86ad4c;
-    border-radius: 14px;
-    background: #b9d770;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 4px;
+    border: 1px solid #c8ccd1;
+    border-radius: 0;
+    background: #f8f9fa;
+    box-shadow: none;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .wiki-gallery-image,
 .spawn-shot {
     display: block;
     width: 100%;
-    height: clamp(96px, 14vw, 128px);
+    height: clamp(108px, 14vw, 150px);
     box-sizing: border-box;
     object-fit: contain;
-    border: 1px solid #86a25e;
-    border-radius: 10px;
-    background: #111;
+    border: 1px solid #a2a9b1;
+    border-radius: 0;
+    background: #ffffff;
     cursor: zoom-in;
     transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
@@ -1416,26 +1417,38 @@ table.striped tr:nth-child(even) td {
 .wiki-gallery-image.is-fallback,
 .spawn-shot.is-fallback {
     object-fit: contain;
-    padding: 14px;
-    background: #f4f7ea;
+    padding: 10px;
+    background: #f8f9fa;
     image-rendering: pixelated;
 }
 
 .wiki-gallery-item figcaption,
 .spawn-card figcaption {
-    margin-top: 8px;
+    margin-top: 6px;
+    padding: 0 18px 2px 2px;
     font-size: 13px;
     line-height: 1.35;
-    color: #1e1e1e;
+    color: #202122;
+    position: relative;
 }
 
 .wiki-gallery-item figcaption strong,
 .spawn-card figcaption strong {
-    display: block;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: #1f3d0f;
+    display: none;
+}
+
+.wiki-gallery-item figcaption::after,
+.spawn-card figcaption::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 13px;
+    height: 13px;
+    opacity: 0.72;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23727a84' stroke-width='1.2'%3E%3Crect x='1.5' y='3' width='9.5' height='7.5'/%3E%3Crect x='5' y='6.5' width='9.5' height='7.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .wiki-gallery-note,
