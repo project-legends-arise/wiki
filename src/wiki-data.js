@@ -793,6 +793,7 @@ const WIKI_NAV = {
     { href: "Docs/Calypsolens.html",   title: "Calypsolens" },
     { href: "Docs/Climate_System.html",  title: "Climate System" },
     { href: "Docs/Credits.html",         title: "Credits" },
+    { href: "Docs/Dynamic_Spawn_System.html", title: "Dynamic Spawn System" },
     { href: "Docs/Homebase.html",        title: "Homebase" },
     { href: "Docs/Item_List.html",       title: "Item List" },
     { href: "Docs/Moves_List.html",      title: "Moves List" },
