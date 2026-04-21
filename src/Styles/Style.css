@@ -126,6 +126,18 @@ table-text-small{
   text-align: justify;
 }
 
+/* Improve readability in content lists across the wiki */
+.container ul > li + li,
+.container ol > li + li {
+    margin-top: 0.55em;
+}
+
+/* Keep utility/navigation lists compact */
+.wiki-toc ol > li + li,
+.related-articles ul > li + li {
+    margin-top: 0;
+}
+
 /* Stili generali elementi di tabella */
 div.tcontainer{
     width: 100%;
